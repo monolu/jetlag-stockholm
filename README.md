@@ -25,10 +25,16 @@ for the base game, and the official expansion reference at
 
 ## The page
 
-Everything you need during the game is published as one page:
-**<https://claude.ai/code/artifact/1da46632-5022-4f36-bdde-65406e5bc907>**
-(private until you share it from the page's share menu). Source is `field-manual.html`,
-and it is the authoritative version of the rules below.
+Everything you need during the game is one page, live at
+**<https://monolu.github.io/jetlag-stockholm/>** — rules, local definitions, all 252
+stops, and the network on a real map. Send that link to everyone.
+
+It is built by `build_site.py` into `docs/`, from `field-manual.html`. There is also an
+Artifact copy at
+<https://claude.ai/code/artifact/1da46632-5022-4f36-bdde-65406e5bc907>; it holds the same
+text but draws the map itself, because an Artifact cannot load map tiles.
+
+`map.html` is the map on its own, full screen, and works from disk with no server.
 
 ## The network
 
@@ -72,6 +78,8 @@ If My Maps flattens the folders into a single layer, import these four instead:
 | `data/stations.geojson` | Everything, for any tool that eats GeoJSON |
 | `build_map.py` | Regenerates every file in `data/` from the OSM snapshots in `data/osm/` |
 | `build_mapdata.py` | Thins the network into `data/map-data.json`, the payload the page's map draws |
+| `build_site.py` | Builds `docs/index.html`, the hosted page with the Leaflet map |
+| `build_webmap.py` | Builds `map.html`, the standalone full-screen map |
 | `cards/` | Every card and every question as data, plus a deck builder. See `cards/README.md` |
 
 Stop and route data from OpenStreetMap, © OpenStreetMap contributors, ODbL.
