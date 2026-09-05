@@ -38,14 +38,23 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(HERE, "data", "osm")
 OUT = os.path.join(HERE, "data")
 
-ZONE_RADIUS_M = 400   # 1/4 mile, rounded. Medium game hiding zone.
+ZONE_RADIUS_M = 500   # the metric rulebook's medium hiding zone
+
+# Two curses move the edge of a hiding zone, so the map carries all three circles.
+ZONE_VARIANTS = [
+    (250, "250 m — Curse of the Tiny Home, halved"),
+    (500, "500 m — the hiding zone"),
+    (750, "750 m — Curse of the Prosperous Home, half again"),
+]
 NAME_MERGE_M = 600    # same name this close is one stop
 NEAR_MERGE_M = 300    # a stop this close on another system is one interchange
 
-# A circle holding every stop. The smallest one has a radius of 53.94 km; this is
-# rounded up so nothing sits on the line. Furthest stops: Uppsala C, Gröndalsviken.
-BORDER_CENTRE = (59.38, 17.79)
-BORDER_RADIUS_KM = 55
+# A medium game is 100 to 1,000 square miles. This is the largest circle that fits
+# inside that and the placement that holds the most stops: 235 of the 252 on the
+# network. What it leaves out is the far end of every pendeltag and Roslagsbanan
+# branch, from Uppsala C down to Nynashamn.
+BORDER_CENTRE = (59.35, 17.92)
+BORDER_RADIUS_KM = 28.7
 
 # Line numbers and colours follow SL's own rail network map. No number is used
 # twice across the systems, so the bare number is enough to identify a line.
@@ -234,8 +243,13 @@ def route_stops(rel_file, stop_file, label_for):
 
 # ---------------------------------------------------------------- assembly
 
+def inside(lat, lon):
+    """Stops and track outside the border are not in the game."""
+    return metres((lat, lon), BORDER_CENTRE) <= BORDER_RADIUS_KM * 1000
+
+
 def build_rows(verbose=False):
-    """One row per hiding-zone centre."""
+    """One row per hiding-zone centre, inside the border."""
     sources = [
         metro_stops(),
         route_stops("tram_rels.json", "tram_stops.json", lambda ref: ref),
@@ -305,6 +319,11 @@ def build_rows(verbose=False):
             "lat": round(stop["pt"][0], 6),
             "lon": round(stop["pt"][1], 6),
         })
+    dropped = [r["name"] for r in rows if not inside(r["lat"], r["lon"])]
+    rows = [r for r in rows if inside(r["lat"], r["lon"])]
+    if verbose and dropped:
+        print(f"  outside the border, not in play ({len(dropped)}): "
+              + ", ".join(sorted(dropped)))
     rows.sort(key=lambda r: r["name"].lower())
     return rows
 
@@ -316,8 +335,22 @@ def route_lines():
         label = GEOM_LINES.get(rel["id"])
         if not label:
             continue
-        ways = [m["geometry"] for m in rel["members"]
-                if m["type"] == "way" and m.get("geometry") and not m["role"]]
+        ways = []
+        for member in rel["members"]:
+            if member["type"] != "way" or not member.get("geometry") or member["role"]:
+                continue
+            # a line may run out of the map and back; keep the runs that are in it
+            run = []
+            for point in member["geometry"]:
+                if inside(point["lat"], point["lon"]):
+                    run.append(point)
+                elif len(run) > 1:
+                    ways.append(run)
+                    run = []
+                else:
+                    run = []
+            if len(run) > 1:
+                ways.append(run)
         out.append({"label": label, "colour": LINE_COLOURS[label],
                     "name": LINE_NAMES[label], "ways": ways})
     out.sort(key=lambda r: list(LINE_COLOURS).index(r["label"]))
@@ -393,17 +426,22 @@ def stops_folder(rows, nested=True):
     return "".join(parts)
 
 
-def zones_folder(rows):
-    parts = [f"<Folder><name>Hiding zones ({ZONE_RADIUS_M} m)</name>"]
+def zones_folder(rows, radius=None, label=None):
+    radius = radius or ZONE_RADIUS_M
+    parts = [f"<Folder><name>{esc(label or str(radius) + ' m')}</name>"]
     for row in rows:
         ring = " ".join(f"{lon:.6f},{lat:.6f},0"
-                        for lon, lat in circle(row["lat"], row["lon"], ZONE_RADIUS_M))
+                        for lon, lat in circle(row["lat"], row["lon"], radius))
         parts.append("<Placemark>"
                      f"<name>{esc(row['name'])}</name><styleUrl>#zone</styleUrl>"
                      f"<Polygon><outerBoundaryIs><LinearRing><coordinates>{ring}</coordinates>"
                      "</LinearRing></outerBoundaryIs></Polygon></Placemark>")
     parts.append("</Folder>")
     return "".join(parts)
+
+
+def all_zone_folders(rows):
+    return "".join(zones_folder(rows, radius, label) for radius, label in ZONE_VARIANTS)
 
 
 def border_ring():
@@ -489,10 +527,10 @@ if __name__ == "__main__":
         write_csv(rows),
         write_geojson(rows),
         write("all-layers.kml", kml_doc("Hide and Seek Stockholm",
-              lines_folder() + stops_folder(rows) + zones_folder(rows) + border_folder())),
+              lines_folder() + stops_folder(rows) + all_zone_folders(rows) + border_folder())),
         write("transit-lines.kml", kml_doc("Transit lines", lines_folder())),
         write("stations.kml", kml_doc("Stops", stops_folder(rows, nested=False))),
-        write("hiding-zones.kml", kml_doc("Hiding zones", zones_folder(rows))),
+        write("hiding-zones.kml", kml_doc("Hiding zones", all_zone_folders(rows))),
         write("border.kml", kml_doc("Game border", border_folder())),
     ]
     for name in written:

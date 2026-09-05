@@ -47,6 +47,19 @@ CATEGORIES = [
 
 DISTANCE = re.compile(r"^([\d.]+)\s*mi\s*([\d.]+)\s*(km|m)$", re.I)
 
+# The metric rulebook is not a conversion of the imperial one: it prints its own
+# round numbers. These are what we play, keyed by the mile figure on the same card.
+METRIC = {
+    "thermometer": {0.5: 1000, 3: 5000, 10: 15000, 50: 75000},
+    "radar": {0.25: 500, 0.5: 1000, 1: 2000, 3: 5000, 5: 10000, 10: 15000,
+              25: 40000, 50: 80000, 100: 160000},
+    "tentacles": {1: 2000, 15: 25000},
+}
+
+
+def metres_label(metres):
+    return f"{metres} m" if metres < 1000 else f"{metres // 1000} km"
+
 
 def tidy(text):
     return " ".join((text or "").split())
@@ -130,11 +143,14 @@ def gated(cid, rows, value_key):
         if value_key == "distance":
             dist = distance(label)
             if dist:
-                entry["subject"] = f"{dist['miles']} mi"
+                dist["metres"] = METRIC[cid].get(dist["miles"], dist["metres"])
+                entry["subject"] = metres_label(dist["metres"])
+                entry["id"] = f"{cid}-{slug(entry['subject'])}"
                 entry["distance"] = dist
         elif value_key == "places":
             dist = distance(row[1])
             if dist:
+                dist["metres"] = METRIC[cid].get(dist["miles"], dist["metres"])
                 entry["distance"] = dist
         elif value_key == "requirements":
             if tidy(row[1]):
@@ -173,7 +189,9 @@ if __name__ == "__main__":
     doc = {
         "description": ("Every question in the Hide and Seek investigation book, by "
                         "category. `sizes` says which game sizes a question is available "
-                        "in; we play medium."),
+                        "in; we play medium. Distances carry the metric rulebook's own "
+                        "figures, which are round numbers rather than conversions of the "
+                        "mile ones."),
         "source": SHEET,
         "totals": {c["id"]: c["count"] for c in categories},
         "categories": categories,

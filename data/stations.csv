@@ -7,7 +7,6 @@ Alléparken,Tram,12,nockeby,Nockebybanan,Stockholm,59.329287,17.974462
 Altorp,Roslagsbanan,29,roslag,Roslagsbanan,Danderyd,59.410829,18.07284
 Alvik,Tunnelbana + Tram,17/18/19/12/30/31,green/nockeby/orange,Gröna linjen,Stockholm,59.333401,17.982279
 Alviks strand,Tram,30/31,orange,Tvärbanan / Lidingöbanan,Stockholm,59.328963,17.98222
-Arlanda central,Pendeltåg,40,pendel,Pendeltåg,Sigtuna,59.649426,17.928595
 Arninge,Roslagsbanan,28,roslag,Roslagsbanan,Täby,59.458786,18.141376
 Aspudden,Tunnelbana,13,red,Röda linjen,Stockholm,59.306576,18.002392
 Axelsberg,Tunnelbana,13,red,Röda linjen,Stockholm,59.304325,17.974414
@@ -29,14 +28,12 @@ Brommaplan,Tunnelbana,17/18/19,green,Gröna linjen,Stockholm,59.338283,17.939694
 Bråvallavägen,Roslagsbanan,28,roslag,Roslagsbanan,Danderyd,59.405305,18.060404
 Bällsta,Roslagsbanan,27,roslag,Roslagsbanan,Vallentuna,59.522982,18.07196
 Bällsta bro,Tram,30,orange,Tvärbanan / Lidingöbanan,Sundbyberg,59.360752,17.963285
-Bålsta,Pendeltåg,43,pendel,Pendeltåg,Håbo,59.567477,17.535322
 Danderyds sjukhus,Tunnelbana,14,red,Röda linjen,Danderyd,59.390951,18.041963
 Djurgårdsbron,Tram,7,city,Spårväg City,Stockholm,59.331736,18.092641
 Djurgårdsskolan,Tram,7,city,Spårväg City,Stockholm,59.323247,18.104603
 Djursholms Ekeby,Roslagsbanan,28,roslag,Roslagsbanan,Danderyd,59.413309,18.057394
 Djursholms Ösby,Roslagsbanan,27/28/29,roslag,Roslagsbanan,Danderyd,59.398643,18.059099
 Duvbo,Tunnelbana,10,blue,Blå linjen,Sundbyberg,59.367562,17.964303
-Ekskogen,Roslagsbanan,27,roslag,Roslagsbanan,Vallentuna,59.639006,18.226273
 Enebyberg,Roslagsbanan,28,roslag,Roslagsbanan,Danderyd,59.42581,18.051214
 Enskede gård,Tunnelbana,19,green,Gröna linjen,Stockholm,59.289287,18.070204
 Ensta,Roslagsbanan,27,roslag,Roslagsbanan,Täby,59.452139,18.063628
@@ -48,13 +45,10 @@ Fittja,Tunnelbana,13,red,Röda linjen,Botkyrka,59.24736,17.860701
 Flemingsberg,Pendeltåg,40/41,pendel,Pendeltåg,Huddinge,59.218719,17.946934
 Fridhemsplan,Tunnelbana,10/11/17/18/19,blue/green,Blå linjen,Stockholm,59.332948,18.031055
 Fruängen,Tunnelbana,14,red,Röda linjen,Stockholm,59.286468,17.964876
-Frösunda,Roslagsbanan,27,roslag,Roslagsbanan,Vallentuna,59.624869,18.17089
 Galoppfältet,Roslagsbanan,28,roslag,Roslagsbanan,Täby,59.446931,18.085027
 Gamla stan,Tunnelbana,13/14/17/18/19,red/green,Röda linjen,Stockholm,59.323305,18.067002
 Globen,Tunnelbana + Tram,19/30,green/orange,Gröna linjen,Stockholm,59.294058,18.076785
-Gnesta,Pendeltåg,48,pendel,Pendeltåg,Gnesta,59.048467,17.312508
 Gröndal,Tram,30,orange,Tvärbanan / Lidingöbanan,Stockholm,59.31594,18.0113
-Gröndalsviken,Pendeltåg,43,pendel,Pendeltåg,Nynäshamn,58.899152,17.931768
 Gubbängen,Tunnelbana,18,green,Gröna linjen,Stockholm,59.26362,18.082079
 Gullmarsplan,Tunnelbana + Tram,17/18/19/30,green/orange,Gröna linjen,Stockholm,59.299529,18.080639
 Gärdet,Tunnelbana,13,red,Röda linjen,Stockholm,59.345877,18.098877
@@ -66,7 +60,6 @@ Hallunda,Tunnelbana,13,red,Röda linjen,Botkyrka,59.24328,17.825092
 Hammarbyhöjden,Tunnelbana,17,green,Gröna linjen,Stockholm,59.294805,18.104328
 Handen,Pendeltåg,43,pendel,Pendeltåg,Haninge,59.166429,18.134055
 Helenelund,Pendeltåg,40/41,pendel,Pendeltåg,Sollentuna,59.408731,17.962877
-Hemfosa,Pendeltåg,43,pendel,Pendeltåg,Haninge,59.068222,17.975488
 Henriksdal,Saltsjöbanan,25,saltsjo,Saltsjöbanan,Nacka,59.312141,18.108423
 Hjulsta,Tunnelbana,10,blue,Blå linjen,Stockholm,59.396599,17.888219
 Hornstull,Tunnelbana,13/14,red,Röda linjen,Stockholm,59.31642,18.036711
@@ -89,13 +82,11 @@ Jakobsberg,Pendeltåg,43,pendel,Pendeltåg,Järfälla,59.423561,17.833033
 Johannelund,Tunnelbana,17/18/19,green,Gröna linjen,Stockholm,59.367948,17.857853
 Johannesfred,Tram,30/31,orange,Tvärbanan / Lidingöbanan,Stockholm,59.342754,17.969724
 Jordbro,Pendeltåg,43,pendel,Pendeltåg,Haninge,59.142233,18.126585
-Järna,Pendeltåg,48,pendel,Pendeltåg,Södertälje,59.093844,17.56812
 Kallhäll,Pendeltåg,43,pendel,Pendeltåg,Järfälla,59.452472,17.806999
 Karlaplan,Tunnelbana,13,red,Röda linjen,Stockholm,59.339752,18.092295
 Karlsbodavägen,Tram,30,orange,Tvärbanan / Lidingöbanan,Stockholm,59.355927,17.961331
 Kista,Tunnelbana,11,blue,Blå linjen,Stockholm,59.403124,17.942422
 Klövervägen,Tram,12,nockeby,Nockebybanan,Stockholm,59.32525,17.973731
-Knivsta,Pendeltåg,40,pendel,Pendeltåg,Knivsta,59.725761,17.786886
 Kottla,Tram,21,orange,Tvärbanan / Lidingöbanan,Lidingö,59.344444,18.179794
 Kragstalund,Roslagsbanan,27,roslag,Roslagsbanan,Vallentuna,59.510192,18.075699
 Krigslida,Pendeltåg,43,pendel,Pendeltåg,Haninge,59.108788,18.065219
@@ -104,7 +95,6 @@ Kungsträdgården,Tunnelbana + Tram,10/11/7,blue/city,Blå linjen,Stockholm,59.3
 Kungsängen,Pendeltåg,43,pendel,Pendeltåg,Upplands-Bro,59.477751,17.751843
 Käppala,Tram,21,orange,Tvärbanan / Lidingöbanan,Lidingö,59.352648,18.217733
 Kärrtorp,Tunnelbana,17,green,Gröna linjen,Stockholm,59.284156,18.114632
-Kårsta,Roslagsbanan,27,roslag,Roslagsbanan,Vallentuna,59.656771,18.267554
 Lahäll,Roslagsbanan,29,roslag,Roslagsbanan,Täby,59.424012,18.074033
 Larsberg,Tram,21,orange,Tvärbanan / Lidingöbanan,Lidingö,59.350338,18.146562
 Liljeholmen,Tunnelbana + Tram,13/14/30,red/orange,Röda linjen,Stockholm,59.310744,18.023132
@@ -119,9 +109,7 @@ Medborgarplatsen,Tunnelbana,17/18/19,green,Gröna linjen,Stockholm,59.315175,18.
 Midsommarkransen,Tunnelbana,14,red,Röda linjen,Stockholm,59.301611,18.010997
 Molnby,Roslagsbanan,27,roslag,Roslagsbanan,Vallentuna,59.557788,18.085273
 Mälarhöjden,Tunnelbana,13,red,Röda linjen,Stockholm,59.300496,17.95574
-Märsta,Pendeltåg,41,pendel,Pendeltåg,Sigtuna,59.62662,17.861298
 Mårtensdal,Tram,30,orange,Tvärbanan / Lidingöbanan,Stockholm,59.302698,18.088025
-Mölnbo,Pendeltåg,48,pendel,Pendeltåg,Södertälje,59.04759,17.419037
 Mörby,Roslagsbanan,27/28/29,roslag,Roslagsbanan,Danderyd,59.392119,18.047194
 Mörby centrum,Tunnelbana,14,red,Röda linjen,Danderyd,59.398585,18.036396
 Nacka,Saltsjöbanan,25,saltsjo,Saltsjöbanan,Nacka,59.306585,18.130426
@@ -133,8 +121,6 @@ Norra Ulvsunda,Tram,30/31,orange,Tvärbanan / Lidingöbanan,Stockholm,59.350296,
 Norrviken,Pendeltåg,40/41,pendel,Pendeltåg,Sollentuna,59.459113,17.924391
 Norsborg,Tunnelbana,13,red,Röda linjen,Botkyrka,59.243904,17.812731
 Nybroplan,Tram,7,city,Spårväg City,Stockholm,59.332694,18.076602
-Nynäsgård,Pendeltåg,43,pendel,Pendeltåg,Nynäshamn,58.913912,17.942555
-Nynäshamn,Pendeltåg,43,pendel,Pendeltåg,Nynäshamn,58.900914,17.950747
 Näckrosen,Tunnelbana,11,blue,Blå linjen,Solna,59.367575,17.981792
 Näsby allé,Roslagsbanan,29,roslag,Roslagsbanan,Täby,59.427354,18.085215
 Näsbypark,Roslagsbanan,29,roslag,Roslagsbanan,Täby,59.430194,18.095472
@@ -159,7 +145,6 @@ Saltsjö-Järla,Saltsjöbanan,25,saltsjo,Saltsjöbanan,Nacka,59.306919,18.150281
 Saltsjöbaden,Saltsjöbanan,25,saltsjo,Saltsjöbanan,Nacka,59.27904,18.312288
 Sandsborg,Tunnelbana,18,green,Gröna linjen,Stockholm,59.285689,18.091981
 Sankt Eriksplan,Tunnelbana,17/18/19,green,Gröna linjen,Stockholm,59.340539,18.037223
-Segersäng,Pendeltåg,43,pendel,Pendeltåg,Nynäshamn,59.028908,17.926748
 Sickla,Tram + Saltsjöbanan,30/25,orange/saltsjo,Tvärbanan / Lidingöbanan,Nacka,59.306855,18.120768
 Sickla kaj,Tram,30,orange,Tvärbanan / Lidingöbanan,Stockholm,59.302626,18.103391
 Sickla udde,Tram,30,orange,Tvärbanan / Lidingöbanan,Stockholm,59.30629,18.108543
@@ -219,7 +204,6 @@ Täljö,Roslagsbanan,28,roslag,Roslagsbanan,Österåker,59.473363,18.235597
 Ulriksdal,Pendeltåg,40/41,pendel,Pendeltåg,Solna,59.380285,18.000928
 Universitetet,Tunnelbana + Roslagsbanan,14/27/28/29,red/roslag,Röda linjen,Stockholm,59.365202,18.054597
 Upplands Väsby,Pendeltåg,40/41,pendel,Pendeltåg,Upplands Väsby,59.520854,17.899374
-Uppsala C,Pendeltåg,40,pendel,Pendeltåg,Uppsala,59.85742,17.649023
 Valla torg,Tram,30,orange,Tvärbanan / Lidingöbanan,Stockholm,59.295066,18.048493
 Vallentuna,Roslagsbanan,27,roslag,Roslagsbanan,Vallentuna,59.534432,18.08016
 Vega,Pendeltåg,43,pendel,Pendeltåg,Haninge,59.186662,18.135897
@@ -245,7 +229,6 @@ Zinkensdamm,Tunnelbana,13/14,red,Röda linjen,Stockholm,59.317831,18.049188
 Årstadal,Tram,30,orange,Tvärbanan / Lidingöbanan,Stockholm,59.305878,18.025612
 Årstafältet,Tram,30,orange,Tvärbanan / Lidingöbanan,Stockholm,59.296363,18.039524
 Örnsberg,Tunnelbana,13,red,Röda linjen,Stockholm,59.305336,17.987701
-Ösmo,Pendeltåg,43,pendel,Pendeltåg,Nynäshamn,58.983998,17.902596
 Östberga,Roslagsbanan,29,roslag,Roslagsbanan,Danderyd,59.403989,18.073893
 Östermalmstorg,Tunnelbana,13/14,red,Röda linjen,Stockholm,59.335478,18.077689
 Österskär,Roslagsbanan,28,roslag,Roslagsbanan,Österåker,59.461213,18.311069

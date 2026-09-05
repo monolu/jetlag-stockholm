@@ -1,5 +1,5 @@
 {
- "description": "Every question in the Hide and Seek investigation book, by category. `sizes` says which game sizes a question is available in; we play medium.",
+ "description": "Every question in the Hide and Seek investigation book, by category. `sizes` says which game sizes a question is available in; we play medium. Distances carry the metric rulebook's own figures, which are round numbers rather than conversions of the mile ones.",
  "source": "https://docs.google.com/spreadsheets/d/1ZigDKsSCDxbp0JDWTnt0OGOlfxNEqICA3FnXy46p1Jk",
  "totals": {
   "matching": 20,
@@ -471,8 +471,8 @@
    "count": 4,
    "questions": [
     {
-     "id": "thermometer-0-5mi-805m",
-     "subject": "0.5 mi",
+     "id": "thermometer-1-km",
+     "subject": "1 km",
      "sizes": [
       "small",
       "medium",
@@ -480,12 +480,12 @@
      ],
      "distance": {
       "miles": 0.5,
-      "metres": 805
+      "metres": 1000
      }
     },
     {
-     "id": "thermometer-3mi-4-8km",
-     "subject": "3.0 mi",
+     "id": "thermometer-5-km",
+     "subject": "5 km",
      "sizes": [
       "small",
       "medium",
@@ -493,30 +493,30 @@
      ],
      "distance": {
       "miles": 3.0,
-      "metres": 4800
+      "metres": 5000
      }
     },
     {
-     "id": "thermometer-10mi-16km",
-     "subject": "10.0 mi",
+     "id": "thermometer-15-km",
+     "subject": "15 km",
      "sizes": [
       "medium",
       "large"
      ],
      "distance": {
       "miles": 10.0,
-      "metres": 16000
+      "metres": 15000
      }
     },
     {
-     "id": "thermometer-50mi-80km",
-     "subject": "50.0 mi",
+     "id": "thermometer-75-km",
+     "subject": "75 km",
      "sizes": [
       "large"
      ],
      "distance": {
       "miles": 50.0,
-      "metres": 80000
+      "metres": 75000
      }
     }
    ]
@@ -537,8 +537,8 @@
    "count": 10,
    "questions": [
     {
-     "id": "radar-0-25mi-402m",
-     "subject": "0.25 mi",
+     "id": "radar-500-m",
+     "subject": "500 m",
      "sizes": [
       "small",
       "medium",
@@ -546,12 +546,12 @@
      ],
      "distance": {
       "miles": 0.25,
-      "metres": 402
+      "metres": 500
      }
     },
     {
-     "id": "radar-0-50mi-805m",
-     "subject": "0.5 mi",
+     "id": "radar-1-km",
+     "subject": "1 km",
      "sizes": [
       "small",
       "medium",
@@ -559,12 +559,12 @@
      ],
      "distance": {
       "miles": 0.5,
-      "metres": 805
+      "metres": 1000
      }
     },
     {
-     "id": "radar-1mi-1-6km",
-     "subject": "1.0 mi",
+     "id": "radar-2-km",
+     "subject": "2 km",
      "sizes": [
       "small",
       "medium",
@@ -572,12 +572,12 @@
      ],
      "distance": {
       "miles": 1.0,
-      "metres": 1600
+      "metres": 2000
      }
     },
     {
-     "id": "radar-3mi-4-8km",
-     "subject": "3.0 mi",
+     "id": "radar-5-km",
+     "subject": "5 km",
      "sizes": [
       "small",
       "medium",
@@ -585,12 +585,12 @@
      ],
      "distance": {
       "miles": 3.0,
-      "metres": 4800
+      "metres": 5000
      }
     },
     {
-     "id": "radar-5mi-8-0km",
-     "subject": "5.0 mi",
+     "id": "radar-10-km",
+     "subject": "10 km",
      "sizes": [
       "small",
       "medium",
@@ -598,12 +598,12 @@
      ],
      "distance": {
       "miles": 5.0,
-      "metres": 8000
+      "metres": 10000
      }
     },
     {
-     "id": "radar-10mi-16-0km",
-     "subject": "10.0 mi",
+     "id": "radar-15-km",
+     "subject": "15 km",
      "sizes": [
       "small",
       "medium",
@@ -611,12 +611,12 @@
      ],
      "distance": {
       "miles": 10.0,
-      "metres": 16000
+      "metres": 15000
      }
     },
     {
-     "id": "radar-25mi-40-0km",
-     "subject": "25.0 mi",
+     "id": "radar-40-km",
+     "subject": "40 km",
      "sizes": [
       "small",
       "medium",
@@ -628,8 +628,8 @@
      }
     },
     {
-     "id": "radar-50mi-80-5km",
-     "subject": "50.0 mi",
+     "id": "radar-80-km",
+     "subject": "80 km",
      "sizes": [
       "small",
       "medium",
@@ -637,12 +637,12 @@
      ],
      "distance": {
       "miles": 50.0,
-      "metres": 80500
+      "metres": 80000
      }
     },
     {
-     "id": "radar-100mi-160-9km",
-     "subject": "100.0 mi",
+     "id": "radar-160-km",
+     "subject": "160 km",
      "sizes": [
       "small",
       "medium",
@@ -650,7 +650,7 @@
      ],
      "distance": {
       "miles": 100.0,
-      "metres": 160900
+      "metres": 160000
      }
     },
     {
@@ -869,7 +869,7 @@
      ],
      "distance": {
       "miles": 1.0,
-      "metres": 1600
+      "metres": 2000
      }
     },
     {
@@ -881,7 +881,7 @@
      ],
      "distance": {
       "miles": 1.0,
-      "metres": 1600
+      "metres": 2000
      }
     },
     {
@@ -893,7 +893,7 @@
      ],
      "distance": {
       "miles": 1.0,
-      "metres": 1600
+      "metres": 2000
      }
     },
     {
@@ -905,7 +905,7 @@
      ],
      "distance": {
       "miles": 1.0,
-      "metres": 1600
+      "metres": 2000
      }
     },
     {
@@ -916,7 +916,7 @@
      ],
      "distance": {
       "miles": 15.0,
-      "metres": 24140
+      "metres": 25000
      }
     },
     {
@@ -927,7 +927,7 @@
      ],
      "distance": {
       "miles": 15.0,
-      "metres": 24140
+      "metres": 25000
      }
     },
     {
@@ -938,7 +938,7 @@
      ],
      "distance": {
       "miles": 15.0,
-      "metres": 24140
+      "metres": 25000
      }
     },
     {
@@ -949,7 +949,7 @@
      ],
      "distance": {
       "miles": 15.0,
-      "metres": 24140
+      "metres": 25000
      }
     }
    ]
