@@ -19409,7 +19409,7 @@
   {
    "type": "Feature",
    "properties": {
-    "name": "Pendeltåg 40 · Uppsala C–Södertälje centrum",
+    "name": "Pendeltåg 40 · Upplands Väsby–Södertälje centrum",
     "line": "40"
    },
    "geometry": {
@@ -24883,7 +24883,7 @@
   {
    "type": "Feature",
    "properties": {
-    "name": "Pendeltåg 41 · Märsta–Södertälje centrum",
+    "name": "Pendeltåg 41 · Rosersberg–Södertälje centrum",
     "line": "41"
    },
    "geometry": {
@@ -30629,7 +30629,7 @@
   {
    "type": "Feature",
    "properties": {
-    "name": "Pendeltåg 43 · Bålsta–Nynäshamn",
+    "name": "Pendeltåg 43 · Bro–Tungelsta",
     "line": "43"
    },
    "geometry": {
@@ -36055,7 +36055,7 @@
   {
    "type": "Feature",
    "properties": {
-    "name": "Pendeltåg 48 · Södertälje centrum–Gnesta",
+    "name": "Pendeltåg 48 · Södertälje centrum–Södertälje syd",
     "line": "48"
    },
    "geometry": {
@@ -43183,7 +43183,7 @@
   {
    "type": "Feature",
    "properties": {
-    "name": "Roslagsbanan 27 · Stockholms östra–Kårsta",
+    "name": "Roslagsbanan 27 · Tekniska högskolan–Lindholmen",
     "line": "27"
    },
    "geometry": {
@@ -46921,7 +46921,7 @@
   {
    "type": "Feature",
    "properties": {
-    "name": "Roslagsbanan 28 · Stockholms östra–Österskär",
+    "name": "Roslagsbanan 28 · Tekniska högskolan–Österskär",
     "line": "28"
    },
    "geometry": {
@@ -50655,7 +50655,7 @@
   {
    "type": "Feature",
    "properties": {
-    "name": "Roslagsbanan 29 · Stockholms östra–Näsbypark",
+    "name": "Roslagsbanan 29 · Tekniska högskolan–Näsbypark",
     "line": "29"
    },
    "geometry": {

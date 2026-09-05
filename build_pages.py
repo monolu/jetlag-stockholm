@@ -1,11 +1,9 @@
 """
 Builds both copies of the field manual from one template.
 
-    docs/index.html   the hosted page. Tabs between our own Leaflet map and the
-                      Google My Map, because a normal page can load tiles and
-                      iframes.
-    field-manual.html the Artifact copy, which can do neither, so it draws the
-                      network itself.
+    docs/index.html   the hosted page, with our Google My Map embedded.
+    field-manual.html the Artifact copy, which cannot load an iframe, so the map
+                      is a link instead.
 
 Run: python build_pages.py
 """
@@ -14,21 +12,19 @@ import csv
 import html
 import json
 import os
-import re
 
 import build_map as M
-import build_webmap as W
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE = os.path.join(HERE, "page-template.html")
 CARDS = os.path.join(HERE, "cards", "cards.json")
 STATIONS = os.path.join(HERE, "data", "stations.csv")
 
+SITE = "https://monolu.github.io/jetlag-stockholm/"
 MYMAPS_ID = "1KjLl3dy7DhmggT4o4qT-awV80zBs7t0"
 MYMAPS_VIEW = "https://www.google.com/maps/d/viewer?mid=" + MYMAPS_ID + "&hl=en"
 MYMAPS_EMBED = ("https://www.google.com/maps/d/embed?mid=" + MYMAPS_ID +
                 "&amp;hl=en&amp;ll=59.35%2C17.92&amp;z=10")
-LEAFLET = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4"
 
 SYSTEMS = ["Tunnelbana", "Pendeltåg", "Tram", "Roslagsbanan", "Saltsjöbanan"]
 SWATCH = {"Tunnelbana": "blue", "Pendeltåg": "pendel", "Tram": "orange",
@@ -115,207 +111,20 @@ FIGURES = {
 </svg>""",
 }
 
-# ---------------------------------------------------------------- the two maps
-
-SVG_MAP_SECTION = """      <p>Every line, every stop and the border, drawn from the same data as the tables
-        below. Drag to pan, scroll or pinch to zoom, tap a stop to read it.</p>
-      <div class="mapwrap">
-        <div class="mapframe">
-          <svg id="netmap" role="img"
-               aria-label="Map of the SL rail network inside the game border"></svg>
-        </div>
-        <div class="mapbar" id="mapbar">__SYSBUTTONS__
-          <span class="gap"></span>
-          <button type="button" id="mapzones" aria-pressed="false">Zones</button>
-          <button type="button" id="mapin">Zoom in</button>
-          <button type="button" id="mapout">Zoom out</button>
-          <button type="button" id="mapreset">Reset</button>
-        </div>
-        <div class="mapread" id="mapread" aria-live="polite">Tap a stop for its lines and kommun.</div>
-      </div>
-      <p>The dashed circle is the border. <em class="q">Zones</em> steps through the three
-        radii — 500 m, then the 750 m of Curse of the Prosperous Home, then the 250 m of
-        Curse of the Tiny Home — and off again. They are specks until you zoom in. The live
-        page at
-        <a href="https://monolu.github.io/jetlag-stockholm/">monolu.github.io/jetlag-stockholm</a>
-        carries this on a real basemap and next to our Google My Map, which an Artifact
-        cannot load.</p>
-"""
-
-LEAFLET_MAP_SECTION = """      <p>Two views of the same game. <em class="q">Network</em> is our own data, with the
-        lines in SL's colours and a switch for each system. <em class="q">Google</em> is our
-        My Map on Google's basemap, which is where the landmarks the questions ask about
-        are.</p>
-      <div class="mapwrap">
-        <div class="maptabs" role="tablist" aria-label="Which map">
-          <button type="button" role="tab" id="tab-net" aria-controls="panel-net" aria-selected="true">Network</button>
-          <button type="button" role="tab" id="tab-goo" aria-controls="panel-goo" aria-selected="false">Google</button>
-        </div>
-        <div id="panel-net" role="tabpanel" aria-labelledby="tab-net">
-          <div id="netmap"></div>
-          <div class="mapbar" id="mapbar">__SYSBUTTONS__
-            <span class="gap"></span>
-            <button type="button" id="mapzones" aria-pressed="false">Zones</button>
-            <button type="button" id="mapin">Zoom in</button>
-            <button type="button" id="mapout">Zoom out</button>
-            <button type="button" id="mapreset">Reset</button>
-          </div>
-          <div class="mapread" id="mapread" aria-live="polite">Tap a stop for its lines and kommun.</div>
-        </div>
-        <div id="panel-goo" role="tabpanel" aria-labelledby="tab-goo" hidden>
-          <iframe id="mymaps" title="Our game map in Google My Maps" allowfullscreen
-                  data-src="__EMBED__"></iframe>
-          <div class="mapout">
-            <a href="__VIEW__" target="_blank" rel="noopener">Open in Google Maps</a>
-            <span>Opens in the Google Maps app on a phone, where you can search and get directions.</span>
-          </div>
+SITE_MAP = """      <div class="mapwrap">
+        <iframe id="mymaps" title="Our game map in Google My Maps" loading="lazy"
+                allowfullscreen src="__EMBED__"></iframe>
+        <div class="mapout">
+          <a href="__VIEW__" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span>On a phone it opens in the Google Maps app, where you can search and get
+            directions.</span>
         </div>
       </div>
-      <p>The dashed circle is the border. <em class="q">Zones</em> steps through the three
-        radii — 500 m, then the 750 m of Curse of the Prosperous Home, then the 250 m of
-        Curse of the Tiny Home — and off again. They are specks until you zoom in. The
-        Google view carries the same three as separate layers, toggled from the panel at its
-        top left.</p>
 """
 
-MAP_CSS = """
-  /* ---------- the map ---------- */
-  .mapwrap {
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    background: var(--surface);
-    margin: 0 0 16px;
-    overflow: hidden;
-  }
-
-  .maptabs {
-    display: flex;
-    gap: 3px;
-    padding: 8px 8px 0;
-    background: var(--surface-2);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .maptabs button {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    background: transparent;
-    border: 1px solid transparent;
-    border-bottom: 0;
-    border-radius: 3px 3px 0 0;
-    padding: 7px 13px;
-    cursor: pointer;
-  }
-
-  .maptabs button:hover { color: var(--ink); }
-
-  .maptabs button[aria-selected="true"] {
-    color: var(--ink);
-    background: var(--surface);
-    border-color: var(--rule);
-  }
-
-  .mapframe { position: relative; background: var(--surface-2); border-bottom: 1px solid var(--rule); }
-
-  #netmap { display: block; width: 100%; height: clamp(360px, 60vh, 620px); }
-  svg#netmap { touch-action: none; cursor: grab; }
-  svg#netmap.dragging { cursor: grabbing; }
-  svg#netmap .border { fill: none; stroke: var(--rule-strong); stroke-width: 2; stroke-dasharray: 8 6; }
-  svg#netmap .route { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5; }
-  svg#netmap .zone { fill: var(--accent); fill-opacity: .1; stroke: var(--accent); stroke-opacity: .5; stroke-width: 1; }
-  svg#netmap circle.stop { r: var(--dot, 400px); stroke: var(--surface); stroke-width: 1; }
-  svg#netmap circle.pick { stroke: var(--ink); stroke-width: 2; }
-  svg#netmap .off { display: none; }
-  svg#netmap text {
-    font-family: var(--body);
-    font-weight: 600;
-    fill: var(--ink);
-    paint-order: stroke;
-    stroke: var(--surface);
-    stroke-width: 4px;
-    stroke-linejoin: round;
-  }
-
-  #mymaps { display: block; width: 100%; height: clamp(360px, 60vh, 620px); border: 0; }
-  .leaflet-container { font-family: var(--body); background: var(--surface-2); }
-  .leaflet-popup-content { margin: 10px 12px; font-size: 15px; color: #202937; }
-  .leaflet-popup-content b { font-family: var(--display); font-weight: 700; font-size: 16px; }
-  .leaflet-popup-content .kommun { color: #6b7688; font-size: 14px; }
-  .leaflet-control-attribution { font-size: 10px; }
-
-  .mapbar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-    padding: 9px 11px;
-  }
-
-  .mapbar button {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 12.5px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    background: var(--surface);
-    border: 1px solid var(--rule-strong);
-    border-radius: 3px;
-    padding: 5px 9px;
-    cursor: pointer;
-  }
-
-  .mapbar button:hover { color: var(--ink); border-color: var(--muted); }
-  .mapbar button[aria-pressed="false"] { opacity: .45; }
-  .mapbar .sys { display: inline-flex; align-items: center; gap: 6px; }
-  .mapbar .sys::before {
-    content: "";
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--swatch, var(--muted));
-  }
-  .mapbar .gap { flex: 1 1 auto; }
-
-  .mapread {
-    border-top: 1px solid var(--rule);
-    padding: 10px 13px;
-    font-size: 15px;
-    color: var(--ink-soft);
-    min-height: 42px;
-  }
-
-  .mapread strong { font-family: var(--display); font-weight: 700; font-size: 17px; }
-  .mapread .chip { margin-right: 3px; }
-
-  .mapout {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    border-top: 1px solid var(--rule);
-    padding: 10px 12px;
-    font-size: 14px;
-    color: var(--muted);
-  }
-
-  .mapout a {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 12.5px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    background: var(--surface);
-    border: 1px solid var(--rule-strong);
-    border-radius: 3px;
-    padding: 5px 9px;
-    text-decoration: none;
-  }
+ARTIFACT_MAP = """      <p>The map is a Google My Map, which an Artifact cannot load.
+        <a href="__VIEW__" target="_blank" rel="noopener">Open it in Google Maps</a>, or read
+        this page with the map in place at <a href="__SITE__">monolu.github.io/jetlag-stockholm</a>.</p>
 """
 
 SITE_HEAD = """<!doctype html>
@@ -325,17 +134,13 @@ SITE_HEAD = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Rules, map and all 235 stops for our Stockholm hide and seek game.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#128647;</text></svg>">
-<link rel="stylesheet" href="__LEAFLET__/leaflet.min.css">
-<script src="__LEAFLET__/leaflet.js"></script>
 <style>
   html { color-scheme: light dark; }
   body { margin: 0; }
   img { max-width: 100%; }
   [hidden] { display: none !important; }
 </style>
-</head>
-<body>
-""".replace("__LEAFLET__", LEAFLET)
+"""
 
 
 def read_stops():
@@ -368,7 +173,8 @@ def stop_rows(rows):
 def system_tabs(rows):
     counts = {}
     for row in rows:
-        counts[row["system"].split(" + ")[0]] = counts.get(row["system"].split(" + ")[0], 0) + 1
+        first = row["system"].split(" + ")[0]
+        counts[first] = counts.get(first, 0) + 1
     out = ['        <button type="button" role="tab" class="all" aria-selected="true">'
            f"All {len(rows)}</button>"]
     for system in SYSTEMS:
@@ -400,14 +206,6 @@ def clarify_rows():
     return "\n".join(out), len(entries)
 
 
-def system_buttons():
-    out = []
-    for system in SYSTEMS:
-        out.append(f'\n            <button type="button" data-sys="{html.escape(system, quote=True)}" '
-                   f'class="sys" aria-pressed="true">{html.escape(system)}</button>')
-    return "".join(out)
-
-
 def fill(page, pairs):
     for key, value in pairs.items():
         marker = f"<!--{key}-->"
@@ -420,35 +218,24 @@ def build():
     rows = read_stops()
     template = open(TEMPLATE, encoding="utf-8").read()
     clarify, n_clarify = clarify_rows()
-    payload = json.dumps(W.payload(), ensure_ascii=False, separators=(",", ":"))
 
     common = dict(FIGURES)
     common.update({
         "STOPS": stop_rows(rows),
         "SYSTABS": system_tabs(rows),
         "CLARIFY": clarify,
-        "MAPDATA": payload,
     })
 
-    template = template.replace("  /* ---------- callouts ---------- */",
-                                MAP_CSS + "\n  /* ---------- callouts ---------- */", 1)
-
-    svg_js = open(os.path.join(HERE, "js", "map-svg.js"), encoding="utf-8").read()
-    leaflet_js = open(os.path.join(HERE, "js", "map-leaflet.js"), encoding="utf-8").read()
-
-    artifact = fill(template, dict(common, **{
-        "MAPSECTION": SVG_MAP_SECTION.replace("__SYSBUTTONS__", system_buttons()),
-        "MAPSCRIPT": svg_js,
-    }))
+    artifact = fill(template, dict(common, MAPBLOCK=(
+        ARTIFACT_MAP.replace("__VIEW__", MYMAPS_VIEW).replace("__SITE__", SITE))))
     with open(os.path.join(HERE, "field-manual.html"), "w", encoding="utf-8") as fh:
         fh.write(artifact)
 
-    site = fill(template, dict(common, **{
-        "MAPSECTION": (LEAFLET_MAP_SECTION.replace("__SYSBUTTONS__", system_buttons())
-                       .replace("__EMBED__", MYMAPS_EMBED).replace("__VIEW__", MYMAPS_VIEW)),
-        "MAPSCRIPT": leaflet_js,
-    }))
-    site = SITE_HEAD + site + "\n</body>\n</html>\n"
+    site = fill(template, dict(common, MAPBLOCK=(
+        SITE_MAP.replace("__EMBED__", MYMAPS_EMBED).replace("__VIEW__", MYMAPS_VIEW))))
+    # the title, fonts and stylesheet belong in a real <head>
+    cut = site.index("</style>") + len("</style>")
+    site = SITE_HEAD + site[:cut] + "\n</head>\n<body>\n" + site[cut:] + "\n</body>\n</html>\n"
     os.makedirs(os.path.join(HERE, "docs"), exist_ok=True)
     with open(os.path.join(HERE, "docs", "index.html"), "w", encoding="utf-8") as fh:
         fh.write(site)

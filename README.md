@@ -26,30 +26,24 @@ for the base game, and the official expansion reference at
 ## The page
 
 Everything you need during the game is one page, live at
-**<https://monolu.github.io/jetlag-stockholm/>** — rules, local definitions, all 252
-stops, and the network on a real map. Send that link to everyone.
+**<https://monolu.github.io/jetlag-stockholm/>** — the map, the rules that differ here,
+what counts as what, and all 235 stops. Send that link to everyone.
 
-The map section has two tabs. **Network** is our own data on Leaflet, lines in SL's
-colours with a switch per system and a 500 m zone toggle. **Google** is our My Map,
-<https://www.google.com/maps/d/viewer?mid=1KjLl3dy7DhmggT4o4qT-awV80zBs7t0>, for the
-landmarks the questions ask about. The Google one is a cross-origin iframe, so its styling
-and controls are Google's and cannot be changed from our side; that is why both are there.
+The map on it is our Google My Map,
+<https://www.google.com/maps/d/viewer?mid=1KjLl3dy7DhmggT4o4qT-awV80zBs7t0>, embedded.
+Google's basemap carries the landmarks the questions ask about, and Google Maps is our
+source of truth, so there is no second map to reconcile with it.
 
-It is built by `build_site.py` into `docs/`, from `field-manual.html`. There is also an
-Artifact copy at
-<https://claude.ai/code/artifact/1da46632-5022-4f36-bdde-65406e5bc907>; it holds the same
-text but draws the map itself, because an Artifact can neither embed an iframe nor load
-map tiles.
-
-`map.html` is a fallback: the same network on OpenStreetMap, full screen, working from
-disk with no Google and no server.
+`build_pages.py` builds the page from `page-template.html` into `docs/`, and writes an
+Artifact copy, `field-manual.html`, at the same time. That copy holds the same text but
+links to the map instead of embedding it, because an Artifact cannot load an iframe.
 
 ## The network
 
 | System | Stops | Reaches |
 |---|---|---|
-| Tunnelbana T10–T19 | 100 | Hjulsta, Akalla, Norsborg, Mörby centrum, Skarpnäck, Hässelby strand |
-| Pendeltåg 40 / 41 / 43 / 48 | 40 | Upplands Väsby, Rosersberg, Bro, Södertälje, Tungelsta |
+| Tunnelbana 10–19 | 100 | Hjulsta, Akalla, Norsborg, Mörby centrum, Skarpnäck, Hässelby strand |
+| Pendeltåg 40 / 41 / 43 / 48 | 40 | Upplands Väsby, Rosersberg, Bro, Södertälje syd, Tungelsta |
 | Trams 7 / 12 / 21 / 30 / 31 | 60 | Waldemarsudde, Nockeby, Gåshaga brygga, Sickla, Solna station, Bromma flygplats |
 | Roslagsbanan 27 / 28 / 29 | 36 | Lindholmen, Österskär, Näsbypark |
 | Saltsjöbanan 25 / 26 | 17 | Saltsjöbaden, Solsidan |
@@ -62,9 +56,10 @@ the border and is not in the game, so a plain SL ticket covers everything.
 ## Building the map
 
 Go to <https://www.google.com/mymaps>, create a new map, and import
-`data/all-layers.kml`. That one file holds the 21 lines drawn and coloured, all 235 stops
-foldered by system, a 500 m circle around every stop, and the border. Share it with
-everyone and open it once in the Google Maps app so it caches.
+`data/all-layers.kml`. That one file holds six layers: the 21 lines drawn and coloured,
+all 235 stops foldered by system, the 500 m hiding zone around every stop, the 750 m and
+250 m circles the two zone curses make, and the border. Share it with everyone and open it
+once in the Google Maps app so it caches.
 
 If My Maps flattens the folders into a single layer, import these four instead:
 
@@ -72,14 +67,15 @@ If My Maps flattens the folders into a single layer, import these four instead:
 |---|---|
 | `data/transit-lines.kml` | The lines, coloured by system |
 | `data/stations.kml` | The 235 stops |
-| `data/hiding-zones.kml` | 500 m circle around every stop |
+| `data/hiding-zones.kml` | The 500 m, 750 m and 250 m circles around every stop |
 | `data/border.kml` | The 28.7 km border circle |
 
 ## Files
 
 | File | What it is |
 |---|---|
-| `field-manual.html` | The published page: rules, map, local definitions, every stop |
+| `page-template.html` | The page itself. Both copies are built from it |
+| `docs/index.html` | The hosted page, built. Do not edit it by hand |
 | `01-rules.md` | The rulebook digested, medium numbers baked in, plus what the expansion adds |
 | `03-house-rules.md` | The long-form version of our local rulings, with per-curse notes |
 | `04-checklist.md` | Night-before checklist and the round run sheet |
@@ -88,9 +84,6 @@ If My Maps flattens the folders into a single layer, import these four instead:
 | `data/stations.geojson` | Everything, for any tool that eats GeoJSON |
 | `build_map.py` | Regenerates every file in `data/` from the OSM snapshots in `data/osm/` |
 | `build_pages.py` | Builds both copies of the page from `page-template.html` |
-| `build_mapdata.py` | Thins the network into `data/map-data.json`, the payload the page's map draws |
-| `build_site.py` | Builds `docs/index.html`, the hosted page with the Leaflet map |
-| `build_webmap.py` | Builds `map.html`, the standalone full-screen map |
 | `cards/` | Every card and every question as data, plus a deck builder. See `cards/README.md` |
 
 Stop and route data from OpenStreetMap, © OpenStreetMap contributors, ODbL.

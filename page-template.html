@@ -18,9 +18,6 @@
     --rule: #dbd8e4;
     --rule-strong: #bdb8cc;
     --accent: var(--purple);
-    --flag: var(--purple);
-    --chip-ink: #ffffff;
-    --chip-ink-pale: #202937;
 
     --blue: #0092d4;
     --line-red: #e02b25;
@@ -31,10 +28,11 @@
     --orange: #ef7c22;
     --roslag: #b587c8;
     --saltsjo: #10b0a4;
+    --chip-ink: #ffffff;
+    --chip-ink-pale: #202937;
 
     --display: "Saira Condensed", "Saira", Impact, sans-serif;
     --body: "Saira", "Segoe UI", system-ui, sans-serif;
-    --mono: "Saira Condensed", ui-monospace, Menlo, monospace;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -45,13 +43,9 @@
       --ink: #f1eff6;
       --ink-soft: #cdd4de;
       --muted: #94a0b1;
-      --rule: #33405233;
       --rule: #2f3c4e;
       --rule-strong: #445064;
       --accent: #b9a6e0;
-      --flag: #4b3a70;
-      --chip-ink: #12181f;
-      --chip-ink-pale: #12181f;
 
       --blue: #35a9e6;
       --line-red: #f2564f;
@@ -62,6 +56,8 @@
       --orange: #ff9440;
       --roslag: #c99ada;
       --saltsjo: #2fc9bd;
+      --chip-ink: #12181f;
+      --chip-ink-pale: #12181f;
     }
   }
 
@@ -75,9 +71,6 @@
     --rule: #2f3c4e;
     --rule-strong: #445064;
     --accent: #b9a6e0;
-    --flag: #4b3a70;
-    --chip-ink: #12181f;
-    --chip-ink-pale: #12181f;
 
     --blue: #35a9e6;
     --line-red: #f2564f;
@@ -88,9 +81,11 @@
     --orange: #ff9440;
     --roslag: #c99ada;
     --saltsjo: #2fc9bd;
+    --chip-ink: #12181f;
+    --chip-ink-pale: #12181f;
   }
 
-  * { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
 
   body {
     margin: 0;
@@ -107,29 +102,26 @@
   .wrap {
     display: grid;
     grid-template-columns: 1fr;
-    max-width: 1140px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 0 18px 88px;
+    padding: 0 18px 80px;
   }
 
-  /* ---------- masthead ---------- */
-
-  header.mast { padding: 46px 0 24px; border-bottom: 3px solid var(--accent); }
-
+  header.mast { padding: 44px 0 22px; border-bottom: 3px solid var(--accent); }
   .mast-top { display: flex; align-items: center; gap: 13px; flex-wrap: wrap; }
 
   .tsign {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: var(--accent);
     color: #fff;
     font-family: var(--display);
     font-weight: 700;
-    font-size: 25px;
+    font-size: 24px;
     line-height: 1;
   }
 
@@ -145,26 +137,20 @@
   h1 {
     font-family: var(--display);
     font-weight: 700;
-    font-size: clamp(40px, 9vw, 78px);
+    font-size: clamp(38px, 8.5vw, 72px);
     line-height: .92;
-    letter-spacing: -.01em;
     text-transform: uppercase;
-    margin: 18px 0 12px;
+    margin: 16px 0 10px;
     text-wrap: balance;
   }
 
   h1 em { font-style: normal; color: var(--accent); }
 
-  .standfirst {
-    max-width: 58ch;
-    font-size: 19px;
-    color: var(--ink-soft);
-    margin: 0 0 24px;
-  }
+  .standfirst { max-width: 56ch; font-size: 19px; color: var(--ink-soft); margin: 0 0 22px; }
 
   .facts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
     gap: 1px;
     background: var(--rule);
     border: 1px solid var(--rule);
@@ -172,7 +158,7 @@
     overflow: hidden;
   }
 
-  .fact { background: var(--surface); padding: 12px 15px; }
+  .fact { background: var(--surface); padding: 11px 14px; }
 
   .fact dt {
     font-family: var(--display);
@@ -181,53 +167,30 @@
     letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--muted);
-    margin: 0 0 3px;
+    margin: 0 0 2px;
   }
 
   .fact dd {
     margin: 0;
     font-family: var(--display);
     font-weight: 700;
-    font-size: 23px;
+    font-size: 22px;
     text-transform: uppercase;
   }
-
-  /* ---------- section rail ---------- */
 
   .rail { display: none; }
 
   @media (min-width: 1020px) {
-    .wrap { grid-template-columns: 208px minmax(0, 1fr); column-gap: 44px; }
+    .wrap { grid-template-columns: 200px minmax(0, 1fr); column-gap: 44px; }
     header.mast, footer.end { grid-column: 1 / -1; }
-    .rail {
-      display: block;
-      position: sticky;
-      top: 24px;
-      align-self: start;
-      padding: 38px 0 0;
-      margin-top: 8px;
-    }
+    .rail { display: block; position: sticky; top: 22px; align-self: start; padding: 36px 0 0; }
   }
 
-  .rail ol {
-    list-style: none;
-    margin: 0;
-    padding: 0 0 0 20px;
-    border-left: 3px solid var(--rule-strong);
-  }
-
+  .rail ol { list-style: none; margin: 0; padding: 0 0 0 20px; border-left: 3px solid var(--rule-strong); }
   .rail li { position: relative; }
+  .rail a { display: block; padding: 6px 0; font-size: 14px; color: var(--muted); text-decoration: none; }
 
-  .rail a {
-    display: block;
-    padding: 6px 0;
-    font-size: 14px;
-    color: var(--muted);
-    text-decoration: none;
-  }
-
-  /* the dot is 11px across and the rule is 3px, so its left edge sits at
-     -(20 + 1.5) - 5.5 to centre it on the rule */
+  /* 11px dot on a 3px rule 20px to the left: -(20 + 1.5) - 5.5 */
   .rail a::before {
     content: "";
     position: absolute;
@@ -244,14 +207,12 @@
   .rail a.on { color: var(--ink); font-weight: 600; }
   .rail a.on::before { background: var(--accent); border-color: var(--accent); }
 
-  /* ---------- sections ---------- */
-
   main { min-width: 0; }
-  section { padding: 40px 0 6px; scroll-margin-top: 16px; }
+  section { padding: 38px 0 4px; scroll-margin-top: 16px; }
 
   .plate {
     display: inline-block;
-    background: var(--flag);
+    background: var(--accent);
     color: #fff;
     font-family: var(--display);
     font-weight: 600;
@@ -265,35 +226,25 @@
   h2 {
     font-family: var(--display);
     font-weight: 700;
-    font-size: clamp(28px, 4.6vw, 40px);
+    font-size: clamp(27px, 4.4vw, 38px);
     line-height: 1.02;
     text-transform: uppercase;
-    margin: 12px 0 10px;
+    margin: 11px 0 9px;
     text-wrap: balance;
   }
 
   h3 {
     font-family: var(--display);
     font-weight: 600;
-    font-size: 22px;
+    font-size: 21px;
     color: var(--accent);
-    margin: 30px 0 6px;
-  }
-
-  h4 {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 22px 0 7px;
+    margin: 26px 0 6px;
   }
 
   p, li { color: var(--ink-soft); }
-  p { max-width: 64ch; margin: 0 0 13px; }
+  p { max-width: 64ch; margin: 0 0 12px; }
   ul, ol { max-width: 64ch; padding-left: 20px; }
-  li { margin: 0 0 6px; }
+  li { margin: 0 0 5px; }
   strong { color: var(--ink); font-weight: 600; }
   a { color: var(--accent); }
 
@@ -307,24 +258,15 @@
     padding: 0 5px;
   }
 
-  .lede { font-size: 18.5px; color: var(--ink); max-width: 60ch; }
-
-  /* ---------- tables ---------- */
-
   .scroll {
     overflow-x: auto;
     border: 1px solid var(--rule);
     border-radius: 3px;
     background: var(--surface);
-    margin: 0 0 16px;
+    margin: 0 0 14px;
   }
 
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 15.5px;
-    font-variant-numeric: tabular-nums;
-  }
+  table { border-collapse: collapse; width: 100%; font-size: 15.5px; font-variant-numeric: tabular-nums; }
 
   th {
     text-align: left;
@@ -340,20 +282,12 @@
     background: var(--surface-2);
   }
 
-  td {
-    padding: 9px 13px;
-    border-bottom: 1px solid var(--rule);
-    color: var(--ink-soft);
-    vertical-align: top;
-  }
-
+  td { padding: 9px 13px; border-bottom: 1px solid var(--rule); color: var(--ink-soft); vertical-align: top; }
   tr:last-child td { border-bottom: 0; }
   td.name { color: var(--ink); font-weight: 600; }
   td.nowrap { white-space: nowrap; }
-  td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  td.num { white-space: nowrap; }
   td.dead { color: var(--muted); }
-
-  /* ---------- line chips ---------- */
 
   .chip {
     display: inline-block;
@@ -377,34 +311,66 @@
   .c-roslag { background: var(--roslag); color: var(--chip-ink-pale); }
   .c-saltsjo { background: var(--saltsjo); color: var(--chip-ink-pale); }
 
-  /* ---------- callouts ---------- */
-
   .def {
     background: var(--surface);
     border: 1px solid var(--rule);
     border-left: 4px solid var(--accent);
     border-radius: 3px;
-    padding: 13px 15px;
-    margin: 0 0 16px;
+    padding: 12px 15px;
+    margin: 0 0 14px;
     max-width: 64ch;
   }
 
-  .def.warn { border-left-color: var(--red); }
   .def p:last-child { margin-bottom: 0; }
 
-  /* ---------- round sequence ---------- */
+  .mapwrap {
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--surface);
+    overflow: hidden;
+    margin: 0 0 14px;
+  }
+
+  #mymaps { display: block; width: 100%; height: clamp(400px, 66vh, 700px); border: 0; }
+
+  .mapout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--rule);
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .mapout a {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: 3px;
+    padding: 5px 9px;
+    text-decoration: none;
+  }
+
+  .mapout a:hover { color: var(--ink); border-color: var(--muted); }
 
   .flow {
     list-style: none;
     padding: 0;
-    margin: 0 0 16px;
+    margin: 0 0 14px;
     max-width: 64ch;
     border-left: 3px solid var(--rule-strong);
   }
 
-  .flow li { position: relative; padding: 0 0 19px 24px; margin: 0; }
+  .flow li { position: relative; padding: 0 0 17px 24px; margin: 0; }
 
-  /* 15px dot on a 3px rule: -(1.5) - 7.5 */
+  /* 15px dot on a 3px rule at the list edge: -(1.5) - 7.5 */
   .flow li::before {
     content: "";
     position: absolute;
@@ -419,6 +385,14 @@
 
   .flow li.hot::before { background: var(--red); border-color: var(--red); }
 
+  .flow .h {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--ink);
+    display: block;
+  }
+
   .flow .t {
     font-family: var(--display);
     font-weight: 600;
@@ -429,50 +403,19 @@
     display: block;
   }
 
-  .flow .h {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--ink);
-    display: block;
-    margin: 0 0 2px;
-  }
-
-  /* ---------- diagrams ---------- */
-
   .figs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-    gap: 12px;
-    margin: 0 0 18px;
+    grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
+    gap: 11px;
+    margin: 0 0 16px;
   }
 
-  .fig {
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    padding: 12px;
-  }
-
+  .fig { background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: 11px; }
   .fig svg { display: block; width: 100%; height: auto; }
-
-  .fig figcaption {
-    font-size: 14px;
-    color: var(--muted);
-    margin-top: 8px;
-  }
-
+  .fig figcaption { font-size: 14px; color: var(--muted); margin-top: 7px; }
   .fig figcaption b { color: var(--ink); font-weight: 600; }
 
-  /* ---------- finders and tabs ---------- */
-
-  .finder {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    flex-wrap: wrap;
-    margin: 0 0 12px;
-  }
+  .finder { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; margin: 0 0 11px; }
 
   .finder input {
     flex: 1 1 220px;
@@ -487,7 +430,6 @@
   }
 
   .finder input::placeholder { color: var(--muted); }
-
   .finder input:focus-visible, a:focus-visible, button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
@@ -502,12 +444,7 @@
     color: var(--muted);
   }
 
-  .systabs {
-    display: flex;
-    gap: 3px;
-    flex-wrap: wrap;
-    margin: 0 0 12px;
-  }
+  .systabs { display: flex; gap: 3px; flex-wrap: wrap; margin: 0 0 11px; }
 
   .systabs button {
     font-family: var(--display);
@@ -534,23 +471,15 @@
     background: var(--swatch, var(--muted));
   }
 
-  .systabs button:hover { color: var(--ink); }
-
-  .systabs button[aria-selected="true"] {
-    color: #fff;
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-
   .systabs button.all::before { display: none; }
+  .systabs button:hover { color: var(--ink); }
+  .systabs button[aria-selected="true"] { color: #fff; background: var(--accent); border-color: var(--accent); }
 
-  #stops-wrap { max-height: 470px; overflow: auto; }
-
-  /* ---------- footer ---------- */
+  #stops-wrap { max-height: 460px; overflow: auto; }
 
   footer.end {
-    margin-top: 48px;
-    padding-top: 18px;
+    margin-top: 44px;
+    padding-top: 16px;
     border-top: 3px solid var(--accent);
     font-size: 14.5px;
     color: var(--muted);
@@ -571,9 +500,8 @@
       <span class="kicker">Jet Lag: The Game &middot; hide and seek &middot; medium</span>
     </div>
     <h1>Hide &amp; Seek:<br><em>Stockholm</em></h1>
-    <p class="standfirst">The rules for our game, the map we play on, and the local
-      definitions we have agreed. Every SL rail line inside a 28.7 km circle, and every
-      question settled against Google Maps.</p>
+    <p class="standfirst">Two teams of three, one round each, on every SL rail line inside a
+      28.7 km circle. Google Maps settles every question.</p>
     <dl class="facts">
       <div class="fact"><dt>Players</dt><dd>2 × 3</dd></div>
       <div class="fact"><dt>Rounds</dt><dd>1 each</dd></div>
@@ -586,14 +514,14 @@
 
   <nav class="rail" aria-label="Sections">
     <ol>
-      <li><a href="#lines">Lines and stops</a></li>
-      <li><a href="#border">The border</a></li>
       <li><a href="#map">The map</a></li>
+      <li><a href="#network">The network</a></li>
+      <li><a href="#border">The border</a></li>
       <li><a href="#round">A round</a></li>
       <li><a href="#questions">Questions</a></li>
-      <li><a href="#matching">What counts as what</a></li>
-      <li><a href="#dead">Questions that do nothing</a></li>
-      <li><a href="#local">Local definitions</a></li>
+      <li><a href="#counts">What counts as what</a></li>
+      <li><a href="#dead">Dead questions</a></li>
+      <li><a href="#numbers">Numbers and rulings</a></li>
       <li><a href="#deck">The deck</a></li>
       <li><a href="#clarify">Card clarifications</a></li>
       <li><a href="#stops">All 235 stops</a></li>
@@ -602,14 +530,18 @@
 
   <main>
 
-    <section id="lines">
+    <section id="map">
+      <span class="plate">Map</span>
+      <h2>The map</h2>
+<!--MAPBLOCK-->
+      <p>Layers, from the panel at the top left: the border, the 21 lines, the 235 stops,
+        and the hiding zone at 500 m, 750 m and 250 m. The zone circles are specks until you
+        zoom in.</p>
+    </section>
+
+    <section id="network">
       <span class="plate">Network</span>
-      <h2>Lines and stops</h2>
-      <p class="lede">Every SL rail line is in play: the tunnelbana, the pendeltåg, the
-        trams, Roslagsbanan and Saltsjöbanan.</p>
-      <p>Nothing else carries anyone. No SL buses, no ferries, no Arlanda Express, no SJ or
-        Mälartåg service, no taxi, no bike, no scooter, no lift from a friend. Both teams
-        move on foot and on the lines below.</p>
+      <h2>The network</h2>
       <div class="scroll">
         <table>
           <thead><tr><th>System</th><th>Line</th><th>Stops</th><th>Route</th></tr></thead>
@@ -624,7 +556,7 @@
             <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-city">7</span></td><td class="num">10</td><td>Spårväg City · T-Centralen – Waldemarsudde</td></tr>
             <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-nockeby">12</span></td><td class="num">10</td><td>Nockebybanan · Alvik – Nockeby</td></tr>
             <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-orange">21</span></td><td class="num">13</td><td>Lidingöbanan · Ropsten – Gåshaga brygga</td></tr>
-            <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-orange">30</span> <span class="chip c-orange">31</span></td><td class="num">30</td><td>Tvärbanan · Sickla – Solna station, Alviks strand – Bromma flygplats</td></tr>
+            <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-orange">30</span> <span class="chip c-orange">31</span></td><td class="num">28</td><td>Tvärbanan · Sickla – Solna station, Alviks strand – Bromma flygplats</td></tr>
             <tr><td class="name nowrap">Roslagsbanan</td><td class="nowrap"><span class="chip c-roslag">27</span></td><td class="num">15</td><td>Tekniska högskolan – Lindholmen</td></tr>
             <tr><td class="name nowrap">Roslagsbanan</td><td class="nowrap"><span class="chip c-roslag">28</span></td><td class="num">19</td><td>Tekniska högskolan – Österskär</td></tr>
             <tr><td class="name nowrap">Roslagsbanan</td><td class="nowrap"><span class="chip c-roslag">29</span></td><td class="num">11</td><td>Tekniska högskolan – Näsbypark</td></tr>
@@ -633,40 +565,31 @@
           </tbody>
         </table>
       </div>
-      <p>That is 100 tunnelbana stations, 60 tram stops, 40 pendeltåg stations, 36 on
-        Roslagsbanan and 17 on Saltsjöbanan. Sixteen serve more than one system, which
-        leaves <strong>235 stops that can hold a hiding zone</strong>.</p>
-      <p>The stop counts above are the stops <em>inside the border</em>. Each line runs
-        further in real life; those stations are not in the game. Where two stations of
-        different systems sit within 300 m of each other they count as one stop and one
-        zone: T-Centralen with Stockholm City, Tekniska högskolan with Stockholms östra,
-        Sundbybergs centrum with Sundbyberg.</p>
+      <p>Nothing else carries anyone: no SL buses, no ferries, no Arlanda Express, no SJ or
+        Mälartåg, no taxi, bike, scooter or lift. Legs and these lines, both teams.</p>
+      <p>The stop counts are the stops inside the border; each line runs further in real
+        life and those stations are out of the game. Where two stations of different systems
+        sit within 300 m they count as one stop: T-Centralen with Stockholm City, Tekniska
+        högskolan with Stockholms östra, Sundbybergs centrum with Sundbyberg. That leaves
+        <strong>235 stops</strong> that can hold a zone.</p>
     </section>
 
     <section id="border">
-      <span class="plate">Map</span>
+      <span class="plate">Border</span>
       <h2>The border</h2>
       <p>A circle of radius <strong>28.7 km</strong> centred on
-        <em class="q">59.35 N, 17.92 E</em>, a point near Sundbyberg. It covers
-        <strong>2,588 km², which is 999 square miles</strong> — just inside the 1,000 the
-        rulebook allows a medium game.</p>
-      <p>That circle is the largest legal one, placed where it holds the most stops: 235 of
-        the 252 on the network. What it leaves out is the far end of the long branches —
-        Uppsala C, Knivsta, Arlanda, Märsta, Bålsta, Gnesta, Mölnbo, Järna, Nynäshamn and
-        its neighbours, Kårsta, Ekskogen and Frösunda. None of them are in the game, and no
-        ticket beyond a normal SL one is needed to reach anything that is.</p>
+        <em class="q">59.35 N, 17.92 E</em>, near Sundbyberg. It covers 2,588 km², which is
+        999 square miles, just inside the 1,000 a medium game allows, and it is placed to
+        hold the most stops.</p>
+      <p>Outside it are the ends of the long branches: Uppsala C, Knivsta, Arlanda, Märsta,
+        Bålsta, Gnesta, Mölnbo, Järna, the Nynäshamn tail, Kårsta, Ekskogen and Frösunda. A
+        normal SL ticket covers everything inside.</p>
       <div class="def">
-        <p>Anything outside the circle <strong>does not exist</strong>. A question about it
-          returns a null answer, which counts as asked and still pays the hiders their
-          cards. A hiding zone may not reach past the border either: if part of a circle
-          falls outside, that part is out of play.</p>
+        <p>Anything outside the circle <strong>does not exist</strong>: a question about it
+          answers null, which counts as asked and still pays the hiders. A zone may not
+          reach past the border either. If part of a circle falls outside, that part is out
+          of play.</p>
       </div>
-    </section>
-
-    <section id="map">
-      <span class="plate">Map</span>
-      <h2>The network map</h2>
-<!--MAPSECTION-->
     </section>
 
     <section id="round">
@@ -677,78 +600,66 @@
           <span class="t">Before the start</span>
           <span class="h">Handover</span>
           The hiding team takes the deck, the seekers take the investigation book. Seekers
-          switch their location sharing on; hiders switch theirs off. Both teams start in
-          the same place.
+          switch location sharing on, hiders switch theirs off. Both teams start in the same
+          place.
         </li>
         <li>
           <span class="t">60 minutes</span>
           <span class="h">Hiding period</span>
-          The hiders travel on foot and on our lines to any of the 235 stops. Where they
-          stand when the hour ends is their zone. The seekers stay put.
+          The hiders travel to any of the 235 stops. Where they stand when the hour ends is
+          their zone. The seekers stay put.
         </li>
         <li class="hot">
           <span class="t">From minute 60</span>
           <span class="h">The clock runs</span>
-          The seekers ask questions. The hiders answer truthfully within the window, then
-          draw from the deck.
+          The seekers ask questions. The hiders answer truthfully inside the window, then
+          draw.
         </li>
         <li>
           <span class="t">Zone entered</span>
           <span class="h">End game</span>
-          Once a seeker stands inside the 500 m circle and off transit, the hiders stop
-          moving and stay in their final spot.
+          Once a seeker stands inside the circle and off transit, the hiders stop moving.
         </li>
         <li class="hot">
           <span class="t">Found</span>
           <span class="h">Caught</span>
-          A seeker reaches 1.5 m of a hider and recognises them. The clock stops. Time
-          bonuses still in hand are added.
+          A seeker reaches 1.5 m of a hider and recognises them. The clock stops and the
+          time bonuses in hand are added.
         </li>
         <li>
           <span class="t">10 minutes</span>
           <span class="h">Swap</span>
-          The deck is reshuffled, the trackers change hands, and the next round starts from
-          where the last one ended.
+          Reshuffle, change the trackers over, and start the next round from here.
         </li>
       </ol>
-      <p>Each team hides once. <strong>The longest single run wins.</strong> Runs do not add
-        up.</p>
-
-      <h3>Hours</h3>
-      <p>Play runs <strong>09:00 to 18:00</strong>. A round still going at 18:00 carries on
-        into the next day: everyone stops where they stand, notes the spot, and starts again
-        from those same spots the next morning. Every timer stops overnight.</p>
+      <p>Each team hides once. <strong>The longest single run wins</strong>; runs do not add
+        up. Play runs <strong>09:00 to 18:00</strong> and a round still going at 18:00
+        carries into the next day, everyone starting from the spot they stopped on, with
+        every timer paused overnight. Anyone may pause the game at any time on the same
+        terms.</p>
 
       <h3>The zone</h3>
       <ul>
-        <li>A zone is a circle of <strong>500 m</strong> around one of the 235 stops.</li>
-        <li>If other stops fall inside the circle, the hiders name one as their station.
-          Questions and photos refer to that one.</li>
+        <li>A circle of 500 m around one of the 235 stops. Two curses change that radius,
+          see <a href="#numbers">numbers</a>.</li>
+        <li>If other stops fall inside it, the hiders name one as their station. Questions
+          and photos refer to that one.</li>
         <li>The hiders move freely inside the circle until the end game.</li>
-        <li>Two curses move that edge. <strong>Curse of the Prosperous Home</strong> adds
-          half again, to 750 m. <strong>Curse of the Tiny Home</strong> halves it, to
-          250 m, and cannot be played once the end game has started. The map carries all
-          three circles as separate layers.</li>
       </ul>
 
       <h3>The final spot</h3>
       <ul>
-        <li>It must be somewhere the seekers can reach at any hour of the game. A toilet
-          cubicle, a flat and a fenced yard are all out; so is anywhere that shuts before
-          18:00.</li>
-        <li>It must lie within <strong>3 m of a path or road drawn on the map app</strong>,
-          which means a path the app would use to give someone walking directions.</li>
-        <li>It is fixed the moment a seeker enters the circle. Wherever the hiders are
-          standing then is where they stay.</li>
+        <li>Somewhere the seekers can reach at any hour of the game: no toilet cubicle, no
+          flat, no fenced yard, nothing that shuts before 18:00.</li>
+        <li>Within 3 m of a path or road the map app would route someone along.</li>
+        <li>Fixed the moment a seeker enters the circle. Wherever the hiders stand then is
+          where they stay.</li>
       </ul>
-
-      <p>Anyone may pause the game. Every timer stops, everyone stays where they are, and
-        play resumes from the same spots.</p>
     </section>
 
     <section id="questions">
       <span class="plate">Questions</span>
-      <h2>What the seekers can ask</h2>
+      <h2>Questions</h2>
       <div class="scroll">
         <table>
           <thead><tr><th>Category</th><th>Form</th><th>Hiders draw</th><th>Window</th></tr></thead>
@@ -762,84 +673,62 @@
           </tbody>
         </table>
       </div>
-
-      <h3>The distances, metric</h3>
-      <p>The metric rulebook prints its own round numbers rather than converting the mile
-        ones. These are the figures on our cards.</p>
-      <div class="scroll">
-        <table>
-          <thead><tr><th>Category</th><th>In a medium game</th><th>Not in ours</th></tr></thead>
-          <tbody>
-            <tr><td class="name">Radar</td><td>500 m · 1 km · 2 km · 5 km · 10 km · 15 km · choose</td><td class="dead">40 km · 80 km · 160 km, all dead</td></tr>
-            <tr><td class="name">Thermometer</td><td>1 km · 5 km · 15 km</td><td class="dead">75 km, large games only</td></tr>
-            <tr><td class="name">Tentacles</td><td>2 km</td><td class="dead">25 km, large games only</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="figs">
-        <figure class="fig"><!--FIG-MATCHING-->
-          <figcaption><b>Matching.</b> Whatever the seekers' nearest one is, the answer
-            splits the map into the ground that shares it and the ground that does not.</figcaption>
-        </figure>
-        <figure class="fig"><!--FIG-MEASURING-->
-          <figcaption><b>Measuring.</b> Closer or further draws a line through the map at
-            the seekers' own distance from the thing.</figcaption>
-        </figure>
-        <figure class="fig"><!--FIG-RADAR-->
-          <figcaption><b>Radar.</b> A circle of the asked size around the seekers. Hit or
-            miss, one side of it goes.</figcaption>
-        </figure>
-        <figure class="fig"><!--FIG-TENTACLE-->
-          <figcaption><b>Tentacles.</b> Within 2 km of the seekers, the hiders name the one
-            they are nearest to, which leaves only that thing's share of the circle.</figcaption>
-        </figure>
-      </div>
-
-      <h3>How they work</h3>
       <ul>
-        <li>One question at a time. The next one waits until this one is answered.</li>
-        <li>Asking the same question again costs double: the hiders draw the reward twice,
-          in two separate draws, never as one larger draw.</li>
+        <li>One question at a time. The next waits until this one is answered.</li>
+        <li>Asking the same question again costs double: the hiders draw its reward twice,
+          in two separate draws.</li>
         <li>A hider who misses the window pauses their own clock until they answer, and
           draws nothing for it.</li>
-        <li>A radar asks where the hiders are standing, not where their zone is.</li>
-        <li>A thermometer starts with a pin. The seekers travel the distance in a straight
-          line, then send a second pin.</li>
-        <li>The transit line question can only be asked from a moving train or tram, and the
-          seekers send the full stop list with it.</li>
-        <li>A tentacle question the hiders are out of range of is answered "not within
-          reach", and still pays them.</li>
-        <li>Any research is allowed <strong>except Google Street View</strong>. The one
-          exception is Curse of the Unguided Tourist, which supplies a Street View image.</li>
+        <li>A radar asks where the hiders stand, not where their zone is.</li>
+        <li>A thermometer starts with a pin, then a second pin after the distance, measured
+          straight.</li>
+        <li>The transit line question is asked from a moving train or tram, with the full
+          stop list sent alongside.</li>
+        <li>A tentacle out of range is answered "not within reach", and still pays.</li>
+        <li>All research is allowed <strong>except Google Street View</strong>, which only
+          Curse of the Unguided Tourist provides.</li>
       </ul>
       <div class="def">
         <p><strong>Google Maps settles every category.</strong> Both teams search the same
-          app, and a place with five or more reviews counts as real while a place with fewer
-          does not, unless everyone agrees otherwise. The seekers screenshot what they are
-          counting when they ask.</p>
+          app. A place with five or more reviews counts, one with fewer does not, unless
+          everyone agrees otherwise. The seekers screenshot what they count when they ask.</p>
+      </div>
+      <div class="figs">
+        <figure class="fig"><!--FIG-MATCHING-->
+          <figcaption><b>Matching</b> splits the map into the ground that shares the
+            seekers' nearest one and the ground that does not.</figcaption>
+        </figure>
+        <figure class="fig"><!--FIG-MEASURING-->
+          <figcaption><b>Measuring</b> cuts at the seekers' own distance from the
+            thing.</figcaption>
+        </figure>
+        <figure class="fig"><!--FIG-RADAR-->
+          <figcaption><b>Radar</b> is a circle of the asked size. Hit or miss, one side of
+            it goes.</figcaption>
+        </figure>
+        <figure class="fig"><!--FIG-TENTACLE-->
+          <figcaption><b>Tentacles</b> leave only the share of the circle belonging to the
+            one named.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section id="matching">
+    <section id="counts">
       <span class="plate">Definitions</span>
       <h2>What counts as what</h2>
-      <p class="lede">Twenty matching questions, four tentacle questions, and what each one
-        means here.</p>
-      <p>The rulebook's own wording is at
-        <a href="https://www.lifack.ch/docs/seeking/matching_questions">lifack.ch</a>. Where
-        a question names a category of place, it means the category Google Maps puts it in,
-        and distance is measured to the map icon rather than to the edge of the thing.</p>
+      <p>A named category means the category Google Maps puts a place in, and distance is
+        measured to the map icon, not to the edge of the thing. The rulebook's wording is at
+        <a href="https://www.lifack.ch/docs/seeking/matching_questions">lifack.ch</a>.</p>
 
       <h3>Transit</h3>
       <div class="scroll">
         <table>
-          <thead><tr><th>Question</th><th>What it means here</th></tr></thead>
+          <thead><tr><th>Question</th><th>Here</th></tr></thead>
           <tbody>
-            <tr><td class="name nowrap">Commercial airport</td><td>An airport with flights you can find on Google Flights. <strong>Bromma is the only one inside the border</strong>, so the matching version is always yes. The measuring version works and pulls west.</td></tr>
-            <tr><td class="name nowrap">Transit line</td><td>Yes if the train or tram the seekers are riding would stop at the hiders' station. They must be aboard and moving, and they send the full stop list. Twenty-one lines are in play.</td></tr>
-            <tr><td class="name nowrap">Station's name length</td><td>Characters in the station name, spaces, hyphens and slashes included, spelled as in the table at the foot of this page. Gamla stan is 10, T-Centralen is 11, Torsvik/Millesgården is 20.</td></tr>
-            <tr><td class="name nowrap">Street or path</td><td>The nearest named street or path. A street ends where its name changes, so Sankt Eriksgatan stops being itself at the bridge; an unnamed path ends at an intersection.</td></tr>
+            <tr><td class="name nowrap">Commercial airport</td><td>One with flights on Google Flights. Bromma is the only one inside the border.</td></tr>
+            <tr><td class="name nowrap">Transit line</td><td>Yes if the train or tram the seekers ride would stop at the hiders' station.</td></tr>
+            <tr><td class="name nowrap">Station's name length</td><td>Characters as spelled in the stop table, spaces, hyphens and slashes included. Gamla stan 10, T-Centralen 11, Torsvik/Millesgården 20.</td></tr>
+            <tr><td class="name nowrap">Street or path</td><td>The nearest named one. A street ends where its name changes; an unnamed path ends at an intersection.</td></tr>
           </tbody>
         </table>
       </div>
@@ -849,112 +738,82 @@
         <table>
           <thead><tr><th>Level</th><th>Sweden</th><th>Here</th></tr></thead>
           <tbody>
-            <tr><td class="name">1st</td><td>Län</td><td class="dead">Stockholms län holds every stop. Always the same, so it tells the seekers nothing.</td></tr>
-            <tr><td class="name">2nd</td><td>Kommun</td><td>Nineteen of them, from Stockholm with 120 stops down to Sigtuna, Salem and Upplands Väsby with one each. Every stop's kommun is in the table below.</td></tr>
-            <tr><td class="name">3rd</td><td>Distrikt</td><td>Sweden's distrikt, the parish-based areas used since 2016. Inside Stockholms kommun read the stadsdelsområde instead.</td></tr>
+            <tr><td class="name">1st</td><td>Län</td><td class="dead">Stockholms län holds every stop.</td></tr>
+            <tr><td class="name">2nd</td><td>Kommun</td><td>Nineteen, from Stockholm with 120 stops to Sigtuna, Salem and Upplands Väsby with one each. Every stop's kommun is in the table below.</td></tr>
+            <tr><td class="name">3rd</td><td>Distrikt</td><td>The parish-based areas used since 2016. Inside Stockholms kommun read the stadsdelsområde instead.</td></tr>
             <tr><td class="name">4th</td><td>Stadsdel</td><td>Stockholms kommun only. If either team stands outside it, the answer is no.</td></tr>
           </tbody>
         </table>
       </div>
       <div class="def">
-        <p><strong>Where to look them up.</strong> Google Maps does not draw these borders.
-          <a href="https://minkarta.lantmateriet.se/">Lantmäteriet's Min karta</a> is the
-          national map and settles län, kommun and distrikt: open the layer menu and turn on
-          administrative boundaries.
+        <p>Google Maps does not draw these borders.
+          <a href="https://minkarta.lantmateriet.se/">Lantmäteriet's Min karta</a> settles
+          län, kommun and distrikt — turn on administrative boundaries in the layer menu.
           <a href="https://kartor.stockholm.se/">Stockholms stads kartor</a> settles
-          stadsdelsområde and stadsdel inside the city.
-          <a href="https://www.openstreetmap.org/">OpenStreetMap</a> is the quick check:
-          drop a pin and read what contains it.</p>
+          stadsdel. <a href="https://www.openstreetmap.org/">OpenStreetMap</a> is the quick
+          check: drop a pin, read what contains it.</p>
       </div>
 
       <h3>Natural</h3>
       <div class="scroll">
         <table>
-          <thead><tr><th>Question</th><th>What it means here</th></tr></thead>
+          <thead><tr><th>Question</th><th>Here</th></tr></thead>
           <tbody>
-            <tr><td class="name nowrap">Mountain</td><td>Whatever Google Maps calls a mountain, measured to its icon. <strong>It marks none inside the border</strong>, so both the matching and the measuring version return null. Check before the first round; the hills around Stockholm are 20 to 100 m and Google does not label them.</td></tr>
-            <tr><td class="name nowrap">Landmass</td><td>Land in one piece, not broken by water. Stockholm is islands, so this is the sharpest question on the board. Our list is under <a href="#local">local definitions</a>.</td></tr>
-            <tr><td class="name nowrap">Park</td><td>Whatever Google Maps calls a park, measured to its icon, which can put you a kilometre from the icon of the park you are standing in. That is the rule anyway.</td></tr>
+            <tr><td class="name nowrap">Mountain</td><td>Google Maps marks none inside the border. The hills around Stockholm are 20 to 100 m and it does not label them.</td></tr>
+            <tr><td class="name nowrap">Landmass</td><td>Land in one piece, not broken by water. Our list is under <a href="#numbers">rulings</a>.</td></tr>
+            <tr><td class="name nowrap">Park</td><td>Measured to the icon, which can put you a kilometre from the icon of the park you stand in.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h3>Places of interest</h3>
+      <h3>Places and utilities</h3>
       <div class="scroll">
         <table>
-          <thead><tr><th>Question</th><th>What it means here</th></tr></thead>
+          <thead><tr><th>Question</th><th>Here</th></tr></thead>
           <tbody>
-            <tr><td class="name nowrap">Amusement park</td><td>Gröna Lund is the only clear one inside the border, so matching is always yes. Measuring works and points at Djurgården. Indoor playgrounds and folkparker are the edge cases to settle first.</td></tr>
-            <tr><td class="name nowrap">Zoo</td><td>Skansen is the only clear one, so matching is always yes and measuring works. The 4H farms and the animal pens in parklekar are the edge cases.</td></tr>
-            <tr><td class="name nowrap">Aquarium</td><td>Skansen-Akvariet is the only clear one. Settle Fjärilshuset in Haga before the first round.</td></tr>
-            <tr><td class="name nowrap">Golf course</td><td>Outdoor courses only. Driving ranges and mini-golf do not count. Several sit inside the border — Lidingö, Djursholm, Kevinge, Ågesta — so this one works.</td></tr>
-            <tr><td class="name nowrap">Museum</td><td>Dense in the middle and thin outside it. Djurgården alone has a dozen, which makes this strong downtown and blunt in the suburbs.</td></tr>
-            <tr><td class="name nowrap">Movie theatre</td><td>A biograf. Filmstaden's multiplexes sit in the bigger centres, with a handful of independents in the inner city.</td></tr>
+            <tr><td class="name nowrap">Amusement park</td><td>Gröna Lund is the only clear one. Settle indoor playgrounds and folkparker before the first round.</td></tr>
+            <tr><td class="name nowrap">Zoo</td><td>Skansen is the only clear one. Settle the 4H farms and parklek animal pens.</td></tr>
+            <tr><td class="name nowrap">Aquarium</td><td>Skansen-Akvariet is the only clear one. Settle Fjärilshuset in Haga.</td></tr>
+            <tr><td class="name nowrap">Golf course</td><td>Outdoor courses. Driving ranges and mini-golf do not count. Lidingö, Djursholm, Kevinge and Ågesta are inside.</td></tr>
+            <tr><td class="name nowrap">Museum</td><td>As Google labels it. A dozen sit on Djurgården alone.</td></tr>
+            <tr><td class="name nowrap">Movie theatre</td><td>A biograf: Filmstaden's multiplexes and a few independents.</td></tr>
+            <tr><td class="name nowrap">Hospital</td><td>Karolinska Solna and Huddinge, Danderyd, Södersjukhuset, S:t Göran, Nacka, Södertälje. Settle whether a vårdcentral counts.</td></tr>
+            <tr><td class="name nowrap">Library</td><td>Every kommun runs one and most suburban centres have a branch.</td></tr>
+            <tr><td class="name nowrap">Foreign consulate</td><td>Google's embassy and consulate category. Honorary consulates do not count. Most stand in Diplomatstaden.</td></tr>
           </tbody>
         </table>
       </div>
-
-      <h3>Public utilities</h3>
-      <div class="scroll">
-        <table>
-          <thead><tr><th>Question</th><th>What it means here</th></tr></thead>
-          <tbody>
-            <tr><td class="name nowrap">Hospital</td><td>Karolinska in Solna and Huddinge, Danderyd, Södersjukhuset, S:t Göran, Nacka, Södertälje. The question is whether a vårdcentral counts: agree that first, and let the five-review rule settle the rest.</td></tr>
-            <tr><td class="name nowrap">Library</td><td>Every kommun runs one and most suburban centres have a branch, so coverage is even across the map.</td></tr>
-            <tr><td class="name nowrap">Foreign consulate</td><td>Google Maps' embassy and consulate category. Honorary consulates do not count. Most of them stand in Diplomatstaden on Östermalm, so a hit there is loud.</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Tentacles</h3>
-      <p>Four of them in a medium game, each reaching <strong>2 km</strong> from the
-        seekers. The hiders name the one they are nearest to, or say they are out of reach.
-        Same categories as the matching questions, same Google Maps rule.</p>
-      <div class="scroll">
-        <table>
-          <thead><tr><th>Tentacle</th><th>How it behaves here</th></tr></thead>
-          <tbody>
-            <tr><td class="name nowrap">Museums</td><td>Strongest downtown, where a 2 km circle can hold twenty. Nearly useless in the outer suburbs, where it holds none and the answer is "out of reach".</td></tr>
-            <tr><td class="name nowrap">Libraries</td><td>The most even of the four. Almost every 2 km circle in the built-up area holds one or two.</td></tr>
-            <tr><td class="name nowrap">Movie theatres</td><td>Clustered in the centre and in the suburban malls, absent in between.</td></tr>
-            <tr><td class="name nowrap">Hospitals</td><td>Few and far apart, so a hit is worth a lot and a miss rules out very little. Same vårdcentral question as above.</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>The four tentacle questions — museums, libraries, movie theatres, hospitals — use
+        these same definitions, reaching 2 km.</p>
     </section>
 
     <section id="dead">
       <span class="plate">Dead</span>
-      <h2>Questions that do nothing here</h2>
-      <p class="lede">These cannot tell the seekers anything on this map. They still count
-        as asked, and the hiders still draw their cards.</p>
+      <h2>Dead questions</h2>
+      <p>These tell the seekers nothing here. They still count as asked and still pay the
+        hiders.</p>
       <div class="scroll">
         <table>
           <thead><tr><th>Question</th><th>Why</th></tr></thead>
           <tbody>
-            <tr><td class="name">Matching — commercial airport</td><td>Bromma is the only one inside the border, so the answer is always yes. The measuring version works.</td></tr>
+            <tr><td class="name">Matching — commercial airport</td><td>Only Bromma is inside, so always yes. Measuring works.</td></tr>
+            <tr><td class="name">Matching — amusement park</td><td>Only Gröna Lund. Measuring works.</td></tr>
+            <tr><td class="name">Matching — zoo</td><td>Only Skansen. Measuring works.</td></tr>
             <tr><td class="name">Matching — 1st admin division</td><td>Every stop is in Stockholms län.</td></tr>
-            <tr><td class="name">Matching — amusement park</td><td>Gröna Lund is the only one. The measuring version works.</td></tr>
-            <tr><td class="name">Matching — zoo</td><td>Skansen is the only one. The measuring version works.</td></tr>
-            <tr><td class="name">Measuring — 1st admin division border</td><td>The border of Stockholms län falls outside the circle.</td></tr>
-            <tr><td class="name">Measuring — international border</td><td>The nearest one lies hundreds of kilometres away.</td></tr>
-            <tr><td class="name">Measuring — high-speed train line</td><td>No line in the circle reaches 250 km/h on purpose-built track, and we do not count the 200 km/h stretches.</td></tr>
-            <tr><td class="name">Mountain, matching and measuring</td><td>Google Maps marks none inside the border.</td></tr>
-            <tr><td class="name">Radar 40, 80 and 160 km</td><td>The circle is 57 km across, so the answer is always yes.</td></tr>
+            <tr><td class="name">Measuring — 1st admin division border</td><td>The länsgräns falls outside the circle.</td></tr>
+            <tr><td class="name">Measuring — international border</td><td>Hundreds of kilometres away.</td></tr>
+            <tr><td class="name">Measuring — high-speed train line</td><td>No line inside reaches 250 km/h on purpose-built track, and we do not count the 200 km/h stretches.</td></tr>
+            <tr><td class="name">Mountain, either kind</td><td>Google Maps marks none inside the border.</td></tr>
+            <tr><td class="name">Radar 40, 80, 160 km</td><td>The circle is 57 km across, so always yes.</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Everything else works: kommun, distrikt, stadsdel, landmass, station name length,
-        street or path, park, museum, library, movie theatre, hospital, consulate, golf
-        course, body of water, sea level, coastline, rail station, transit line, all three
-        thermometers, radar 500 m to 15 km, every photo, and all four tentacles.</p>
+      <p>Everything else works.</p>
     </section>
 
-    <section id="local">
-      <span class="plate">Local</span>
-      <h2>Definitions for this map</h2>
-
-      <h3>Distances</h3>
+    <section id="numbers">
+      <span class="plate">Rulings</span>
+      <h2>Numbers and rulings</h2>
       <div class="scroll">
         <table>
           <thead><tr><th>Thing</th><th>Ours</th></tr></thead>
@@ -965,10 +824,10 @@
             <tr><td>Caught, and recognised</td><td class="num">1.5 m</td></tr>
             <tr><td>Final spot from a routable path</td><td class="num">3 m</td></tr>
             <tr><td>Photo of a 5 ft × 5 ft section</td><td class="num">1.5 × 1.5 m</td></tr>
-            <tr><td>Radar</td><td class="num">500 m / 1 / 2 / 5 / 10 / 15 km</td></tr>
-            <tr><td>Thermometer</td><td class="num">1 / 5 / 15 km</td></tr>
+            <tr><td>Radar</td><td class="num">500 m · 1 · 2 · 5 · 10 · 15 km, or choose</td></tr>
+            <tr><td>Thermometer</td><td class="num">1 · 5 · 15 km</td></tr>
             <tr><td>Tentacles</td><td class="num">2 km</td></tr>
-            <tr><td>Curse distances given in feet</td><td class="num">100 ft 30 m · 500 ft 150 m · 1,000 ft 300 m</td></tr>
+            <tr><td>Curse distances given in feet: 100 · 500 · 1,000</td><td class="num">30 · 150 · 300 m</td></tr>
           </tbody>
         </table>
       </div>
@@ -976,72 +835,66 @@
         <em class="q">Measure distance</em>.</p>
 
       <h3>Land</h3>
-      <p>These count as separate landmasses:</p>
+      <p>Separate landmasses, and a bridge joins none of them:</p>
       <ul>
-        <li><strong>The mainland</strong> — everything north and west of the water: Solna,
-          Sundbyberg, Danderyd, Täby, Vallentuna, Österåker, Norrmalm, Vasastan, Östermalm,
-          Gärdet, Bromma, Järfälla, Sollentuna, Upplands Väsby, and round the west end of
-          Mälaren to Södertälje west of the canal.</li>
-        <li><strong>Södertörn</strong> — everything south and east of the water: Söderort,
-          Huddinge, Botkyrka, Salem, Tumba, Haninge, Nacka, Saltsjöbaden and Östertälje. The
-          Södertälje canal is the divide, so this is not the same landmass as the mainland.</li>
-        <li><strong>Lidingö</strong></li>
-        <li><strong>Kungsholmen</strong>, which takes in Stadshagen, Kristineberg and
-          Marieberg</li>
-        <li><strong>Södermalm</strong> &middot; <strong>Djurgården</strong> &middot;
-          <strong>Långholmen</strong> &middot; <strong>Reimersholme</strong> &middot;
-          <strong>Stora Essingen</strong> &middot; <strong>Lilla Essingen</strong></li>
+        <li><strong>The mainland</strong>, north and west of the water: Solna, Sundbyberg,
+          Danderyd, Täby, Vallentuna, Österåker, Norrmalm, Vasastan, Östermalm, Gärdet,
+          Bromma, Järfälla, Sollentuna, Upplands Väsby, and round the west end of Mälaren to
+          Södertälje west of the canal.</li>
+        <li><strong>Södertörn</strong>, south and east of it: Söderort, Huddinge, Botkyrka,
+          Salem, Tumba, Haninge, Nacka, Saltsjöbaden, Östertälje. The Södertälje canal
+          divides the two.</li>
+        <li><strong>Lidingö</strong> &middot; <strong>Kungsholmen</strong>, with Stadshagen,
+          Kristineberg and Marieberg &middot; <strong>Södermalm</strong> &middot;
+          <strong>Djurgården</strong> &middot; <strong>Långholmen</strong> &middot;
+          <strong>Reimersholme</strong> &middot; <strong>Stora Essingen</strong> &middot;
+          <strong>Lilla Essingen</strong></li>
         <li><strong>Stadsholmen</strong> (Gamla stan), <strong>Riddarholmen</strong> and
-          <strong>Helgeandsholmen</strong>, which are three islands and not one</li>
-        <li><strong>Skeppsholmen and Kastellholmen</strong>, counted as one</li>
+          <strong>Helgeandsholmen</strong>, three islands and not one. Blasieholmen is a
+          peninsula.</li>
+        <li><strong>Skeppsholmen and Kastellholmen</strong>, counted as one.</li>
       </ul>
-      <p>Blasieholmen is a peninsula, not an island. A bridge does not join two landmasses.</p>
 
       <h3>Water</h3>
       <div class="def">
-        <p><strong>The coast is the salt water.</strong> Everything seaward of the Slussen
-          and Hammarby locks counts as coastline: Strömmen, Nybroviken, Saltsjön, Lilla
-          Värtan, Djurgårdsbrunnsviken, and the Nacka and Lidingö shores. Mälaren,
-          Riddarfjärden, Årstaviken and the lakes do not.</p>
+        <p><strong>The coast is the salt water</strong>, everything seaward of the Slussen
+          and Hammarby locks: Strömmen, Nybroviken, Saltsjön, Lilla Värtan,
+          Djurgårdsbrunnsviken, and the Nacka and Lidingö shores. Mälaren, Riddarfjärden,
+          Årstaviken and the lakes are not. The rulebook's own definition wants a channel
+          1.6 km wide, which would leave Stockholm no coast at all.</p>
       </div>
-      <p>The rulebook asks for a channel at least 1.6 km wide, which would leave Stockholm
-        with no coast at all. The locks divide fresh water from salt, so we use them.</p>
 
       <h3>Other</h3>
       <ul>
         <li><strong>Nearest rail station</strong> counts everything on rails inside the
-          circle: our own stops, tram stops included, plus the SJ, Mälartåg and Arlanda
-          Express stations we cannot ride.</li>
-        <li><strong>A photo taken outside the station</strong> is taken at the platform or
-          the stop pole when the zone has no station building.</li>
-        <li>Location sharing drops out in the tunnels. Curses that depend on where the
-          seekers are use their last known position; if that is more than ten minutes old,
-          the hiders may ask, and the seekers answer honestly.</li>
-        <li>The game language is fixed before the first round. It decides Curse of the
-          Hidden Hangman and Curse of the Quill.</li>
+          circle, tram stops included, plus the SJ, Mälartåg and Arlanda Express stations we
+          cannot ride.</li>
+        <li>A <strong>photo taken outside the station</strong> is taken at the platform or
+          the stop pole where there is no station building.</li>
+        <li>Tracking drops out in the tunnels. Curses that turn on where the seekers are use
+          their last known position; if it is over ten minutes old the hiders may ask, and
+          the seekers answer honestly.</li>
+        <li>The game <strong>language</strong> is fixed before the first round. It decides
+          Curse of the Hidden Hangman and Curse of the Quill.</li>
       </ul>
     </section>
 
     <section id="deck">
       <span class="plate">Deck</span>
       <h2>The deck</h2>
-      <p>One hundred cards: time bonuses, powerups and curses, shuffled together. What is in
-        it is the hiders' business.</p>
-      <p>A hider holds <strong>six cards</strong> unless a powerup raises the limit. Time
-        bonuses cannot be played and count only if they are in hand when the team is caught.
-        Only one curse that blocks questions or transit runs at a time, the seekers say when
-        they have cleared it, and a spent card is discarded. A hider announces a powerup
-        only when it changes something for the seekers.</p>
+      <p>One hundred cards. A hider holds <strong>six</strong> unless a powerup raises the
+        limit. Time bonuses cannot be played and count only if they are in hand when the
+        team is caught. One curse that blocks questions or transit runs at a time and the
+        seekers say when they have cleared it. A spent card is discarded, and a powerup is
+        announced only when it changes something for the seekers.</p>
     </section>
 
     <section id="clarify">
       <span class="plate">Rulings</span>
       <h2>Card clarifications</h2>
-      <p class="lede">The published notes for every card that has one, so an argument at
-        14:00 takes a search rather than a phone call.</p>
-      <p>From the base rulebook and the
-        <a href="https://rules.jetlagthegame.com/expansion/">expansion reference rules</a>.
-        This covers every card in print, not only the ones in our deck.</p>
+      <p>The published note for every card that has one, from the base rulebook and the
+        <a href="https://rules.jetlagthegame.com/expansion/">expansion reference</a>. This
+        covers every card in print, not only the ones in our deck.</p>
       <div class="finder">
         <input id="cq" type="search" placeholder="Search a card…" aria-label="Search card clarifications">
         <span class="count" id="ccount"></span>
@@ -1059,9 +912,8 @@
     <section id="stops">
       <span class="plate">Stops</span>
       <h2>All 235 stops</h2>
-      <p>Every one of these can hold a 500 m zone. The kommun column answers
-        second-division questions. A stop served by two systems is filed under the first of
-        them, so Alvik sits under Tunnelbana even though three tram lines call there.</p>
+      <p>Each can hold a zone. A stop on two systems is filed under the first of them, so
+        Alvik sits under Tunnelbana though three tram lines call there.</p>
       <div class="systabs" id="systabs" role="tablist" aria-label="System">
 <!--SYSTABS-->
       </div>
@@ -1093,31 +945,33 @@
 
 </div>
 
-<script type="application/json" id="map-data"><!--MAPDATA--></script>
 <script>
-<!--MAPSCRIPT-->
-
   (function () {
-    var q = document.getElementById("q");
-    var rows = Array.prototype.slice.call(document.querySelectorAll("#stops-table tbody tr"));
-    var count = document.getElementById("count");
-    var tabs = Array.prototype.slice.call(document.querySelectorAll("#systabs button"));
-    var system = "";
-
-    function render() {
-      var term = q.value.trim().toLowerCase();
-      var shown = 0;
-      rows.forEach(function (row) {
-        var hit = (!term || row.dataset.k.indexOf(term) !== -1) &&
-                  (!system || row.dataset.sys === system);
-        row.hidden = !hit;
-        if (hit) shown++;
-      });
-      count.textContent = shown === rows.length
-        ? rows.length + " stops"
-        : shown + " of " + rows.length + " stops";
+    function filter(input, table, count, noun, extra) {
+      var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr"));
+      function render() {
+        var term = input.value.trim().toLowerCase();
+        var shown = 0;
+        rows.forEach(function (row) {
+          var hit = (!term || row.dataset.k.indexOf(term) !== -1) && (!extra || extra(row));
+          row.hidden = !hit;
+          if (hit) shown++;
+        });
+        count.textContent = shown === rows.length
+          ? rows.length + " " + noun
+          : shown + " of " + rows.length + " " + noun;
+      }
+      input.addEventListener("input", render);
+      return render;
     }
 
+    var system = "";
+    var render = filter(document.getElementById("q"),
+                        document.getElementById("stops-table"),
+                        document.getElementById("count"), "stops",
+                        function (row) { return !system || row.dataset.sys === system; });
+
+    var tabs = Array.prototype.slice.call(document.querySelectorAll("#systabs button"));
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
         system = tab.dataset.sys || "";
@@ -1127,29 +981,10 @@
         render();
       });
     });
-
-    q.addEventListener("input", render);
     render();
 
-    var cq = document.getElementById("cq");
-    var crows = Array.prototype.slice.call(document.querySelectorAll("#clarify-table tbody tr"));
-    var ccount = document.getElementById("ccount");
-
-    function crender() {
-      var term = cq.value.trim().toLowerCase();
-      var shown = 0;
-      crows.forEach(function (row) {
-        var hit = !term || row.dataset.k.indexOf(term) !== -1;
-        row.hidden = !hit;
-        if (hit) shown++;
-      });
-      ccount.textContent = shown === crows.length
-        ? crows.length + " cards"
-        : shown + " of " + crows.length + " cards";
-    }
-
-    cq.addEventListener("input", crender);
-    crender();
+    filter(document.getElementById("cq"), document.getElementById("clarify-table"),
+           document.getElementById("ccount"), "cards")();
 
     var links = Array.prototype.slice.call(document.querySelectorAll(".rail a"));
     var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
