@@ -49,7 +49,7 @@ disk with no Google and no server.
 | System | Stops | Reaches |
 |---|---|---|
 | Tunnelbana T10–T19 | 100 | Hjulsta, Akalla, Norsborg, Mörby centrum, Skarpnäck, Hässelby strand |
-| Pendeltåg 40 / 41 / 43 / 48 | 40 | Rosersberg, Kungsängen, Södertälje, Tungelsta |
+| Pendeltåg 40 / 41 / 43 / 48 | 40 | Upplands Väsby, Rosersberg, Bro, Södertälje, Tungelsta |
 | Trams 7 / 12 / 21 / 30 / 31 | 60 | Waldemarsudde, Nockeby, Gåshaga brygga, Sickla, Solna station, Bromma flygplats |
 | Roslagsbanan 27 / 28 / 29 | 36 | Lindholmen, Österskär, Näsbypark |
 | Saltsjöbanan 25 / 26 | 17 | Saltsjöbaden, Solsidan |

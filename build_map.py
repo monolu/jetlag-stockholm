@@ -328,29 +328,72 @@ def build_rows(verbose=False):
     return rows
 
 
-def route_lines():
+def stitch(members):
+    """The route's ways as one ordered list of points.
+
+    OSM stores a route as a bag of ways whose direction is whatever the mapper
+    drew; each is flipped, if needed, to carry on from the end of the last one.
+    """
+    path = []
+    for member in members:
+        if member["type"] != "way" or not member.get("geometry") or member["role"]:
+            continue
+        points = [(p["lat"], p["lon"]) for p in member["geometry"]]
+        if len(points) < 2:
+            continue
+        if path:
+            end = path[-1]
+            if metres(end, points[0]) > metres(end, points[-1]):
+                points.reverse()
+            if metres(path[-1], points[0]) < 1:
+                points = points[1:]
+        path.extend(points)
+    return path
+
+
+def trim_to_stops(path, stops):
+    """Cut the drawn line back to its first and last stop that are in play.
+
+    Track carries on past a terminus into sidings and depots, and beyond the
+    stops we dropped at the border, so without this a line trails off into
+    nothing.
+    """
+    if not path or not stops:
+        return []
+    marks = []
+    for stop in stops:
+        nearest = min(range(len(path)), key=lambda i: metres(path[i], stop))
+        marks.append(nearest)
+    return path[min(marks):max(marks) + 1]
+
+
+def route_lines(rows=None):
     """One entry per line: label, colour and the ways that draw it."""
+    rows = build_rows() if rows is None else rows
+    stops_on = {}
+    for row in rows:
+        for line in row["lines"].split("/"):
+            stops_on.setdefault(line, []).append((row["lat"], row["lon"]))
+
     out = []
     for rel in load("route_geom.json") + load("rail_geom.json"):
         label = GEOM_LINES.get(rel["id"])
         if not label:
             continue
-        ways = []
-        for member in rel["members"]:
-            if member["type"] != "way" or not member.get("geometry") or member["role"]:
-                continue
-            # a line may run out of the map and back; keep the runs that are in it
-            run = []
-            for point in member["geometry"]:
-                if inside(point["lat"], point["lon"]):
-                    run.append(point)
-                elif len(run) > 1:
+        path = trim_to_stops(stitch(rel["members"]), stops_on.get(label, []))
+
+        # a trimmed line can still cross the border on the way between two stops
+        ways, run = [], []
+        for lat, lon in path:
+            if inside(lat, lon):
+                run.append({"lat": lat, "lon": lon})
+            else:
+                if len(run) > 1:
                     ways.append(run)
-                    run = []
-                else:
-                    run = []
-            if len(run) > 1:
-                ways.append(run)
+                run = []
+        if len(run) > 1:
+            ways.append(run)
+
         out.append({"label": label, "colour": LINE_COLOURS[label],
                     "name": LINE_NAMES[label], "ways": ways})
     out.sort(key=lambda r: list(LINE_COLOURS).index(r["label"]))
