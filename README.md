@@ -29,8 +29,11 @@ Everything you need during the game is one page, live at
 **<https://monolu.github.io/jetlag-stockholm/>** — rules, local definitions, all 252
 stops, and the network on a real map. Send that link to everyone.
 
-The map on it is our own Google My Map, embedded:
-<https://www.google.com/maps/d/viewer?mid=1KjLl3dy7DhmggT4o4qT-awV80zBs7t0>
+The map section has two tabs. **Network** is our own data on Leaflet, lines in SL's
+colours with a switch per system and a 400 m zone toggle. **Google** is our My Map,
+<https://www.google.com/maps/d/viewer?mid=1KjLl3dy7DhmggT4o4qT-awV80zBs7t0>, for the
+landmarks the questions ask about. The Google one is a cross-origin iframe, so its styling
+and controls are Google's and cannot be changed from our side; that is why both are there.
 
 It is built by `build_site.py` into `docs/`, from `field-manual.html`. There is also an
 Artifact copy at
