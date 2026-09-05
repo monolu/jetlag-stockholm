@@ -17,7 +17,7 @@ Read them out loud before round one.
 | Photo "5 ft × 5 ft section" | **1.5 × 1.5 m** |
 | Photo of a park: stand 5 ft from obstructions | **1.5 m** |
 | Radar | **500 m / 1 km / 2 km / 5 km / 10 km / 15 km** |
-| Radar, the long three | **40 / 80 / 160 km**, all dead: the map is 57 km across |
+| Radar, the long three | **80 and 160 km** are dead: the map is 57 km across. 40 km is not, quite |
 | Thermometer | **1 km / 5 km / 15 km** |
 | Tentacles | **2 km** |
 | Curse distances in feet: 100 / 500 / 1,000 | **30 m / 150 m / 300 m** |
@@ -101,7 +101,7 @@ Three, and only three. They still count as asked and **still pay the hider cards
 |---|---|
 | International border | The nearest one is hundreds of kilometres outside the circle. Null. |
 | High-speed train line | No line in the circle reaches 250 km/h on purpose-built track, and we don't count the 200 km/h stretches. Null. |
-| Radar 40, 80 and 160 km | The circle is 57 km across, so the answer is always yes. |
+| Radar 80 and 160 km | No two points in the circle are more than 57 km apart, so the answer is always yes. At 40 km it is almost always yes. |
 
 **Dead as well, now the border is smaller.** Trimming the map to a legal medium size took
 Arlanda, Uppsala, Knivsta, Bålsta and Gnesta out of it:
