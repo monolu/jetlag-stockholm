@@ -43,8 +43,11 @@
     svg.appendChild(root);
     root.appendChild(make("circle", { cx: 0, cy: 0, r: R, "class": "border" }));
 
-    var zoneLayer = make("g", { "class": "off" });
-    root.appendChild(zoneLayer);
+    var zoneLayers = data.zones.map(function () {
+      var layer = make("g", { "class": "off" });
+      root.appendChild(layer);
+      return layer;
+    });
 
     var lineLayer = make("g", {});
     root.appendChild(lineLayer);
@@ -79,8 +82,10 @@
       dot.dataset.sys = stop[3];
       stopLayer.appendChild(dot);
 
-      zoneLayer.appendChild(make("circle",
-        { cx: xy[0], cy: xy[1], r: data.zone, "class": "zone" }));
+      data.zones.forEach(function (zone, z) {
+        zoneLayers[z].appendChild(make("circle",
+          { cx: xy[0], cy: xy[1], r: zone[0], "class": "zone" }));
+      });
     });
     root.appendChild(label);
 
@@ -192,11 +197,15 @@
     document.getElementById("mapout").addEventListener("click", function () { zoomAbout(0, 0, 0.625); });
     document.getElementById("mapreset").addEventListener("click", fit);
 
+    // off, then each radius in turn: the hiding zone and the two the curses make
     var zonesButton = document.getElementById("mapzones");
+    var showing = -1;
     zonesButton.addEventListener("click", function () {
-      var on = zonesButton.getAttribute("aria-pressed") === "true";
-      zonesButton.setAttribute("aria-pressed", String(!on));
-      zoneLayer.classList.toggle("off", on);
+      if (showing >= 0) zoneLayers[showing].classList.add("off");
+      showing = showing + 1 >= data.zones.length ? -1 : showing + 1;
+      if (showing >= 0) zoneLayers[showing].classList.remove("off");
+      zonesButton.setAttribute("aria-pressed", String(showing >= 0));
+      zonesButton.textContent = showing < 0 ? "Zones" : "Zones " + data.zones[showing][1];
     });
 
     Array.prototype.forEach.call(document.querySelectorAll("#mapbar .sys"), function (button) {

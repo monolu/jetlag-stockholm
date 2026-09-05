@@ -48,7 +48,9 @@ def payload():
               round(r["lat"], 5), round(r["lon"], 5)] for r in rows]
 
     return {"centre": list(M.BORDER_CENTRE), "radius": M.BORDER_RADIUS_KM * 1000,
-            "zone": M.ZONE_RADIUS_M, "lines": lines, "stops": stops,
+            "zone": M.ZONE_RADIUS_M,
+            "zones": [[radius, label.split(" — ")[0]] for radius, label in M.ZONE_VARIANTS],
+            "lines": lines, "stops": stops,
             "colours": LINE_HEX, "swatches": SYSTEM_SWATCH,
             "lineColour": M.LINE_COLOURS}
 

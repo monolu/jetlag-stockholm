@@ -42,9 +42,9 @@ ZONE_RADIUS_M = 500   # the metric rulebook's medium hiding zone
 
 # Two curses move the edge of a hiding zone, so the map carries all three circles.
 ZONE_VARIANTS = [
-    (250, "250 m — Curse of the Tiny Home, halved"),
     (500, "500 m — the hiding zone"),
     (750, "750 m — Curse of the Prosperous Home, half again"),
+    (250, "250 m — Curse of the Tiny Home, halved"),
 ]
 NAME_MERGE_M = 600    # same name this close is one stop
 NEAR_MERGE_M = 300    # a stop this close on another system is one interchange

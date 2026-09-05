@@ -133,8 +133,10 @@ SVG_MAP_SECTION = """      <p>Every line, every stop and the border, drawn from 
         </div>
         <div class="mapread" id="mapread" aria-live="polite">Tap a stop for its lines and kommun.</div>
       </div>
-      <p>The dashed circle is the border. <em class="q">Zones</em> draws the 500 m hiding
-        zone around every stop; they are specks until you zoom in. The live page at
+      <p>The dashed circle is the border. <em class="q">Zones</em> steps through the three
+        radii — 500 m, then the 750 m of Curse of the Prosperous Home, then the 250 m of
+        Curse of the Tiny Home — and off again. They are specks until you zoom in. The live
+        page at
         <a href="https://monolu.github.io/jetlag-stockholm/">monolu.github.io/jetlag-stockholm</a>
         carries this on a real basemap and next to our Google My Map, which an Artifact
         cannot load.</p>
@@ -169,10 +171,11 @@ LEAFLET_MAP_SECTION = """      <p>Two views of the same game. <em class="q">Netw
           </div>
         </div>
       </div>
-      <p>The dashed circle is the border. <em class="q">Zones</em> draws the 500 m hiding
-        zone around every stop; they are specks until you zoom in. The Google view carries
-        the same layers, plus the 250 m and 750 m circles the two zone curses make, toggled
-        from the panel at its top left.</p>
+      <p>The dashed circle is the border. <em class="q">Zones</em> steps through the three
+        radii — 500 m, then the 750 m of Curse of the Prosperous Home, then the 250 m of
+        Curse of the Tiny Home — and off again. They are specks until you zoom in. The
+        Google view carries the same three as separate layers, toggled from the panel at its
+        top left.</p>
 """
 
 MAP_CSS = """

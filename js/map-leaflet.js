@@ -41,7 +41,7 @@
     });
 
     var readout = document.getElementById("mapread");
-    var zoneLayer = L.layerGroup();
+    var zoneLayers = data.zones.map(function () { return L.layerGroup(); });
     var dots = [];
 
     data.stops.forEach(function (stop) {
@@ -68,10 +68,12 @@
       });
 
       dots.push(marker);
-      L.circle([stop[4], stop[5]], {
-        radius: data.zone, color: "#453366", weight: 1, opacity: .5,
-        fillOpacity: .08, interactive: false
-      }).addTo(zoneLayer);
+      data.zones.forEach(function (zone, i) {
+        L.circle([stop[4], stop[5]], {
+          radius: zone[0], color: "#453366", weight: 1, opacity: .5,
+          fillOpacity: .08, interactive: false
+        }).addTo(zoneLayers[i]);
+      });
     });
 
     // 235 dots at one size turn the middle of the map into a single blob
@@ -99,11 +101,15 @@
       });
     });
 
+    // off, then each radius in turn: the hiding zone and the two the curses make
     var zonesButton = document.getElementById("mapzones");
+    var showing = -1;
     zonesButton.addEventListener("click", function () {
-      var on = zonesButton.getAttribute("aria-pressed") === "true";
-      zonesButton.setAttribute("aria-pressed", String(!on));
-      if (on) map.removeLayer(zoneLayer); else zoneLayer.addTo(map);
+      if (showing >= 0) map.removeLayer(zoneLayers[showing]);
+      showing = showing + 1 >= data.zones.length ? -1 : showing + 1;
+      if (showing >= 0) zoneLayers[showing].addTo(map);
+      zonesButton.setAttribute("aria-pressed", String(showing >= 0));
+      zonesButton.textContent = showing < 0 ? "Zones" : "Zones " + data.zones[showing][1];
     });
 
     document.getElementById("mapin").addEventListener("click", function () { map.zoomIn(); });
