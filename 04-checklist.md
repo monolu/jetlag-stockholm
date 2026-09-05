@@ -21,7 +21,6 @@ Six people, two teams of three, two rounds, across the whole SL rail network. Ea
 - [ ] Send someone who isn't playing your live locations.
 - [ ] Check the weather, and the last departures on Roslagsbanan, Saltsjöbanan and the
       outer pendeltåg branches — they stop long before the metro does.
-- [ ] Everyone has the Arlanda passage and the Uppsala extension on their ticket.
 
 ## In the bag
 
@@ -67,7 +66,7 @@ Per team:
       stan, Slussen, Alvik, Gullmarsplan) are where they actually catch people.
 
 **End game**
-- [ ] The moment any seeker is inside the 400 m circle and off transit, all three hiders
+- [ ] The moment any seeker is inside the 500 m circle and off transit, all three hiders
       freeze in their final spot. Say it in the chat when it happens.
 - [ ] Caught = a seeker within 1.5 m of any hider and has recognised them
 - [ ] Stop the clock. Add the time bonuses still in hand, then the per cent cards as a

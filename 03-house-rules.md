@@ -1,7 +1,7 @@
 # Stockholm house rules
 
-Six players, two teams of three, the whole SL rail network, base deck plus Expansion
-Pack Vol. 1 with **every curse in**. The rulebook is written in miles for cities
+Six players, two teams of three, every SL rail line inside a 28.7 km circle, base deck
+plus Expansion Pack Vol. 1 with **every curse in**. The rulebook is written in miles for cities
 that aren't built on islands, and it leaves plenty to the local group. These are our calls.
 Read them out loud before round one.
 
@@ -11,16 +11,18 @@ Read them out loud before round one.
 
 | Rulebook | We use |
 |---|---|
-| Hiding zone, ¼ mile | **400 m** radius from the stop |
+| Hiding zone, ¼ mile | **500 m** radius from the stop |
 | Caught: within 5 ft | **1.5 m** and recognised |
 | Hiding spot within 10 ft of a path | **3 m** |
 | Photo "5 ft × 5 ft section" | **1.5 × 1.5 m** |
 | Photo of a park: stand 5 ft from obstructions | **1.5 m** |
-| Radar ¼ / ½ / 1 / 3 / 5 / 10 mi | **400 m / 800 m / 1.6 km / 5 km / 8 km / 16 km** |
-| Radar 25 / 50 / 100 mi | **40 km / 80 km / 160 km** (160 km is dead, see §6) |
-| Thermometer ½ / 3 / 10 mi | **800 m / 5 km / 16 km** |
-| Tentacle "within 1 mile" | **1.6 km** |
-| Curse distances: 100 ft / 500 ft / 1,000 ft / ¼ mi / 5 mi | **30 m / 150 m / 300 m / 400 m / 8 km** |
+| Radar | **500 m / 1 km / 2 km / 5 km / 10 km / 15 km** |
+| Radar, the long three | **40 / 80 / 160 km**, all dead: the map is 57 km across |
+| Thermometer | **1 km / 5 km / 15 km** |
+| Tentacles | **2 km** |
+| Curse distances in feet: 100 / 500 / 1,000 | **30 m / 150 m / 300 m** |
+| Hiding zone, Curse of the Prosperous Home | **750 m** |
+| Hiding zone, Curse of the Tiny Home | **250 m** |
 
 Measure in Google Maps: long-press an empty spot → *Measure distance*.
 
@@ -30,8 +32,8 @@ Measure in Google Maps: long-press an empty spot → *Measure distance*.
   Roslagsbanan and Saltsjöbanan. Nothing else moves anyone: no SL buses, no ferries, no
   Arlanda Express, no SJ or Mälartåg service, no taxi, no bike, no scooter, no lift from a
   friend.
-- The plain SL ticket doesn't cover the Arlanda passage or the Uppsala stretch. Everyone
-  buys those extensions before the game, because both are in play.
+- Arlanda and Uppsala are outside the border, so a plain SL ticket covers every line we
+  can ride. No extensions needed.
 - Same rules for both teams.
 
 ## 3. Game hours, tickets, money
@@ -42,8 +44,8 @@ Measure in Google Maps: long-press an empty spot → *Measure distance*.
 - The metro runs roughly 05:00–01:00. The trams, Roslagsbanan, Saltsjöbanan and the
   outer pendeltåg branches all stop much earlier, so check the SL app before committing to
   a far-out zone.
-- Tickets: single ~43 kr / 75 min, 24-hour ticket ~180 kr, in the SL app, plus the
-  Arlanda passage and the Uppsala extension.
+- Tickets: single ~43 kr / 75 min, 24-hour ticket ~180 kr, in the SL app. Arlanda and
+  Uppsala are outside the border, so nothing needs an extension.
 - "Publicly accessible during **all game hours**" is what binds hiding spots. Libraries,
   malls and museums shut at 17–18:00, so a spot inside one is illegal even at 13:00. Outdoors, station concourses and covered public passages are safe.
   The spot must also sit within 3 m of a path or road the map app would route someone along.
@@ -99,16 +101,15 @@ Three, and only three. They still count as asked and **still pay the hider cards
 |---|---|
 | International border | The nearest one is hundreds of kilometres outside the circle. Null. |
 | High-speed train line | No line in the circle reaches 250 km/h on purpose-built track, and we don't count the 200 km/h stretches. Null. |
-| Radar 160 km | The circle is 110 km across, so the answer is always yes. |
+| Radar 40, 80 and 160 km | The circle is 57 km across, so the answer is always yes. |
 
-**Live, and worth saying out loud.** Three questions that a city-sized Stockholm map would
-kill are real on this one:
+**Dead as well, now the border is smaller.** Trimming the map to a legal medium size took
+Arlanda, Uppsala, Knivsta, Bålsta and Gnesta out of it:
 
-- **Commercial airport** - Bromma and Arlanda are both inside the circle.
-- **1st admin division** - three län, four stops outside Stockholms län.
-- **1st admin division border** - the Uppsala län border crosses between Arlanda and
-  Knivsta and again between Bro and Bålsta; the Södermanlands län border crosses between
-  Mölnbo and Gnesta.
+- **Commercial airport, matching** - Bromma is the only one left inside the circle.
+- **1st admin division** - every stop is in Stockholms län again.
+- **1st admin division border** - the länsgräns falls outside the circle.
+- **Amusement park and zoo, matching** - Gröna Lund and Skansen are the only ones.
 
 **Settled before the first round.** Four categories depend on how Google Maps labels
 things, and Google and OpenStreetMap disagree badly across a map this size. Search each
@@ -122,7 +123,7 @@ decides anything doubtful.
 
 **Everything else works:** kommun, landmass, station name length, street or path, park,
 museum, library, movie theater, hospital, foreign consulate, golf course, body of water,
-sea level, coastline, rail station, transit line, every thermometer, radar 400 m to 80 km,
+sea level, coastline, rail station, transit line, every thermometer, radar 500 m to 15 km,
 every photo, and all four tentacles.
 
 ## 7. Question rulings, Stockholm edition
@@ -147,7 +148,7 @@ every photo, and all four tentacles.
 
 ## 8. Time traps
 
-Traps go on one of the 252 stops in `data/stations.csv` and nowhere else. Passing through
+Traps go on one of the 235 stops in `data/stations.csv` and nowhere else. Passing through
 a station means travelling a line that physically runs through it.
 
 ## 9. Curses in our deck

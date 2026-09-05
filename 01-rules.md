@@ -12,7 +12,7 @@ says miles, use those.
 2. Everyone starts in the same place. Hiders take the deck; seekers take the investigation
    book. Seekers' location sharing **on**, hiders' **off**.
 3. **Hiding period: 60 minutes.** The hiding team travels on foot and on SL rail to
-   any of the 252 stops. Wherever they stand at 60:00 is their zone, full stop.
+   any of the 235 stops. Wherever they stand at 60:00 is their zone, full stop.
 4. The hiding clock starts. Seekers ask questions; hiders answer truthfully and draw cards
    for every answer.
 5. When a seeker enters the zone on foot, the **end game** starts: the hiders freeze in
@@ -45,9 +45,9 @@ case. Our calls:
 
 ## Hiding zone
 
-- Centred on one of our 252 stops. If several stops sit inside your circle you still have
+- Centred on one of our 235 stops. If several stops sit inside your circle you still have
   to nominate *one* as "your" station: questions and photos refer to it.
-- **400 m radius** around that stop's map icon.
+- **500 m radius** around that stop's map icon.
 - Move freely inside the circle until the end game.
 
 ## Final hiding spot
@@ -94,7 +94,7 @@ Bonuses cannot be played, and they only count if they are in hand when the team 
 A per cent card is worth its share of the hiding time itself, worked out before any other
 bonus is added, so they never compound with each other.
 
-**Time traps.** Placed on one of our 252 stops and nowhere else. The card leaves your hand
+**Time traps.** Placed on one of our 235 stops and nowhere else. The card leaves your hand
 the moment it is placed, and any time it wins is added at once. "Passing through" means
 travelling a line that physically runs through that station.
 
