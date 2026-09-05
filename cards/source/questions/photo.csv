@@ -1,0 +1,50 @@
+Radar,
+Cost,Draw 1
+Time,S/M: 10 Minutes L: 20 Minutes
+Question:,Send a photo of [subject].
+,
+[Subject],Requirements
+All Games,
+A Tree,Must include the entire tree
+The Sky,Place phone on ground and shoot directly up
+You,"Selfie mode, arm parallel to the ground, fully extended"
+Widest Street,Must include both sides of the street
+"Tallest structure
+in your sightline","Tallest from your current perspective / sightline.
+Must include top and both sides.
+The top must be in the top 1/3rd of frame "
+"Any building 
+visible from station","Must stand directly outside transit station entrance.
+If multipole entrance you may choose.
+Must include roof, boths sides, 
+with the top of the building in the top 1/3rd of frame"
+Medium & Up,
+"Tallest building 
+visible from station","Tallest from your perspective / sightline.
+Must stand directly outside transit station entrance.
+If multipole entrance you may choose. 
+Must include roof, boths sides,
+with the top of the building in the top 1/3rd of frame"
+"Trace Nearest
+Street / Path","Street / Path must be visible on mapping app.
+Trace intersection to intersection"
+Two Buildings,Must include 5'x5' section with three distinct elements
+Restaurant Interior,"No zoom, must take photo from outside through window"
+Train Platform,Must include 5'x5' section with three distinct elements
+Park,"No zoom, phone perpendicular to ground, 
+must stand 5' away from any obstruction"
+Grocery Store Aisle,"No zoom, stand at the end of the aisle, 
+shoot directly down aisle. "
+Place of Worship,Must include 5'x5' section with three distinct elements
+Large Only,
+"1/2 Mile of
+streets traced","Must be continuous, include 5 turns, no doubling back, 
+send N-S Oriented, streets must appear on mapping app."
+"Tallest mountain
+visible from station","Tallest form you perspective / sightline. 
+Must be 3x zoom.
+Top of mountain must be in top 1/3rd of frame"
+"Biggest body of
+water in your zone","Max 3x zoom.
+Must include either both sides of water OR the horizon. "
+Five buildings,"Must include bottom, and up to four stories "

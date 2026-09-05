@@ -1,0 +1,247 @@
+{
+ "name": "deck-stockholm",
+ "note": "The deck in our box for the Stockholm game: 45 time bonuses, 25 powerups, 30 curses.",
+ "size": 100,
+ "cards": [
+  {
+   "id": "time-red",
+   "name": "Time bonus, red",
+   "copies": 9
+  },
+  {
+   "id": "time-orange",
+   "name": "Time bonus, orange",
+   "copies": 10
+  },
+  {
+   "id": "time-yellow",
+   "name": "Time bonus, yellow",
+   "copies": 10
+  },
+  {
+   "id": "time-green",
+   "name": "Time bonus, green",
+   "copies": 3
+  },
+  {
+   "id": "time-blue",
+   "name": "Time bonus, blue",
+   "copies": 2
+  },
+  {
+   "id": "time-percent-5",
+   "name": "Time bonus, 5%",
+   "copies": 4
+  },
+  {
+   "id": "time-percent-10",
+   "name": "Time bonus, 10%",
+   "copies": 2
+  },
+  {
+   "id": "time-trap",
+   "name": "Time trap",
+   "copies": 5
+  },
+  {
+   "id": "powerup-discard-2-draw-3",
+   "name": "Discard 2, draw 3",
+   "copies": 4
+  },
+  {
+   "id": "powerup-discard-1-draw-2",
+   "name": "Discard 1, draw 2",
+   "copies": 4
+  },
+  {
+   "id": "powerup-randomize-question",
+   "name": "Randomize question",
+   "copies": 4
+  },
+  {
+   "id": "powerup-veto-question",
+   "name": "Veto question",
+   "copies": 4
+  },
+  {
+   "id": "powerup-duplicate-another-card",
+   "name": "Duplicate another card",
+   "copies": 2
+  },
+  {
+   "id": "powerup-discard-me",
+   "name": "Discard me",
+   "copies": 2
+  },
+  {
+   "id": "powerup-draw-1-expand-1",
+   "name": "Draw 1, expand 1",
+   "copies": 2
+  },
+  {
+   "id": "powerup-draw-2-expand-2",
+   "name": "Draw 2, expand 2",
+   "copies": 1
+  },
+  {
+   "id": "powerup-discard-3-draw-4",
+   "name": "Discard 3, draw 4",
+   "copies": 1
+  },
+  {
+   "id": "powerup-move",
+   "name": "Move",
+   "copies": 1
+  },
+  {
+   "id": "curse-egg-partner",
+   "name": "Curse Of The Egg Partner",
+   "copies": 1
+  },
+  {
+   "id": "curse-mediocre-travel-agent",
+   "name": "Curse Of The Mediocre Travel Agent",
+   "copies": 1
+  },
+  {
+   "id": "curse-pong-champion",
+   "name": "Curse Of The Pong Champion",
+   "copies": 1
+  },
+  {
+   "id": "curse-shrewd-critic",
+   "name": "Curse Of The Shrewd Critic",
+   "copies": 1
+  },
+  {
+   "id": "curse-data-leak",
+   "name": "Curse Of The Data Leak",
+   "copies": 1
+  },
+  {
+   "id": "curse-bargain-hunter",
+   "name": "Curse Of The Bargain Hunter",
+   "copies": 1
+  },
+  {
+   "id": "curse-post-office",
+   "name": "Curse Of The Post Office",
+   "copies": 1
+  },
+  {
+   "id": "curse-plagued-word",
+   "name": "Curse Of The Plagued Word",
+   "copies": 1
+  },
+  {
+   "id": "curse-seventh-seal",
+   "name": "Curse Of The Seventh Seal",
+   "copies": 1
+  },
+  {
+   "id": "curse-impenetrable-fog",
+   "name": "Curse Of The Impenetrable Fog",
+   "copies": 1
+  },
+  {
+   "id": "curse-gilded-inquiry",
+   "name": "Curse Of The Gilded Inquiry",
+   "copies": 1
+  },
+  {
+   "id": "curse-express-route",
+   "name": "Curse Of The Express Route",
+   "copies": 1
+  },
+  {
+   "id": "curse-ransom-note",
+   "name": "Curse Of The Ransom Note",
+   "copies": 1
+  },
+  {
+   "id": "curse-lemon-phylactery",
+   "name": "Curse Of The Lemon Phylactery",
+   "copies": 1
+  },
+  {
+   "id": "curse-soothsayer",
+   "name": "Curse Of The Soothsayer",
+   "copies": 1
+  },
+  {
+   "id": "curse-impressionable-consumer",
+   "name": "Curse Of The Impressionable Consumer",
+   "copies": 1
+  },
+  {
+   "id": "curse-featherless-flight",
+   "name": "Curse Of Featherless Flight",
+   "copies": 1
+  },
+  {
+   "id": "curse-divine-blessing",
+   "name": "Curse Of The Divine Blessing",
+   "copies": 1
+  },
+  {
+   "id": "curse-open-mind",
+   "name": "Curse Of The Open Mind",
+   "copies": 1
+  },
+  {
+   "id": "curse-trickster",
+   "name": "Curse Of The Trickster",
+   "copies": 1
+  },
+  {
+   "id": "curse-curious-explorer",
+   "name": "Curse Of The Curious Explorer",
+   "copies": 1
+  },
+  {
+   "id": "curse-okaihau-express",
+   "name": "Curse Of The Okaihau Express",
+   "copies": 1
+  },
+  {
+   "id": "curse-quill",
+   "name": "Curse Of The Quill",
+   "copies": 1
+  },
+  {
+   "id": "curse-queue",
+   "name": "Curse Of The Queue",
+   "copies": 1
+  },
+  {
+   "id": "curse-zoologist",
+   "name": "Curse Of The Zoologist",
+   "copies": 1
+  },
+  {
+   "id": "curse-pomologist",
+   "name": "Curse Of The Pomologist",
+   "copies": 1
+  },
+  {
+   "id": "curse-passenger-princess",
+   "name": "Curse Of The Passenger Princess",
+   "copies": 1
+  },
+  {
+   "id": "curse-gamblers-feet",
+   "name": "Curse Of The Gambler's Feet",
+   "copies": 1
+  },
+  {
+   "id": "curse-jammed-door",
+   "name": "Curse Of The Jammed Door",
+   "copies": 1
+  },
+  {
+   "id": "curse-mind-meld",
+   "name": "Curse Of The Mind Meld",
+   "copies": 1
+  }
+ ]
+}

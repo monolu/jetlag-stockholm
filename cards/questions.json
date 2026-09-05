@@ -1,0 +1,958 @@
+{
+ "description": "Every question in the Hide and Seek investigation book, by category. `sizes` says which game sizes a question is available in; we play medium.",
+ "source": "https://docs.google.com/spreadsheets/d/1ZigDKsSCDxbp0JDWTnt0OGOlfxNEqICA3FnXy46p1Jk",
+ "totals": {
+  "matching": 20,
+  "measuring": 21,
+  "thermometer": 4,
+  "radar": 10,
+  "photo": 18,
+  "tentacles": 8,
+  "all": 81
+ },
+ "categories": [
+  {
+   "id": "matching",
+   "name": "Matching",
+   "cost": {
+    "draw": 3,
+    "keep": 1
+   },
+   "answer_minutes": {
+    "small": 5,
+    "medium": 5,
+    "large": 5
+   },
+   "prompt": "Is your nearest _____ the same as my nearest _____?",
+   "count": 20,
+   "questions": [
+    {
+     "id": "matching-commercial-airport",
+     "subject": "Commercial Airport",
+     "group": "Transit",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-transit-line",
+     "subject": "Transit Line",
+     "group": "Transit",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-station-s-name-length",
+     "subject": "Station's Name Length",
+     "group": "Transit",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-street-or-path",
+     "subject": "Street or Path",
+     "group": "Transit",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-1st-admin-state",
+     "subject": "1st Admin (State)",
+     "group": "Administrative divisions",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-2nd-admin-county",
+     "subject": "2nd Admin (County)",
+     "group": "Administrative divisions",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-3rd-admin-municipality-city-town",
+     "subject": "3rd Admin (Municipality | City | Town)",
+     "group": "Administrative divisions",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-4th-admin-borough",
+     "subject": "4th Admin (Borough)",
+     "group": "Administrative divisions",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-mountain",
+     "subject": "Mountain",
+     "group": "Natural",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-landmass",
+     "subject": "Landmass",
+     "group": "Natural",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-park",
+     "subject": "Park",
+     "group": "Natural",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-amusement-park",
+     "subject": "Amusement Park",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-zoo",
+     "subject": "Zoo",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-aquarium",
+     "subject": "Aquarium",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-golf-course",
+     "subject": "Golf Course",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-museum",
+     "subject": "Museum",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-movie-theatre",
+     "subject": "Movie Theatre",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-hospital",
+     "subject": "Hospital",
+     "group": "Public utilities",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-library",
+     "subject": "Library",
+     "group": "Public utilities",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "matching-foreign-consulate",
+     "subject": "Foreign Consulate",
+     "group": "Public utilities",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "measuring",
+   "name": "Measuring",
+   "cost": {
+    "draw": 3,
+    "keep": 1
+   },
+   "answer_minutes": {
+    "small": 5,
+    "medium": 5,
+    "large": 5
+   },
+   "prompt": "Compared to me, are you closer to or further from _____?",
+   "count": 21,
+   "questions": [
+    {
+     "id": "measuring-a-commercial-airport",
+     "subject": "A Commercial Airport",
+     "group": "Transit",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-a-high-speed-train-line",
+     "subject": "A High Speed Train Line",
+     "group": "Transit",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-a-rail-station",
+     "subject": "A Rail Station",
+     "group": "Transit",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-an-international-border",
+     "subject": "An International Border",
+     "group": "Borders",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-a-1st-admin-border-state",
+     "subject": "A 1st Admin Border (State)",
+     "group": "Borders",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-a-2nd-admin-border-county",
+     "subject": "A 2nd Admin Border (County)",
+     "group": "Borders",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-4th-admin-borough",
+     "subject": "4th Admin (Borough)",
+     "group": "Borders",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-sea-level",
+     "subject": "Sea Level",
+     "group": "Natural",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-a-body-of-water",
+     "subject": "A Body of Water",
+     "group": "Natural",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-a-coastline",
+     "subject": "A Coastline",
+     "group": "Natural",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-a-mountain",
+     "subject": "A Mountain",
+     "group": "Natural",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-a-park",
+     "subject": "A Park",
+     "group": "Natural",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-amusement-park",
+     "subject": "Amusement Park",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-zoo",
+     "subject": "Zoo",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-aquarium",
+     "subject": "Aquarium",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-golf-course",
+     "subject": "Golf Course",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-museum",
+     "subject": "Museum",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-movie-theatre",
+     "subject": "Movie Theatre",
+     "group": "Places of interest",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-hospital",
+     "subject": "Hospital",
+     "group": "Public utilities",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-library",
+     "subject": "Library",
+     "group": "Public utilities",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    {
+     "id": "measuring-foreign-consulate",
+     "subject": "Foreign Consulate",
+     "group": "Public utilities",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "thermometer",
+   "name": "Thermometer",
+   "cost": {
+    "draw": 2,
+    "keep": 1
+   },
+   "answer_minutes": {
+    "small": 5,
+    "medium": 5,
+    "large": 5
+   },
+   "prompt": "I just traveled (at least) [Distance]. Am I hotter or colder?",
+   "count": 4,
+   "questions": [
+    {
+     "id": "thermometer-0-5mi-805m",
+     "subject": "0.5 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 0.5,
+      "metres": 805
+     }
+    },
+    {
+     "id": "thermometer-3mi-4-8km",
+     "subject": "3.0 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 3.0,
+      "metres": 4800
+     }
+    },
+    {
+     "id": "thermometer-10mi-16km",
+     "subject": "10.0 mi",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 10.0,
+      "metres": 16000
+     }
+    },
+    {
+     "id": "thermometer-50mi-80km",
+     "subject": "50.0 mi",
+     "sizes": [
+      "large"
+     ],
+     "distance": {
+      "miles": 50.0,
+      "metres": 80000
+     }
+    }
+   ]
+  },
+  {
+   "id": "radar",
+   "name": "Radar",
+   "cost": {
+    "draw": 2,
+    "keep": 1
+   },
+   "answer_minutes": {
+    "small": 5,
+    "medium": 5,
+    "large": 5
+   },
+   "prompt": "Are you within [Distance] of me?",
+   "count": 10,
+   "questions": [
+    {
+     "id": "radar-0-25mi-402m",
+     "subject": "0.25 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 0.25,
+      "metres": 402
+     }
+    },
+    {
+     "id": "radar-0-50mi-805m",
+     "subject": "0.5 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 0.5,
+      "metres": 805
+     }
+    },
+    {
+     "id": "radar-1mi-1-6km",
+     "subject": "1.0 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 1.0,
+      "metres": 1600
+     }
+    },
+    {
+     "id": "radar-3mi-4-8km",
+     "subject": "3.0 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 3.0,
+      "metres": 4800
+     }
+    },
+    {
+     "id": "radar-5mi-8-0km",
+     "subject": "5.0 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 5.0,
+      "metres": 8000
+     }
+    },
+    {
+     "id": "radar-10mi-16-0km",
+     "subject": "10.0 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 10.0,
+      "metres": 16000
+     }
+    },
+    {
+     "id": "radar-25mi-40-0km",
+     "subject": "25.0 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 25.0,
+      "metres": 40000
+     }
+    },
+    {
+     "id": "radar-50mi-80-5km",
+     "subject": "50.0 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 50.0,
+      "metres": 80500
+     }
+    },
+    {
+     "id": "radar-100mi-160-9km",
+     "subject": "100.0 mi",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 100.0,
+      "metres": 160900
+     }
+    },
+    {
+     "id": "radar-choose",
+     "subject": "Choose",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "photo",
+   "name": "Photo",
+   "cost": {
+    "draw": 1,
+    "keep": 1
+   },
+   "answer_minutes": {
+    "small": 10,
+    "medium": 10,
+    "large": 20
+   },
+   "prompt": "Send a photo of [subject].",
+   "count": 18,
+   "questions": [
+    {
+     "id": "photo-a-tree",
+     "subject": "A Tree",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "requirements": "Must include the entire tree"
+    },
+    {
+     "id": "photo-the-sky",
+     "subject": "The Sky",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "requirements": "Place phone on ground and shoot directly up"
+    },
+    {
+     "id": "photo-you",
+     "subject": "You",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "requirements": "Selfie mode, arm parallel to the ground, fully extended"
+    },
+    {
+     "id": "photo-widest-street",
+     "subject": "Widest Street",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "requirements": "Must include both sides of the street"
+    },
+    {
+     "id": "photo-tallest-structure-in-your-sightline",
+     "subject": "Tallest structure in your sightline",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "requirements": "Tallest from your current perspective / sightline. Must include top and both sides. The top must be in the top 1/3rd of frame"
+    },
+    {
+     "id": "photo-any-building-visible-from-station",
+     "subject": "Any building visible from station",
+     "sizes": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "requirements": "Must stand directly outside transit station entrance. If multipole entrance you may choose. Must include roof, boths sides, with the top of the building in the top 1/3rd of frame"
+    },
+    {
+     "id": "photo-tallest-building-visible-from-station",
+     "subject": "Tallest building visible from station",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "requirements": "Tallest from your perspective / sightline. Must stand directly outside transit station entrance. If multipole entrance you may choose. Must include roof, boths sides, with the top of the building in the top 1/3rd of frame"
+    },
+    {
+     "id": "photo-trace-nearest-street-path",
+     "subject": "Trace Nearest Street / Path",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "requirements": "Street / Path must be visible on mapping app. Trace intersection to intersection"
+    },
+    {
+     "id": "photo-two-buildings",
+     "subject": "Two Buildings",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "requirements": "Must include 5'x5' section with three distinct elements"
+    },
+    {
+     "id": "photo-restaurant-interior",
+     "subject": "Restaurant Interior",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "requirements": "No zoom, must take photo from outside through window"
+    },
+    {
+     "id": "photo-train-platform",
+     "subject": "Train Platform",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "requirements": "Must include 5'x5' section with three distinct elements"
+    },
+    {
+     "id": "photo-park",
+     "subject": "Park",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "requirements": "No zoom, phone perpendicular to ground, must stand 5' away from any obstruction"
+    },
+    {
+     "id": "photo-grocery-store-aisle",
+     "subject": "Grocery Store Aisle",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "requirements": "No zoom, stand at the end of the aisle, shoot directly down aisle."
+    },
+    {
+     "id": "photo-place-of-worship",
+     "subject": "Place of Worship",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "requirements": "Must include 5'x5' section with three distinct elements"
+    },
+    {
+     "id": "photo-1-2-mile-of-streets-traced",
+     "subject": "1/2 Mile of streets traced",
+     "sizes": [
+      "large"
+     ],
+     "requirements": "Must be continuous, include 5 turns, no doubling back, send N-S Oriented, streets must appear on mapping app."
+    },
+    {
+     "id": "photo-tallest-mountain-visible-from-station",
+     "subject": "Tallest mountain visible from station",
+     "sizes": [
+      "large"
+     ],
+     "requirements": "Tallest form you perspective / sightline. Must be 3x zoom. Top of mountain must be in top 1/3rd of frame"
+    },
+    {
+     "id": "photo-biggest-body-of-water-in-your-zone",
+     "subject": "Biggest body of water in your zone",
+     "sizes": [
+      "large"
+     ],
+     "requirements": "Max 3x zoom. Must include either both sides of water OR the horizon."
+    },
+    {
+     "id": "photo-five-buildings",
+     "subject": "Five buildings",
+     "sizes": [
+      "large"
+     ],
+     "requirements": "Must include bottom, and up to four stories"
+    }
+   ]
+  },
+  {
+   "id": "tentacles",
+   "name": "Tentacles",
+   "cost": {
+    "draw": 4,
+    "keep": 2
+   },
+   "answer_minutes": {
+    "small": 5,
+    "medium": 5,
+    "large": 5
+   },
+   "prompt": "Of all the [Places] within [Distance] of me, which are you closest to?",
+   "count": 8,
+   "questions": [
+    {
+     "id": "tentacles-museums",
+     "subject": "Museums",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 1.0,
+      "metres": 1600
+     }
+    },
+    {
+     "id": "tentacles-libraries",
+     "subject": "Libraries",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 1.0,
+      "metres": 1600
+     }
+    },
+    {
+     "id": "tentacles-movie-theatres",
+     "subject": "Movie Theatres",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 1.0,
+      "metres": 1600
+     }
+    },
+    {
+     "id": "tentacles-hospitals",
+     "subject": "Hospitals",
+     "sizes": [
+      "medium",
+      "large"
+     ],
+     "distance": {
+      "miles": 1.0,
+      "metres": 1600
+     }
+    },
+    {
+     "id": "tentacles-metro-lines",
+     "subject": "Metro Lines",
+     "sizes": [
+      "large"
+     ],
+     "distance": {
+      "miles": 15.0,
+      "metres": 24140
+     }
+    },
+    {
+     "id": "tentacles-zoos",
+     "subject": "Zoos",
+     "sizes": [
+      "large"
+     ],
+     "distance": {
+      "miles": 15.0,
+      "metres": 24140
+     }
+    },
+    {
+     "id": "tentacles-aquariums",
+     "subject": "Aquariums",
+     "sizes": [
+      "large"
+     ],
+     "distance": {
+      "miles": 15.0,
+      "metres": 24140
+     }
+    },
+    {
+     "id": "tentacles-amusement-parks",
+     "subject": "Amusement Parks",
+     "sizes": [
+      "large"
+     ],
+     "distance": {
+      "miles": 15.0,
+      "metres": 24140
+     }
+    }
+   ]
+  }
+ ]
+}

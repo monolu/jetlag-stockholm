@@ -1,0 +1,18 @@
+Thermometer,
+Cost,"Draw 2, Pick 1"
+Time,5 Minutes
+Question:,"I just traveled (at least) [Distance]. 
+Am I hotter or colder?"
+,
+[Distance],Notes
+All Games,
+"0.5mi
+805m",
+"3mi
+4.8km",
+Medium & Large,
+"10mi
+16km",
+Large Only,
+"50mi
+80km",

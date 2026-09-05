@@ -1,0 +1,232 @@
+{
+ "name": "deck",
+ "note": "generated at size 100, seed 1",
+ "size": 100,
+ "cards": [
+  {
+   "id": "curse-archaeologist",
+   "name": "Curse Of The Archaeologist",
+   "copies": 1
+  },
+  {
+   "id": "curse-bargain-hunter",
+   "name": "Curse Of The Bargain Hunter",
+   "copies": 1
+  },
+  {
+   "id": "curse-bird-guide",
+   "name": "Curse Of The Bird Guide",
+   "copies": 1
+  },
+  {
+   "id": "curse-blind-wanderer",
+   "name": "Curse Of The Blind Wanderer",
+   "copies": 1
+  },
+  {
+   "id": "curse-clone",
+   "name": "Curse Of The Clone",
+   "copies": 1
+  },
+  {
+   "id": "curse-curious-explorer",
+   "name": "Curse Of The Curious Explorer",
+   "copies": 1
+  },
+  {
+   "id": "curse-empty-mind",
+   "name": "Curse Of The Empty Mind",
+   "copies": 1
+  },
+  {
+   "id": "curse-express-route",
+   "name": "Curse Of The Express Route",
+   "copies": 1
+  },
+  {
+   "id": "curse-featherless-flight",
+   "name": "Curse Of Featherless Flight",
+   "copies": 1
+  },
+  {
+   "id": "curse-gilded-inquiry",
+   "name": "Curse Of The Gilded Inquiry",
+   "copies": 1
+  },
+  {
+   "id": "curse-grass-toucher",
+   "name": "Curse Of The Grass-Toucher",
+   "copies": 1
+  },
+  {
+   "id": "curse-hide-and-seek-ception",
+   "name": "Curse Of The Hide-And-Seek-Ception",
+   "copies": 1
+  },
+  {
+   "id": "curse-landline",
+   "name": "Curse Of The Landline",
+   "copies": 1
+  },
+  {
+   "id": "curse-mind-meld",
+   "name": "Curse Of The Mind Meld",
+   "copies": 1
+  },
+  {
+   "id": "curse-oracle",
+   "name": "Curse Of The Oracle",
+   "copies": 1
+  },
+  {
+   "id": "curse-overflowing-chalice",
+   "name": "Curse Of The Overflowing Chalice",
+   "copies": 1
+  },
+  {
+   "id": "curse-pong-champion",
+   "name": "Curse Of The Pong Champion",
+   "copies": 1
+  },
+  {
+   "id": "curse-prophet",
+   "name": "Curse Of The Prophet",
+   "copies": 1
+  },
+  {
+   "id": "curse-runner",
+   "name": "Curse Of The Runner",
+   "copies": 1
+  },
+  {
+   "id": "curse-seventh-seal",
+   "name": "Curse Of The Seventh Seal",
+   "copies": 1
+  },
+  {
+   "id": "curse-tiny-home",
+   "name": "Curse Of The Tiny Home",
+   "copies": 1
+  },
+  {
+   "id": "curse-untethered-spirit",
+   "name": "Curse Of The Untethered Spirit",
+   "copies": 1
+  },
+  {
+   "id": "curse-urban-explorer",
+   "name": "Curse Of The Urban Explorer",
+   "copies": 1
+  },
+  {
+   "id": "curse-void",
+   "name": "Curse Of The Void",
+   "copies": 1
+  },
+  {
+   "id": "curse-water-weight",
+   "name": "Curse Of Water Weight",
+   "copies": 1
+  },
+  {
+   "id": "powerup-nothing",
+   "name": "Nothing",
+   "copies": 4
+  },
+  {
+   "id": "powerup-discard-1-draw-2",
+   "name": "Discard 1, draw 2",
+   "copies": 3
+  },
+  {
+   "id": "powerup-discard-2-draw-3",
+   "name": "Discard 2, draw 3",
+   "copies": 3
+  },
+  {
+   "id": "powerup-discard-3-draw-4",
+   "name": "Discard 3, draw 4",
+   "copies": 3
+  },
+  {
+   "id": "powerup-discard-me",
+   "name": "Discard me",
+   "copies": 2
+  },
+  {
+   "id": "powerup-draw-1-expand-1",
+   "name": "Draw 1, expand 1",
+   "copies": 1
+  },
+  {
+   "id": "powerup-draw-2-expand-2",
+   "name": "Draw 2, expand 2",
+   "copies": 1
+  },
+  {
+   "id": "powerup-duplicate-another-card",
+   "name": "Duplicate another card",
+   "copies": 1
+  },
+  {
+   "id": "powerup-move",
+   "name": "Move",
+   "copies": 1
+  },
+  {
+   "id": "powerup-randomize-question",
+   "name": "Randomize question",
+   "copies": 3
+  },
+  {
+   "id": "powerup-veto-question",
+   "name": "Veto question",
+   "copies": 3
+  },
+  {
+   "id": "time-black",
+   "name": "Time bonus, black",
+   "copies": 3
+  },
+  {
+   "id": "time-blue",
+   "name": "Time bonus, blue",
+   "copies": 1
+  },
+  {
+   "id": "time-green",
+   "name": "Time bonus, green",
+   "copies": 2
+  },
+  {
+   "id": "time-orange",
+   "name": "Time bonus, orange",
+   "copies": 10
+  },
+  {
+   "id": "time-percent-10",
+   "name": "Time bonus, 10%",
+   "copies": 3
+  },
+  {
+   "id": "time-percent-5",
+   "name": "Time bonus, 5%",
+   "copies": 3
+  },
+  {
+   "id": "time-red",
+   "name": "Time bonus, red",
+   "copies": 17
+  },
+  {
+   "id": "time-yellow",
+   "name": "Time bonus, yellow",
+   "copies": 7
+  },
+  {
+   "id": "time-trap",
+   "name": "Time trap",
+   "copies": 4
+  }
+ ]
+}

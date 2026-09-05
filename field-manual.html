@@ -1,0 +1,1568 @@
+<title>Stockholm Hide &amp; Seek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #e9eef2;
+    --surface: #ffffff;
+    --surface-2: #f4f7f9;
+    --ink: #0e1620;
+    --ink-soft: #35434f;
+    --muted: #5c6b7a;
+    --rule: #d3dde4;
+    --rule-strong: #b6c4ce;
+    --blue: #0092d4;
+    --red: #e02b25;
+    --green: #00a24c;
+    --pendel: #e4629b;
+    --city: #a39b92;
+    --nockeby: #8ca0cb;
+    --orange: #ef7c22;
+    --roslag: #b587c8;
+    --saltsjo: #10b0a4;
+    --accent: #0079b8;
+    --flag: #14324f;
+    --chip-ink: #ffffff;
+    --chip-ink-pale: #10161c;
+    --display: "Familjen Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0a0f14;
+      --surface: #121a21;
+      --surface-2: #18222b;
+      --ink: #e8eef4;
+      --ink-soft: #c2cedb;
+      --muted: #91a1b0;
+      --rule: #22303b;
+      --rule-strong: #334654;
+      --blue: #35a9e6;
+      --red: #f2564f;
+      --green: #23bd6a;
+      --pendel: #f08cb8;
+      --city: #b9b1a8;
+      --nockeby: #a3b5db;
+      --orange: #ff9440;
+      --roslag: #c99ada;
+      --saltsjo: #2fc9bd;
+      --accent: #3aabe8;
+      --flag: #17334d;
+      --chip-ink: #06131d;
+      --chip-ink-pale: #06131d;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0a0f14;
+    --surface: #121a21;
+    --surface-2: #18222b;
+    --ink: #e8eef4;
+    --ink-soft: #c2cedb;
+    --muted: #91a1b0;
+    --rule: #22303b;
+    --rule-strong: #334654;
+    --blue: #35a9e6;
+    --red: #f2564f;
+    --green: #23bd6a;
+    --pendel: #f08cb8;
+    --city: #b9b1a8;
+    --nockeby: #a3b5db;
+    --orange: #ff9440;
+    --roslag: #c99ada;
+    --saltsjo: #2fc9bd;
+    --accent: #3aabe8;
+    --flag: #17334d;
+    --chip-ink: #06131d;
+    --chip-ink-pale: #06131d;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 18px 88px;
+  }
+
+  /* ---------- masthead ---------- */
+
+  header.mast { padding: 52px 0 26px; border-bottom: 2px solid var(--ink); }
+
+  .mast-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+  .tsign {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--chip-ink);
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(38px, 9vw, 74px);
+    line-height: .95;
+    letter-spacing: -.03em;
+    margin: 20px 0 14px;
+    text-wrap: balance;
+  }
+
+  h1 em { font-style: normal; color: var(--blue); }
+
+  .standfirst {
+    max-width: 60ch;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin: 0 0 26px;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .fact { background: var(--surface); padding: 13px 15px; }
+
+  .fact dt {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 4px;
+  }
+
+  .fact dd {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -.01em;
+  }
+
+  /* ---------- line rail (nav) ---------- */
+
+  .rail { display: none; }
+
+  @media (min-width: 1000px) {
+    .wrap { grid-template-columns: 200px minmax(0, 1fr); column-gap: 46px; }
+    header.mast, footer.end { grid-column: 1 / -1; }
+    .rail {
+      display: block;
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      padding: 38px 0 0 6px;
+      margin-top: 8px;
+    }
+  }
+
+  .rail ol { list-style: none; margin: 0; padding: 0 0 0 18px; border-left: 3px solid var(--rule-strong); }
+  .rail li { position: relative; }
+
+  .rail a {
+    display: block;
+    padding: 7px 0;
+    font-size: 13.5px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .rail a::before {
+    content: "";
+    position: absolute;
+    left: -24.5px;
+    top: 15px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--rule-strong);
+  }
+
+  .rail a:hover { color: var(--ink); }
+  .rail a.on { color: var(--ink); font-weight: 600; }
+  .rail a.on::before { background: var(--blue); border-color: var(--blue); }
+
+  /* ---------- sections ---------- */
+
+  main { min-width: 0; }
+  section { padding: 42px 0 6px; scroll-margin-top: 16px; }
+
+  .plate {
+    display: inline-block;
+    background: var(--flag);
+    color: #fff;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    padding: 5px 11px 4px;
+    border-radius: 2px;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(26px, 4.4vw, 36px);
+    line-height: 1.06;
+    letter-spacing: -.022em;
+    margin: 14px 0 10px;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: -.01em;
+    margin: 28px 0 8px;
+  }
+
+  h4 {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 22px 0 7px;
+  }
+
+  p, li { color: var(--ink-soft); }
+  p { max-width: 66ch; margin: 0 0 14px; }
+  ul, ol { max-width: 66ch; padding-left: 20px; }
+  li { margin: 0 0 7px; }
+  strong { color: var(--ink); font-weight: 600; }
+  a { color: var(--accent); }
+
+  em.q {
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: .92em;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+
+  .lede { font-size: 17px; color: var(--ink); max-width: 62ch; }
+
+  /* ---------- tables ---------- */
+
+  .scroll {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--surface);
+    margin: 0 0 18px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14.5px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  th {
+    text-align: left;
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule-strong);
+    white-space: nowrap;
+    background: var(--surface-2);
+  }
+
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: 0; }
+  td.name { color: var(--ink); font-weight: 500; }
+  td.nowrap { white-space: nowrap; }
+  td.num { font-family: var(--mono); white-space: nowrap; }
+
+  /* ---------- line chips ---------- */
+
+  .chip {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.7;
+    padding: 0 6px;
+    border-radius: 2px;
+    color: var(--chip-ink);
+    white-space: nowrap;
+  }
+
+  .c-blue { background: var(--blue); }
+  .c-red { background: var(--red); }
+  .c-green { background: var(--green); }
+  .c-pendel { background: var(--pendel); }
+  .c-city { background: var(--city); color: var(--chip-ink-pale); }
+  .c-nockeby { background: var(--nockeby); color: var(--chip-ink-pale); }
+  .c-orange { background: var(--orange); color: var(--chip-ink-pale); }
+  .c-roslag { background: var(--roslag); color: var(--chip-ink-pale); }
+  .c-saltsjo { background: var(--saltsjo); color: var(--chip-ink-pale); }
+
+  /* ---------- network map ---------- */
+
+  .mapwrap {
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--surface);
+    margin: 0 0 18px;
+    overflow: hidden;
+  }
+
+  .mapframe {
+    position: relative;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  #netmap {
+    display: block;
+    width: 100%;
+    height: clamp(360px, 62vh, 620px);
+    touch-action: none;
+    cursor: grab;
+  }
+
+  #netmap.dragging { cursor: grabbing; }
+  #netmap .border { fill: none; stroke: var(--rule-strong); stroke-width: 2; stroke-dasharray: 8 6; }
+  #netmap .route { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5; }
+  #netmap .zone { fill: var(--accent); fill-opacity: .1; stroke: var(--accent); stroke-opacity: .5; stroke-width: 1; }
+  #netmap circle.stop { r: var(--dot, 400px); stroke: var(--surface); stroke-width: 1; }
+  #netmap circle.pick { stroke: var(--ink); stroke-width: 2; }
+  #netmap .off { display: none; }
+  #netmap text {
+    font-family: var(--body);
+    font-weight: 600;
+    fill: var(--ink);
+    paint-order: stroke;
+    stroke: var(--surface);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+  }
+
+  .mapbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+  }
+
+  .mapbar button {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: 3px;
+    padding: 5px 9px;
+    cursor: pointer;
+  }
+
+  .mapbar button:hover { color: var(--ink); border-color: var(--muted); }
+  .mapbar button[aria-pressed="false"] { opacity: .45; }
+  .mapbar .sys { display: inline-flex; align-items: center; gap: 6px; }
+  .mapbar .sys::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--swatch, var(--muted));
+  }
+  .mapbar .gap { flex: 1 1 auto; }
+
+  .mapread {
+    border-top: 1px solid var(--rule);
+    padding: 11px 14px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    min-height: 44px;
+  }
+
+  .mapread strong { font-family: var(--display); font-size: 16px; }
+  .mapread .chip { margin-right: 3px; }
+
+  /* ---------- definition callout ---------- */
+
+  .def {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    border-radius: 3px;
+    padding: 14px 16px;
+    margin: 0 0 18px;
+    max-width: 66ch;
+  }
+
+  .def p:last-child { margin-bottom: 0; }
+
+  /* ---------- round sequence ---------- */
+
+  .flow {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    max-width: 66ch;
+    border-left: 3px solid var(--rule-strong);
+  }
+
+  .flow li { position: relative; padding: 0 0 20px 24px; margin: 0; }
+
+  .flow li::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 7px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--rule-strong);
+  }
+
+  .flow li.hot::before { background: var(--red); border-color: var(--red); }
+
+  .flow .t {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+  }
+
+  .flow .h {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--ink);
+    display: block;
+    margin: 1px 0 3px;
+  }
+
+  /* ---------- stop finder ---------- */
+
+  .finder {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 0 0 14px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--bg);
+    padding: 8px 0;
+  }
+
+  .finder input {
+    flex: 1 1 220px;
+    min-width: 0;
+    font-family: var(--body);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: 3px;
+    padding: 9px 12px;
+  }
+
+  .finder input::placeholder { color: var(--muted); }
+
+  .finder input:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .count { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+  .sysblock h4 { display: flex; align-items: baseline; gap: 8px; }
+  .sysblock h4 .n { color: var(--rule-strong); }
+
+  /* ---------- footer ---------- */
+
+  footer.end {
+    margin-top: 52px;
+    padding-top: 20px;
+    border-top: 2px solid var(--ink);
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  footer.end p { color: var(--muted); max-width: 68ch; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="mast-top">
+      <span class="tsign">T</span>
+      <span class="kicker">Jet Lag: The Game &middot; hide and seek &middot; medium</span>
+    </div>
+    <h1>Hide &amp; Seek:<br><em>Stockholm</em></h1>
+    <p class="standfirst">The rules for our game, the map we play on, and the local
+      definitions we have agreed. The whole SL rail network is in play, from Uppsala to
+      Nynäshamn, and every curse in the deck is legal.</p>
+    <dl class="facts">
+      <div class="fact"><dt>Players</dt><dd>2 × 3</dd></div>
+      <div class="fact"><dt>Rounds</dt><dd>1 each</dd></div>
+      <div class="fact"><dt>Hiding period</dt><dd>60 min</dd></div>
+      <div class="fact"><dt>Hiding zone</dt><dd>400 m</dd></div>
+      <div class="fact"><dt>Stops</dt><dd>252</dd></div>
+      <div class="fact"><dt>Map</dt><dd>9,500 km&sup2;</dd></div>
+    </dl>
+  </header>
+
+  <nav class="rail" aria-label="Sections">
+    <ol>
+      <li><a href="#lines">Lines and stops</a></li>
+      <li><a href="#border">The border</a></li>
+      <li><a href="#map">The network map</a></li>
+      <li><a href="#round">A round</a></li>
+      <li><a href="#questions">Questions</a></li>
+      <li><a href="#dead">Questions that do nothing</a></li>
+      <li><a href="#local">Local definitions</a></li>
+      <li><a href="#deck">The deck</a></li>
+      <li><a href="#stops">All 252 stops</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section id="lines">
+      <span class="plate">Network</span>
+      <h2>Lines and stops</h2>
+      <p class="lede">Every SL rail line is in play: the tunnelbana, the pendeltåg, the
+        trams, Roslagsbanan and Saltsjöbanan.</p>
+      <p>Nothing else carries anyone. No SL buses, no ferries, no Arlanda Express, no SJ or
+        Mälartåg service, no taxi, no bike, no scooter, no lift from a friend. Both teams
+        move on foot and on the lines below.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>System</th><th>Line</th><th>Stops</th><th>Route</th></tr></thead>
+          <tbody>
+            <tr><td class="name nowrap">Tunnelbana</td><td class="nowrap"><span class="chip c-blue">10</span> <span class="chip c-blue">11</span></td><td class="num">20</td><td>Blå linjen · Kungsträdgården – Hjulsta / Akalla</td></tr>
+            <tr><td class="name nowrap">Tunnelbana</td><td class="nowrap"><span class="chip c-red">13</span> <span class="chip c-red">14</span></td><td class="num">36</td><td>Röda linjen · Norsborg / Fruängen – Ropsten / Mörby centrum</td></tr>
+            <tr><td class="name nowrap">Tunnelbana</td><td class="nowrap"><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="num">49</td><td>Gröna linjen · Hässelby strand – Skarpnäck / Farsta strand / Hagsätra</td></tr>
+            <tr><td class="name nowrap">Pendeltåg</td><td class="nowrap"><span class="chip c-pendel">40</span></td><td class="num">25</td><td>Uppsala C – Arlanda – Södertälje centrum</td></tr>
+            <tr><td class="name nowrap">Pendeltåg</td><td class="nowrap"><span class="chip c-pendel">41</span></td><td class="num">24</td><td>Märsta – Södertälje centrum</td></tr>
+            <tr><td class="name nowrap">Pendeltåg</td><td class="nowrap"><span class="chip c-pendel">43</span></td><td class="num">28</td><td>Bålsta – Nynäshamn</td></tr>
+            <tr><td class="name nowrap">Pendeltåg</td><td class="nowrap"><span class="chip c-pendel">48</span></td><td class="num">6</td><td>Södertälje centrum – Gnesta</td></tr>
+            <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-city">7</span></td><td class="num">10</td><td>Spårväg City · T-Centralen – Waldemarsudde</td></tr>
+            <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-nockeby">12</span></td><td class="num">10</td><td>Nockebybanan · Alvik – Nockeby</td></tr>
+            <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-orange">21</span></td><td class="num">13</td><td>Lidingöbanan · Ropsten – Gåshaga brygga</td></tr>
+            <tr><td class="name nowrap">Tram</td><td class="nowrap"><span class="chip c-orange">30</span> <span class="chip c-orange">31</span></td><td class="num">30</td><td>Tvärbanan · Sickla – Solna station, Alviks strand – Bromma flygplats</td></tr>
+            <tr><td class="name nowrap">Roslagsbanan</td><td class="nowrap"><span class="chip c-roslag">27</span></td><td class="num">18</td><td>Tekniska högskolan – Kårsta</td></tr>
+            <tr><td class="name nowrap">Roslagsbanan</td><td class="nowrap"><span class="chip c-roslag">28</span></td><td class="num">19</td><td>Tekniska högskolan – Österskär</td></tr>
+            <tr><td class="name nowrap">Roslagsbanan</td><td class="nowrap"><span class="chip c-roslag">29</span></td><td class="num">11</td><td>Tekniska högskolan – Näsbypark</td></tr>
+            <tr><td class="name nowrap">Saltsjöbanan</td><td class="nowrap"><span class="chip c-saltsjo">25</span></td><td class="num">13</td><td>Henriksdal – Saltsjöbaden</td></tr>
+            <tr><td class="name nowrap">Saltsjöbanan</td><td class="nowrap"><span class="chip c-saltsjo">26</span></td><td class="num">5</td><td>Igelboda – Solsidan</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Counted as places rather than as lines: 100 tunnelbana stations, 60 tram stops, 54
+        pendeltåg stations, 39 on Roslagsbanan and 17 on Saltsjöbanan. Sixteen of those
+        serve more than one system, which leaves <strong>252 stops that can hold a hiding
+        zone</strong>.</p>
+      <p>Where two stations sit within 300 m of each other and belong to different systems,
+        they count as one stop and one zone. That covers T-Centralen with Stockholm City,
+        Tekniska högskolan with Stockholms östra, and Sundbybergs centrum with Sundbyberg.</p>
+      <p>Line 43X is an express variant of 43. It calls at no station 43 misses, so it
+        counts as line 43. Numbers and colours follow SL's own rail network map, and no
+        number is used twice, so the number alone names the line.</p>
+    </section>
+
+    <section id="border">
+      <span class="plate">Map</span>
+      <h2>The border</h2>
+      <p>A circle of radius <strong>55 km</strong> centred on
+        <em class="q">59.38 N, 17.79 E</em>, a point near Barkarby. It covers about
+        <strong>9,500 km²</strong> and holds every stop in the game with a kilometre to
+        spare. The furthest out are Uppsala C in the north and Gröndalsviken in the south,
+        both about 54 km from the centre.</p>
+      <div class="def">
+        <p>Anything outside the circle <strong>does not exist</strong>. A question about it
+          returns a null answer, which counts as asked and still pays the hiders their
+          cards.</p>
+      </div>
+      <p>The circle takes in Uppsala, Knivsta, Arlanda, Bålsta, Gnesta, Nynäshamn,
+        Saltsjöbaden, Österskär and Kårsta. It leaves out Nyköping, Västerås, Enköping,
+        Norrtälje and the outer archipelago.</p>
+    </section>
+
+    <section id="map">
+      <span class="plate">Map</span>
+      <h2>The network map</h2>
+      <p>Every line, every stop and the border, drawn from the same data as the tables
+        below. Drag to pan, scroll or pinch to zoom, tap a stop to read it.</p>
+      <div class="mapwrap">
+        <div class="mapframe">
+          <svg id="netmap" role="img"
+               aria-label="Map of the SL rail network inside the game border, with all 252 stops"></svg>
+        </div>
+        <div class="mapbar" id="mapbar">
+          <button type="button" data-sys="Tunnelbana" class="sys" aria-pressed="true">Tunnelbana</button>
+          <button type="button" data-sys="Pendeltåg" class="sys" aria-pressed="true">Pendeltåg</button>
+          <button type="button" data-sys="Tram" class="sys" aria-pressed="true">Tram</button>
+          <button type="button" data-sys="Roslagsbanan" class="sys" aria-pressed="true">Roslagsbanan</button>
+          <button type="button" data-sys="Saltsjöbanan" class="sys" aria-pressed="true">Saltsjöbanan</button>
+          <span class="gap"></span>
+          <button type="button" id="mapzones" aria-pressed="false">Zones</button>
+          <button type="button" id="mapin">Zoom in</button>
+          <button type="button" id="mapout">Zoom out</button>
+          <button type="button" id="mapreset">Reset</button>
+        </div>
+        <div class="mapread" id="mapread" aria-live="polite">Tap a stop for its lines and kommun.</div>
+      </div>
+      <p>The dashed circle is the border. Turning on <em class="q">Zones</em> draws the
+        400 m hiding zone around every stop; they are specks until you zoom in.</p>
+    </section>
+
+    <section id="round">
+      <span class="plate">Play</span>
+      <h2>A round</h2>
+      <ol class="flow">
+        <li>
+          <span class="t">Before the start</span>
+          <span class="h">Handover</span>
+          The hiding team takes the deck, the seekers take the investigation book. Seekers
+          switch their location sharing on; hiders switch theirs off. Both teams start in
+          the same place.
+        </li>
+        <li>
+          <span class="t">60 minutes</span>
+          <span class="h">Hiding period</span>
+          The hiders travel on foot and on our lines to any of the 252 stops. Where they
+          stand when the hour ends is their zone. The seekers stay put.
+        </li>
+        <li class="hot">
+          <span class="t">From minute 60</span>
+          <span class="h">The clock runs</span>
+          The seekers ask questions. The hiders answer truthfully within the window, then
+          draw from the deck.
+        </li>
+        <li>
+          <span class="t">Zone entered</span>
+          <span class="h">End game</span>
+          Once a seeker stands inside the 400 m circle and off transit, the hiders stop
+          moving and stay in their final spot.
+        </li>
+        <li class="hot">
+          <span class="t">Found</span>
+          <span class="h">Caught</span>
+          A seeker reaches 1.5 m of a hider and recognises them. The clock stops. Time
+          bonuses still in hand are added, fixed cards and per cent cards alike.
+        </li>
+        <li>
+          <span class="t">10 minutes</span>
+          <span class="h">Swap</span>
+          The deck is reshuffled, the trackers change hands, and the next round starts from
+          where the last one ended.
+        </li>
+      </ol>
+      <p>Each team hides once. <strong>The longest single run wins.</strong> Runs do not add
+        up.</p>
+
+      <h3>Hours</h3>
+      <p>Play runs <strong>09:00 to 18:00</strong>. A round that is still going at 18:00
+        carries on into the next day: everyone stops where they stand, notes the spot, and
+        starts again from those same spots the next morning. Every timer stops overnight.</p>
+
+      <h3>The zone</h3>
+      <ul>
+        <li>A zone is a circle of <strong>400 m</strong> around one of the 252 stops.</li>
+        <li>If other stops fall inside the circle, the hiders name one as their station.
+          Questions and photos refer to that one.</li>
+        <li>The hiders move freely inside the circle until the end game.</li>
+      </ul>
+
+      <h3>The final spot</h3>
+      <ul>
+        <li>It must be somewhere the seekers can reach at any hour of the game. A toilet
+          cubicle, a flat and a fenced yard are all out; so is anywhere that shuts before
+          18:00.</li>
+        <li>It must lie within <strong>3 m of a path or road drawn on the map app</strong>,
+          which means a path the app would use to give someone walking directions.</li>
+        <li>It is fixed the moment a seeker enters the circle. Wherever the hiders are
+          standing then is where they stay.</li>
+      </ul>
+
+      <p>Anyone may pause the game. Every timer stops, everyone stays where they are, and
+        play resumes from the same spots.</p>
+    </section>
+
+    <section id="questions">
+      <span class="plate">Questions</span>
+      <h2>What the seekers can ask</h2>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Category</th><th>Form</th><th>Hiders draw</th><th>Window</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Matching</td><td>"Is your nearest ___ the same as mine?"</td><td class="num">3, keep 1</td><td class="num">5 min</td></tr>
+            <tr><td class="name">Measuring</td><td>"Compared to me, closer to or further from ___?"</td><td class="num">3, keep 1</td><td class="num">5 min</td></tr>
+            <tr><td class="name">Thermometer</td><td>"After travelling ___, am I hotter or colder?"</td><td class="num">2, keep 1</td><td class="num">5 min</td></tr>
+            <tr><td class="name">Radar</td><td>"Are you within ___ of me?"</td><td class="num">2, keep 1</td><td class="num">5 min</td></tr>
+            <tr><td class="name">Photo</td><td>"Send me a photo of ___."</td><td class="num">1, keep 1</td><td class="num">10 min</td></tr>
+            <tr><td class="name">Tentacle</td><td>"Within 1.6 km, which ___ are you nearest?"</td><td class="num">4, keep 2</td><td class="num">5 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>One question at a time. The next one waits until this one is answered.</li>
+        <li>Asking the same question again costs double: the hiders draw the reward twice,
+          in two separate draws, never as one larger draw.</li>
+        <li>A hider who misses the window pauses their own clock until they answer, and
+          draws nothing for it.</li>
+        <li>A radar asks where the hiders are standing, not where their zone is.</li>
+        <li>A thermometer starts with a pin. The seekers travel the distance in a straight
+          line, then send a second pin.</li>
+        <li>The transit line question can only be asked from a moving train or tram, and the
+          seekers send the full stop list with it.</li>
+        <li>Both teams use Google Maps. A place with five or more reviews counts as real; a
+          place with fewer does not, unless everyone agrees otherwise.</li>
+        <li>Any research is allowed <strong>except Google Street View</strong>. The one
+          exception is Curse of the Unguided Tourist, which supplies a Street View image.</li>
+      </ul>
+    </section>
+
+    <section id="dead">
+      <span class="plate">Dead</span>
+      <h2>Questions that do nothing here</h2>
+      <p class="lede">Three questions cannot tell the seekers anything on this map. They
+        still count as asked, and the hiders still draw their cards.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Question</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="name">International border</td><td>The nearest one lies hundreds of kilometres outside the circle, so the answer is null wherever both teams stand.</td></tr>
+            <tr><td class="name">High-speed train line</td><td>No line in the circle reaches 250 km/h on purpose-built track. We count none of the 200 km/h stretches, so the answer is null.</td></tr>
+            <tr><td class="name">Radar 160 km</td><td>The circle is 110 km across, so the answer is always yes.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Live, and worth saying out loud</h3>
+      <p>Three questions that a smaller Stockholm map would kill are real here:</p>
+      <ul>
+        <li><strong>Commercial airport.</strong> Two are in the circle, Bromma and Arlanda,
+          so matching and measuring both work.</li>
+        <li><strong>1st administrative division.</strong> The map covers three län. Four
+          stops sit outside Stockholms län: Uppsala C, Knivsta and Bålsta in Uppsala län,
+          and Gnesta in Södermanlands län.</li>
+        <li><strong>1st administrative division border.</strong> The Uppsala län border
+          crosses the line between Arlanda and Knivsta, and again between Bro and Bålsta.
+          The Södermanlands län border crosses between Mölnbo and Gnesta.</li>
+      </ul>
+      <p>Everything else works: kommun, landmass, station name length, street or path, park,
+        museum, library, cinema, hospital, consulate, golf course, body of water, sea level,
+        coastline, rail station, transit line, every thermometer, radars from 400 m to
+        80 km, every photo, and all four tentacle questions.</p>
+
+      <h3>Settled before the first round</h3>
+      <p>Four categories depend on how Google Maps labels things, and Google and
+        OpenStreetMap disagree across a map this size. Search each one inside the circle
+        before the game and write down what you find. That list is then binding, and the
+        five-review rule decides anything doubtful.</p>
+      <ul>
+        <li><strong>Mountain</strong> — OpenStreetMap marks 218 named hilltops in the
+          circle, most of them 20 to 100 m high. Google marks far fewer.</li>
+        <li><strong>Amusement park</strong> — Gröna Lund is certain. Indoor playgrounds and
+          folkparker sit on the line.</li>
+        <li><strong>Zoo</strong> — Skansen is certain. The 4H farms and parklek animal pens
+          sit on the line.</li>
+        <li><strong>Aquarium</strong> — Skansen-Akvariet is the only clear one.</li>
+      </ul>
+    </section>
+
+    <section id="local">
+      <span class="plate">Local</span>
+      <h2>Definitions for this map</h2>
+
+      <h3>Distances</h3>
+      <p>The rulebook is written in miles. We use these numbers instead.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Rulebook</th><th>Ours</th></tr></thead>
+          <tbody>
+            <tr><td>Hiding zone, ¼ mile</td><td class="num">400 m</td></tr>
+            <tr><td>Caught, within 5 ft</td><td class="num">1.5 m</td></tr>
+            <tr><td>Final spot within 10 ft of a path</td><td class="num">3 m</td></tr>
+            <tr><td>Photo of a 5 ft × 5 ft section</td><td class="num">1.5 × 1.5 m</td></tr>
+            <tr><td>Radar ¼ / ½ / 1 / 3 / 5 / 10 mi</td><td class="num">400 m / 800 m / 1.6 km / 5 km / 8 km / 16 km</td></tr>
+            <tr><td>Radar 25 / 50 / 100 mi</td><td class="num">40 km / 80 km / 160 km</td></tr>
+            <tr><td>Thermometer ½ / 3 / 10 mi</td><td class="num">800 m / 5 km / 16 km</td></tr>
+            <tr><td>Tentacle, within 1 mile</td><td class="num">1.6 km</td></tr>
+            <tr><td>Curse distances: 100 ft / 500 ft / 1,000 ft / ¼ mi / 5 mi</td><td class="num">30 m / 150 m / 300 m / 400 m / 8 km</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>To measure in Google Maps, press and hold an empty spot, then choose
+        <em class="q">Measure distance</em>.</p>
+
+      <h3>Administrative divisions</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Level</th><th>Sweden</th><th>Here</th></tr></thead>
+          <tbody>
+            <tr><td class="name">1st</td><td>Län</td><td>Stockholms län holds 248 stops, Uppsala län 3, Södermanlands län 1</td></tr>
+            <tr><td class="name">2nd</td><td>Kommun</td><td>24 of them, from Stockholm with 120 stops down to Gnesta, Håbo, Knivsta, Salem, Upplands Väsby and Uppsala with one each. Every stop's kommun is in the table below.</td></tr>
+            <tr><td class="name">3rd</td><td>Distrikt</td><td>The admin level 9 area on OpenStreetMap. Inside Stockholms kommun that is the stadsdelsområde; everywhere else it is the distrikt.</td></tr>
+            <tr><td class="name">4th</td><td>Stadsdel</td><td>Stockholms kommun only. If either team stands outside it, a matching question answers no.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Google Maps draws none of these borders, so OpenStreetMap settles them: drop a pin
+        and read the boundaries there.</p>
+
+      <h3>Land</h3>
+      <p>These count as separate landmasses:</p>
+      <ul>
+        <li><strong>The mainland</strong> — everything north and west of the water, from
+          Uppsala and Arlanda down through Stockholm's northern half and Bromma, then round
+          the west end of Mälaren to Södertälje west of the canal, Järna, Mölnbo and Gnesta.</li>
+        <li><strong>Södertörn</strong> — everything south and east of the water: Söderort,
+          Huddinge, Botkyrka, Salem, Tumba, Haninge, Nynäshamn, Nacka, Saltsjöbaden and
+          Östertälje. The Södertälje canal is the divide, so this is not the same landmass
+          as the mainland.</li>
+        <li><strong>Lidingö</strong></li>
+        <li><strong>Kungsholmen</strong>, which takes in Stadshagen, Kristineberg and
+          Marieberg</li>
+        <li><strong>Södermalm</strong> &middot; <strong>Djurgården</strong> &middot;
+          <strong>Långholmen</strong> &middot; <strong>Reimersholme</strong> &middot;
+          <strong>Stora Essingen</strong> &middot; <strong>Lilla Essingen</strong></li>
+        <li><strong>Stadsholmen</strong> (Gamla stan), <strong>Riddarholmen</strong> and
+          <strong>Helgeandsholmen</strong>, which are three islands and not one</li>
+        <li><strong>Skeppsholmen and Kastellholmen</strong>, counted as one</li>
+      </ul>
+      <p>Blasieholmen is a peninsula, not an island. A bridge does not join two landmasses.</p>
+
+      <h3>Water</h3>
+      <div class="def">
+        <p><strong>The coast is the salt water.</strong> Everything seaward of the Slussen
+          and Hammarby locks counts as coastline: Strömmen, Nybroviken, Saltsjön, Lilla
+          Värtan, Djurgårdsbrunnsviken, the Nacka and Lidingö shores, and the water out to
+          Nynäshamn. Mälaren, Riddarfjärden, Årstaviken and the lakes do not.</p>
+      </div>
+      <p>The rulebook asks for a channel at least 1.6 km wide, which would leave Stockholm
+        with no coast at all. The locks divide fresh water from salt, so we use them.</p>
+
+      <h3>Other</h3>
+      <ul>
+        <li><strong>Nearest rail station</strong> counts everything on rails inside the
+          circle: our own stops, tram stops included, plus the SJ, Mälartåg and Arlanda
+          Express stations we cannot ride.</li>
+        <li><strong>Station name length</strong> counts the name as written in the tables
+          below, spaces, hyphens and slashes included. Gamla stan is 10, T-Centralen is 11,
+          Torsvik/Millesgården is 20.</li>
+        <li><strong>Foreign consulate</strong> means the embassy and consulate category in
+          Google Maps. Honorary consulates do not count.</li>
+        <li><strong>A photo taken outside the station</strong> is taken at the platform or
+          the stop pole when the zone has no station building.</li>
+        <li>Where a zone has no rail platform, <em class="q">I cannot answer the
+          question</em> is a valid answer to a train platform photo, and the hiders still
+          draw.</li>
+        <li>Location sharing drops out in the tunnels. Curses that depend on where the
+          seekers are use their last known position; if that is more than ten minutes old,
+          the hiders may ask, and the seekers answer honestly.</li>
+        <li>The game language is fixed before the first round. It decides Curse of the
+          Hidden Hangman and Curse of the Quill.</li>
+      </ul>
+    </section>
+
+    <section id="deck">
+      <span class="plate">Deck</span>
+      <h2>The deck</h2>
+      <p>One hundred cards: 45 time bonuses, 25 powerups and 30 curses. Every curse is
+        legal. A hider holds <strong>6 cards</strong> unless a powerup raises the limit.</p>
+
+      <h3>Time bonuses</h3>
+      <p>The fixed cards carry three values, one per game size. We read the middle one.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Card</th><th>In the deck</th><th>Worth</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Red</td><td class="num">9</td><td class="num">3 min</td></tr>
+            <tr><td class="name">Red, per cent</td><td class="num">4</td><td class="num">5%</td></tr>
+            <tr><td class="name">Orange</td><td class="num">10</td><td class="num">6 min</td></tr>
+            <tr><td class="name">Orange, per cent</td><td class="num">2</td><td class="num">10%</td></tr>
+            <tr><td class="name">Yellow</td><td class="num">10</td><td class="num">9 min</td></tr>
+            <tr><td class="name">Green</td><td class="num">3</td><td class="num">12 min</td></tr>
+            <tr><td class="name">Blue</td><td class="num">2</td><td class="num">18 min</td></tr>
+            <tr><td class="name">Time trap</td><td class="num">5</td><td>see below</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Time bonuses cannot be played. They count only if they are in hand when the team is
+        caught.</p>
+      <p>A per cent card is worth its share of the hiding time itself, worked out before any
+        other bonus is added. Six of them in one hand pay six shares of the same clock, not
+        a share of a share.</p>
+      <p>A time trap sits on one of our 252 stops and on no other station. The card leaves
+        the hand as it is placed, and any time it wins is added at once. Passing through a
+        station means travelling a line that runs through it.</p>
+
+      <h3>Powerups</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Card</th><th>In the deck</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Discard 2, draw 3</td><td class="num">4</td></tr>
+            <tr><td class="name">Discard 1, draw 2</td><td class="num">4</td></tr>
+            <tr><td class="name">Randomize question</td><td class="num">4</td></tr>
+            <tr><td class="name">Veto question</td><td class="num">4</td></tr>
+            <tr><td class="name">Duplicate another card</td><td class="num">2</td></tr>
+            <tr><td class="name">Discard me</td><td class="num">2</td></tr>
+            <tr><td class="name">Draw 1, expand 1</td><td class="num">2</td></tr>
+            <tr><td class="name">Draw 2, expand 2</td><td class="num">1</td></tr>
+            <tr><td class="name">Discard 3, draw 4</td><td class="num">1</td></tr>
+            <tr><td class="name">Move</td><td class="num">1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Move: the hider discards their hand, names their station, and gets
+        <strong>20 minutes</strong> to build a new zone anywhere on the map. The seekers are
+        frozen and the clock is paused. It cannot be played during the end game.</p>
+
+      <h3>Curses</h3>
+      <ul>
+        <li>Only one curse that blocks questions or transit runs at a time. The seekers say
+          when they have cleared it.</li>
+        <li>A curse is discarded once it has been used.</li>
+        <li>A hider announces a powerup only when it affects the seekers.</li>
+      </ul>
+    </section>
+
+    <section id="stops">
+      <span class="plate">Stops</span>
+      <h2>All 252 stops</h2>
+      <p>Every one of these can hold a 400 m zone. The kommun column answers second-division
+        questions. A stop serving two systems is listed under the first of them.</p>
+      <div class="finder">
+        <input id="q" type="search" placeholder="Filter by name, line or kommun…" aria-label="Filter stops">
+        <span class="count" id="count"></span>
+      </div>
+      <div class="sysblock">
+        <h4>Tunnelbana <span class="n">100</span></h4>
+        <div class="scroll"><table>
+          <thead><tr><th>Stop</th><th>Lines</th><th>Kommun</th></tr></thead>
+          <tbody>
+            <tr data-k="abrahamsberg 17/18/19 stockholm tunnelbana"><td class="name nowrap">Abrahamsberg</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="akalla 11 stockholm tunnelbana"><td class="name nowrap">Akalla</td><td><span class="chip c-blue">11</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="alby 13 botkyrka tunnelbana"><td class="name nowrap">Alby</td><td><span class="chip c-red">13</span></td><td class="nowrap">Botkyrka</td></tr>
+            <tr data-k="alvik 17/18/19/12/30/31 stockholm tunnelbana + tram"><td class="name nowrap">Alvik</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span> <span class="chip c-nockeby">12</span> <span class="chip c-orange">30</span> <span class="chip c-orange">31</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="aspudden 13 stockholm tunnelbana"><td class="name nowrap">Aspudden</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="axelsberg 13 stockholm tunnelbana"><td class="name nowrap">Axelsberg</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="bagarmossen 17 stockholm tunnelbana"><td class="name nowrap">Bagarmossen</td><td><span class="chip c-green">17</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="bandhagen 19 stockholm tunnelbana"><td class="name nowrap">Bandhagen</td><td><span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="bergshamra 14 solna tunnelbana"><td class="name nowrap">Bergshamra</td><td><span class="chip c-red">14</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="björkhagen 17 stockholm tunnelbana"><td class="name nowrap">Björkhagen</td><td><span class="chip c-green">17</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="blackeberg 17/18/19 stockholm tunnelbana"><td class="name nowrap">Blackeberg</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="blåsut 18 stockholm tunnelbana"><td class="name nowrap">Blåsut</td><td><span class="chip c-green">18</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="bredäng 13 stockholm tunnelbana"><td class="name nowrap">Bredäng</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="brommaplan 17/18/19 stockholm tunnelbana"><td class="name nowrap">Brommaplan</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="danderyds sjukhus 14 danderyd tunnelbana"><td class="name nowrap">Danderyds sjukhus</td><td><span class="chip c-red">14</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="duvbo 10 sundbyberg tunnelbana"><td class="name nowrap">Duvbo</td><td><span class="chip c-blue">10</span></td><td class="nowrap">Sundbyberg</td></tr>
+            <tr data-k="enskede gård 19 stockholm tunnelbana"><td class="name nowrap">Enskede gård</td><td><span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="farsta 18 stockholm tunnelbana"><td class="name nowrap">Farsta</td><td><span class="chip c-green">18</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="farsta strand 18/43 stockholm tunnelbana + pendeltåg"><td class="name nowrap">Farsta strand</td><td><span class="chip c-green">18</span> <span class="chip c-pendel">43</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="fittja 13 botkyrka tunnelbana"><td class="name nowrap">Fittja</td><td><span class="chip c-red">13</span></td><td class="nowrap">Botkyrka</td></tr>
+            <tr data-k="fridhemsplan 10/11/17/18/19 stockholm tunnelbana"><td class="name nowrap">Fridhemsplan</td><td><span class="chip c-blue">10</span> <span class="chip c-blue">11</span> <span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="fruängen 14 stockholm tunnelbana"><td class="name nowrap">Fruängen</td><td><span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="gamla stan 13/14/17/18/19 stockholm tunnelbana"><td class="name nowrap">Gamla stan</td><td><span class="chip c-red">13</span> <span class="chip c-red">14</span> <span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="globen 19/30 stockholm tunnelbana + tram"><td class="name nowrap">Globen</td><td><span class="chip c-green">19</span> <span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="gubbängen 18 stockholm tunnelbana"><td class="name nowrap">Gubbängen</td><td><span class="chip c-green">18</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="gullmarsplan 17/18/19/30 stockholm tunnelbana + tram"><td class="name nowrap">Gullmarsplan</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span> <span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="gärdet 13 stockholm tunnelbana"><td class="name nowrap">Gärdet</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="hagsätra 19 stockholm tunnelbana"><td class="name nowrap">Hagsätra</td><td><span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="hallonbergen 10 sundbyberg tunnelbana"><td class="name nowrap">Hallonbergen</td><td><span class="chip c-blue">10</span></td><td class="nowrap">Sundbyberg</td></tr>
+            <tr data-k="hallunda 13 botkyrka tunnelbana"><td class="name nowrap">Hallunda</td><td><span class="chip c-red">13</span></td><td class="nowrap">Botkyrka</td></tr>
+            <tr data-k="hammarbyhöjden 17 stockholm tunnelbana"><td class="name nowrap">Hammarbyhöjden</td><td><span class="chip c-green">17</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="hjulsta 10 stockholm tunnelbana"><td class="name nowrap">Hjulsta</td><td><span class="chip c-blue">10</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="hornstull 13/14 stockholm tunnelbana"><td class="name nowrap">Hornstull</td><td><span class="chip c-red">13</span> <span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="husby 11 stockholm tunnelbana"><td class="name nowrap">Husby</td><td><span class="chip c-blue">11</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="huvudsta 10 solna tunnelbana"><td class="name nowrap">Huvudsta</td><td><span class="chip c-blue">10</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="hägerstensåsen 14 stockholm tunnelbana"><td class="name nowrap">Hägerstensåsen</td><td><span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="hässelby gård 17/18/19 stockholm tunnelbana"><td class="name nowrap">Hässelby gård</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="hässelby strand 17/18/19 stockholm tunnelbana"><td class="name nowrap">Hässelby strand</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="högdalen 19 stockholm tunnelbana"><td class="name nowrap">Högdalen</td><td><span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="hökarängen 18 stockholm tunnelbana"><td class="name nowrap">Hökarängen</td><td><span class="chip c-green">18</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="hötorget 17/18/19 stockholm tunnelbana"><td class="name nowrap">Hötorget</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="islandstorget 17/18/19 stockholm tunnelbana"><td class="name nowrap">Islandstorget</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="johannelund 17/18/19 stockholm tunnelbana"><td class="name nowrap">Johannelund</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="karlaplan 13 stockholm tunnelbana"><td class="name nowrap">Karlaplan</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="kista 11 stockholm tunnelbana"><td class="name nowrap">Kista</td><td><span class="chip c-blue">11</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="kristineberg 17/18/19 stockholm tunnelbana"><td class="name nowrap">Kristineberg</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="kungsträdgården 10/11/7 stockholm tunnelbana + tram"><td class="name nowrap">Kungsträdgården</td><td><span class="chip c-blue">10</span> <span class="chip c-blue">11</span> <span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="kärrtorp 17 stockholm tunnelbana"><td class="name nowrap">Kärrtorp</td><td><span class="chip c-green">17</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="liljeholmen 13/14/30 stockholm tunnelbana + tram"><td class="name nowrap">Liljeholmen</td><td><span class="chip c-red">13</span> <span class="chip c-red">14</span> <span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="mariatorget 13/14 stockholm tunnelbana"><td class="name nowrap">Mariatorget</td><td><span class="chip c-red">13</span> <span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="masmo 13 huddinge tunnelbana"><td class="name nowrap">Masmo</td><td><span class="chip c-red">13</span></td><td class="nowrap">Huddinge</td></tr>
+            <tr data-k="medborgarplatsen 17/18/19 stockholm tunnelbana"><td class="name nowrap">Medborgarplatsen</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="midsommarkransen 14 stockholm tunnelbana"><td class="name nowrap">Midsommarkransen</td><td><span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="mälarhöjden 13 stockholm tunnelbana"><td class="name nowrap">Mälarhöjden</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="mörby centrum 14 danderyd tunnelbana"><td class="name nowrap">Mörby centrum</td><td><span class="chip c-red">14</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="norsborg 13 botkyrka tunnelbana"><td class="name nowrap">Norsborg</td><td><span class="chip c-red">13</span></td><td class="nowrap">Botkyrka</td></tr>
+            <tr data-k="näckrosen 11 solna tunnelbana"><td class="name nowrap">Näckrosen</td><td><span class="chip c-blue">11</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="odenplan 17/18/19/40/41/43 stockholm tunnelbana + pendeltåg"><td class="name nowrap">Odenplan</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span> <span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span> <span class="chip c-pendel">43</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="rinkeby 10 stockholm tunnelbana"><td class="name nowrap">Rinkeby</td><td><span class="chip c-blue">10</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="rissne 10 sundbyberg tunnelbana"><td class="name nowrap">Rissne</td><td><span class="chip c-blue">10</span></td><td class="nowrap">Sundbyberg</td></tr>
+            <tr data-k="ropsten 13/21 stockholm tunnelbana + tram"><td class="name nowrap">Ropsten</td><td><span class="chip c-red">13</span> <span class="chip c-orange">21</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="råcksta 17/18/19 stockholm tunnelbana"><td class="name nowrap">Råcksta</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="rådhuset 10/11 stockholm tunnelbana"><td class="name nowrap">Rådhuset</td><td><span class="chip c-blue">10</span> <span class="chip c-blue">11</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="rådmansgatan 17/18/19 stockholm tunnelbana"><td class="name nowrap">Rådmansgatan</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="rågsved 19 stockholm tunnelbana"><td class="name nowrap">Rågsved</td><td><span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="sandsborg 18 stockholm tunnelbana"><td class="name nowrap">Sandsborg</td><td><span class="chip c-green">18</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="sankt eriksplan 17/18/19 stockholm tunnelbana"><td class="name nowrap">Sankt Eriksplan</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="skanstull 17/18/19 stockholm tunnelbana"><td class="name nowrap">Skanstull</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="skarpnäck 17 stockholm tunnelbana"><td class="name nowrap">Skarpnäck</td><td><span class="chip c-green">17</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="skogskyrkogården 18 stockholm tunnelbana"><td class="name nowrap">Skogskyrkogården</td><td><span class="chip c-green">18</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="skärholmen 13 stockholm tunnelbana"><td class="name nowrap">Skärholmen</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="skärmarbrink 17/18 stockholm tunnelbana"><td class="name nowrap">Skärmarbrink</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="slussen 13/14/17/18/19 stockholm tunnelbana"><td class="name nowrap">Slussen</td><td><span class="chip c-red">13</span> <span class="chip c-red">14</span> <span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="sockenplan 19 stockholm tunnelbana"><td class="name nowrap">Sockenplan</td><td><span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="solna centrum 11/30 solna tunnelbana + tram"><td class="name nowrap">Solna centrum</td><td><span class="chip c-blue">11</span> <span class="chip c-orange">30</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="solna strand 10 solna tunnelbana"><td class="name nowrap">Solna strand</td><td><span class="chip c-blue">10</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="stadion 14 stockholm tunnelbana"><td class="name nowrap">Stadion</td><td><span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="stadshagen 10/11 stockholm tunnelbana"><td class="name nowrap">Stadshagen</td><td><span class="chip c-blue">10</span> <span class="chip c-blue">11</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="stora mossen 17/18/19 stockholm tunnelbana"><td class="name nowrap">Stora mossen</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="stureby 19 stockholm tunnelbana"><td class="name nowrap">Stureby</td><td><span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="sundbybergs centrum 10/43/30 sundbyberg tunnelbana + pendeltåg + tram"><td class="name nowrap">Sundbybergs centrum</td><td><span class="chip c-blue">10</span> <span class="chip c-pendel">43</span> <span class="chip c-orange">30</span></td><td class="nowrap">Sundbyberg</td></tr>
+            <tr data-k="svedmyra 19 stockholm tunnelbana"><td class="name nowrap">Svedmyra</td><td><span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="sätra 13 stockholm tunnelbana"><td class="name nowrap">Sätra</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="t-centralen 10/11/13/14/17/18/19/40/41/43/7 stockholm tunnelbana + pendeltåg + tram"><td class="name nowrap">T-Centralen</td><td><span class="chip c-blue">10</span> <span class="chip c-blue">11</span> <span class="chip c-red">13</span> <span class="chip c-red">14</span> <span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span> <span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span> <span class="chip c-pendel">43</span> <span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="tallkrogen 18 stockholm tunnelbana"><td class="name nowrap">Tallkrogen</td><td><span class="chip c-green">18</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="tekniska högskolan 14/27/28/29 stockholm tunnelbana + roslagsbanan"><td class="name nowrap">Tekniska högskolan</td><td><span class="chip c-red">14</span> <span class="chip c-roslag">27</span> <span class="chip c-roslag">28</span> <span class="chip c-roslag">29</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="telefonplan 14 stockholm tunnelbana"><td class="name nowrap">Telefonplan</td><td><span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="tensta 10 stockholm tunnelbana"><td class="name nowrap">Tensta</td><td><span class="chip c-blue">10</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="thorildsplan 17/18/19 stockholm tunnelbana"><td class="name nowrap">Thorildsplan</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="universitetet 14/27/28/29 stockholm tunnelbana + roslagsbanan"><td class="name nowrap">Universitetet</td><td><span class="chip c-red">14</span> <span class="chip c-roslag">27</span> <span class="chip c-roslag">28</span> <span class="chip c-roslag">29</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="vällingby 17/18/19 stockholm tunnelbana"><td class="name nowrap">Vällingby</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="västertorp 14 stockholm tunnelbana"><td class="name nowrap">Västertorp</td><td><span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="västra skogen 10/11 solna tunnelbana"><td class="name nowrap">Västra skogen</td><td><span class="chip c-blue">10</span> <span class="chip c-blue">11</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="vårberg 13 stockholm tunnelbana"><td class="name nowrap">Vårberg</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="vårby gård 13 huddinge tunnelbana"><td class="name nowrap">Vårby gård</td><td><span class="chip c-red">13</span></td><td class="nowrap">Huddinge</td></tr>
+            <tr data-k="zinkensdamm 13/14 stockholm tunnelbana"><td class="name nowrap">Zinkensdamm</td><td><span class="chip c-red">13</span> <span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="ängbyplan 17/18/19 stockholm tunnelbana"><td class="name nowrap">Ängbyplan</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="åkeshov 17/18/19 stockholm tunnelbana"><td class="name nowrap">Åkeshov</td><td><span class="chip c-green">17</span> <span class="chip c-green">18</span> <span class="chip c-green">19</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="örnsberg 13 stockholm tunnelbana"><td class="name nowrap">Örnsberg</td><td><span class="chip c-red">13</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="östermalmstorg 13/14 stockholm tunnelbana"><td class="name nowrap">Östermalmstorg</td><td><span class="chip c-red">13</span> <span class="chip c-red">14</span></td><td class="nowrap">Stockholm</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="sysblock">
+        <h4>Pendeltåg <span class="n">50</span></h4>
+        <div class="scroll"><table>
+          <thead><tr><th>Stop</th><th>Lines</th><th>Kommun</th></tr></thead>
+          <tbody>
+            <tr data-k="arlanda central 40 sigtuna pendeltåg"><td class="name nowrap">Arlanda central</td><td><span class="chip c-pendel">40</span></td><td class="nowrap">Sigtuna</td></tr>
+            <tr data-k="barkarby 43 järfälla pendeltåg"><td class="name nowrap">Barkarby</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Järfälla</td></tr>
+            <tr data-k="bro 43 upplands-bro pendeltåg"><td class="name nowrap">Bro</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Upplands-Bro</td></tr>
+            <tr data-k="bålsta 43 håbo pendeltåg"><td class="name nowrap">Bålsta</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Håbo</td></tr>
+            <tr data-k="flemingsberg 40/41 huddinge pendeltåg"><td class="name nowrap">Flemingsberg</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Huddinge</td></tr>
+            <tr data-k="gnesta 48 gnesta pendeltåg"><td class="name nowrap">Gnesta</td><td><span class="chip c-pendel">48</span></td><td class="nowrap">Gnesta</td></tr>
+            <tr data-k="gröndalsviken 43 nynäshamn pendeltåg"><td class="name nowrap">Gröndalsviken</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Nynäshamn</td></tr>
+            <tr data-k="handen 43 haninge pendeltåg"><td class="name nowrap">Handen</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Haninge</td></tr>
+            <tr data-k="helenelund 40/41 sollentuna pendeltåg"><td class="name nowrap">Helenelund</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Sollentuna</td></tr>
+            <tr data-k="hemfosa 43 haninge pendeltåg"><td class="name nowrap">Hemfosa</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Haninge</td></tr>
+            <tr data-k="huddinge 40/41 huddinge pendeltåg"><td class="name nowrap">Huddinge</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Huddinge</td></tr>
+            <tr data-k="häggvik 40/41 sollentuna pendeltåg"><td class="name nowrap">Häggvik</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Sollentuna</td></tr>
+            <tr data-k="jakobsberg 43 järfälla pendeltåg"><td class="name nowrap">Jakobsberg</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Järfälla</td></tr>
+            <tr data-k="jordbro 43 haninge pendeltåg"><td class="name nowrap">Jordbro</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Haninge</td></tr>
+            <tr data-k="järna 48 södertälje pendeltåg"><td class="name nowrap">Järna</td><td><span class="chip c-pendel">48</span></td><td class="nowrap">Södertälje</td></tr>
+            <tr data-k="kallhäll 43 järfälla pendeltåg"><td class="name nowrap">Kallhäll</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Järfälla</td></tr>
+            <tr data-k="knivsta 40 knivsta pendeltåg"><td class="name nowrap">Knivsta</td><td><span class="chip c-pendel">40</span></td><td class="nowrap">Knivsta</td></tr>
+            <tr data-k="krigslida 43 haninge pendeltåg"><td class="name nowrap">Krigslida</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Haninge</td></tr>
+            <tr data-k="kungsängen 43 upplands-bro pendeltåg"><td class="name nowrap">Kungsängen</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Upplands-Bro</td></tr>
+            <tr data-k="märsta 41 sigtuna pendeltåg"><td class="name nowrap">Märsta</td><td><span class="chip c-pendel">41</span></td><td class="nowrap">Sigtuna</td></tr>
+            <tr data-k="mölnbo 48 södertälje pendeltåg"><td class="name nowrap">Mölnbo</td><td><span class="chip c-pendel">48</span></td><td class="nowrap">Södertälje</td></tr>
+            <tr data-k="norrviken 40/41 sollentuna pendeltåg"><td class="name nowrap">Norrviken</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Sollentuna</td></tr>
+            <tr data-k="nynäsgård 43 nynäshamn pendeltåg"><td class="name nowrap">Nynäsgård</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Nynäshamn</td></tr>
+            <tr data-k="nynäshamn 43 nynäshamn pendeltåg"><td class="name nowrap">Nynäshamn</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Nynäshamn</td></tr>
+            <tr data-k="rosersberg 41 sigtuna pendeltåg"><td class="name nowrap">Rosersberg</td><td><span class="chip c-pendel">41</span></td><td class="nowrap">Sigtuna</td></tr>
+            <tr data-k="rotebro 40/41 sollentuna pendeltåg"><td class="name nowrap">Rotebro</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Sollentuna</td></tr>
+            <tr data-k="rönninge 40/41 salem pendeltåg"><td class="name nowrap">Rönninge</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Salem</td></tr>
+            <tr data-k="segersäng 43 nynäshamn pendeltåg"><td class="name nowrap">Segersäng</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Nynäshamn</td></tr>
+            <tr data-k="skogås 43 huddinge pendeltåg"><td class="name nowrap">Skogås</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Huddinge</td></tr>
+            <tr data-k="sollentuna 40/41 sollentuna pendeltåg"><td class="name nowrap">Sollentuna</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Sollentuna</td></tr>
+            <tr data-k="solna station 40/41/30 solna pendeltåg + tram"><td class="name nowrap">Solna station</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span> <span class="chip c-orange">30</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="spånga 43 stockholm pendeltåg"><td class="name nowrap">Spånga</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="stockholms södra 40/41/43 stockholm pendeltåg"><td class="name nowrap">Stockholms södra</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span> <span class="chip c-pendel">43</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="stuvsta 40/41 huddinge pendeltåg"><td class="name nowrap">Stuvsta</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Huddinge</td></tr>
+            <tr data-k="södertälje centrum 40/41/48 södertälje pendeltåg"><td class="name nowrap">Södertälje centrum</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span> <span class="chip c-pendel">48</span></td><td class="nowrap">Södertälje</td></tr>
+            <tr data-k="södertälje hamn 40/41/48 södertälje pendeltåg"><td class="name nowrap">Södertälje hamn</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span> <span class="chip c-pendel">48</span></td><td class="nowrap">Södertälje</td></tr>
+            <tr data-k="södertälje syd 48 södertälje pendeltåg"><td class="name nowrap">Södertälje syd</td><td><span class="chip c-pendel">48</span></td><td class="nowrap">Södertälje</td></tr>
+            <tr data-k="trångsund 43 huddinge pendeltåg"><td class="name nowrap">Trångsund</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Huddinge</td></tr>
+            <tr data-k="tullinge 40/41 botkyrka pendeltåg"><td class="name nowrap">Tullinge</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Botkyrka</td></tr>
+            <tr data-k="tumba 40/41 botkyrka pendeltåg"><td class="name nowrap">Tumba</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Botkyrka</td></tr>
+            <tr data-k="tungelsta 43 haninge pendeltåg"><td class="name nowrap">Tungelsta</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Haninge</td></tr>
+            <tr data-k="ulriksdal 40/41 solna pendeltåg"><td class="name nowrap">Ulriksdal</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="upplands väsby 40/41 upplands väsby pendeltåg"><td class="name nowrap">Upplands Väsby</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Upplands Väsby</td></tr>
+            <tr data-k="uppsala c 40 uppsala pendeltåg"><td class="name nowrap">Uppsala C</td><td><span class="chip c-pendel">40</span></td><td class="nowrap">Uppsala</td></tr>
+            <tr data-k="vega 43 haninge pendeltåg"><td class="name nowrap">Vega</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Haninge</td></tr>
+            <tr data-k="västerhaninge 43 haninge pendeltåg"><td class="name nowrap">Västerhaninge</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Haninge</td></tr>
+            <tr data-k="älvsjö 40/41/43 stockholm pendeltåg"><td class="name nowrap">Älvsjö</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span> <span class="chip c-pendel">43</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="årstaberg 40/41/43/30 stockholm pendeltåg + tram"><td class="name nowrap">Årstaberg</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span> <span class="chip c-pendel">43</span> <span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="ösmo 43 nynäshamn pendeltåg"><td class="name nowrap">Ösmo</td><td><span class="chip c-pendel">43</span></td><td class="nowrap">Nynäshamn</td></tr>
+            <tr data-k="östertälje 40/41 södertälje pendeltåg"><td class="name nowrap">Östertälje</td><td><span class="chip c-pendel">40</span> <span class="chip c-pendel">41</span></td><td class="nowrap">Södertälje</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="sysblock">
+        <h4>Tram <span class="n">49</span></h4>
+        <div class="scroll"><table>
+          <thead><tr><th>Stop</th><th>Lines</th><th>Kommun</th></tr></thead>
+          <tbody>
+            <tr data-k="aga 21 lidingö tram"><td class="name nowrap">AGA</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="alléparken 12 stockholm tram"><td class="name nowrap">Alléparken</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="alviks strand 30/31 stockholm tram"><td class="name nowrap">Alviks strand</td><td><span class="chip c-orange">30</span> <span class="chip c-orange">31</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="baggeby 21 lidingö tram"><td class="name nowrap">Baggeby</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="bodal 21 lidingö tram"><td class="name nowrap">Bodal</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="brevik 21 lidingö tram"><td class="name nowrap">Brevik</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="bromma blocks 31 stockholm tram"><td class="name nowrap">Bromma Blocks</td><td><span class="chip c-orange">31</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="bromma flygplats 31 stockholm tram"><td class="name nowrap">Bromma flygplats</td><td><span class="chip c-orange">31</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="bällsta bro 30 sundbyberg tram"><td class="name nowrap">Bällsta bro</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Sundbyberg</td></tr>
+            <tr data-k="djurgårdsbron 7 stockholm tram"><td class="name nowrap">Djurgårdsbron</td><td><span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="djurgårdsskolan 7 stockholm tram"><td class="name nowrap">Djurgårdsskolan</td><td><span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="gröndal 30 stockholm tram"><td class="name nowrap">Gröndal</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="gåshaga 21 lidingö tram"><td class="name nowrap">Gåshaga</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="gåshaga brygga 21 lidingö tram"><td class="name nowrap">Gåshaga brygga</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="högberga 21 lidingö tram"><td class="name nowrap">Högberga</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="höglandstorget 12 stockholm tram"><td class="name nowrap">Höglandstorget</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="johannesfred 30/31 stockholm tram"><td class="name nowrap">Johannesfred</td><td><span class="chip c-orange">30</span> <span class="chip c-orange">31</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="karlsbodavägen 30 stockholm tram"><td class="name nowrap">Karlsbodavägen</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="klövervägen 12 stockholm tram"><td class="name nowrap">Klövervägen</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="kottla 21 lidingö tram"><td class="name nowrap">Kottla</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="käppala 21 lidingö tram"><td class="name nowrap">Käppala</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="larsberg 21 lidingö tram"><td class="name nowrap">Larsberg</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="liljevalchs/gröna lund 7 stockholm tram"><td class="name nowrap">Liljevalchs/Gröna Lund</td><td><span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="linde 30 stockholm tram"><td class="name nowrap">Linde</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="luma 30 stockholm tram"><td class="name nowrap">Luma</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="mårtensdal 30 stockholm tram"><td class="name nowrap">Mårtensdal</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="nockeby 12 stockholm tram"><td class="name nowrap">Nockeby</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="nockeby torg 12 stockholm tram"><td class="name nowrap">Nockeby torg</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="nordiska museet/vasamuseet 7 stockholm tram"><td class="name nowrap">Nordiska museet/Vasamuseet</td><td><span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="norra ulvsunda 30/31 stockholm tram"><td class="name nowrap">Norra Ulvsunda</td><td><span class="chip c-orange">30</span> <span class="chip c-orange">31</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="nybroplan 7 stockholm tram"><td class="name nowrap">Nybroplan</td><td><span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="olovslund 12 stockholm tram"><td class="name nowrap">Olovslund</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="sickla 30/25 nacka tram + saltsjöbanan"><td class="name nowrap">Sickla</td><td><span class="chip c-orange">30</span> <span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="sickla kaj 30 stockholm tram"><td class="name nowrap">Sickla kaj</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="sickla udde 30 stockholm tram"><td class="name nowrap">Sickla udde</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="skansen 7 stockholm tram"><td class="name nowrap">Skansen</td><td><span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="skärsätra 21 lidingö tram"><td class="name nowrap">Skärsätra</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="smedslätten 12 stockholm tram"><td class="name nowrap">Smedslätten</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="solna business park 30 solna tram"><td class="name nowrap">Solna Business Park</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Solna</td></tr>
+            <tr data-k="stora essingen 30 stockholm tram"><td class="name nowrap">Stora Essingen</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="styrmansgatan 7 stockholm tram"><td class="name nowrap">Styrmansgatan</td><td><span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="torsvik/millesgården 21 lidingö tram"><td class="name nowrap">Torsvik/Millesgården</td><td><span class="chip c-orange">21</span></td><td class="nowrap">Lidingö</td></tr>
+            <tr data-k="trekanten 30 stockholm tram"><td class="name nowrap">Trekanten</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="valla torg 30 stockholm tram"><td class="name nowrap">Valla torg</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="waldemarsudde 7 stockholm tram"><td class="name nowrap">Waldemarsudde</td><td><span class="chip c-city">7</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="ålstens gård 12 stockholm tram"><td class="name nowrap">Ålstens gård</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="ålstensgatan 12 stockholm tram"><td class="name nowrap">Ålstensgatan</td><td><span class="chip c-nockeby">12</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="årstadal 30 stockholm tram"><td class="name nowrap">Årstadal</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+            <tr data-k="årstafältet 30 stockholm tram"><td class="name nowrap">Årstafältet</td><td><span class="chip c-orange">30</span></td><td class="nowrap">Stockholm</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="sysblock">
+        <h4>Roslagsbanan <span class="n">37</span></h4>
+        <div class="scroll"><table>
+          <thead><tr><th>Stop</th><th>Lines</th><th>Kommun</th></tr></thead>
+          <tbody>
+            <tr data-k="altorp 29 danderyd roslagsbanan"><td class="name nowrap">Altorp</td><td><span class="chip c-roslag">29</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="arninge 28 täby roslagsbanan"><td class="name nowrap">Arninge</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="bråvallavägen 28 danderyd roslagsbanan"><td class="name nowrap">Bråvallavägen</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="bällsta 27 vallentuna roslagsbanan"><td class="name nowrap">Bällsta</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="djursholms ekeby 28 danderyd roslagsbanan"><td class="name nowrap">Djursholms Ekeby</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="djursholms ösby 27/28/29 danderyd roslagsbanan"><td class="name nowrap">Djursholms Ösby</td><td><span class="chip c-roslag">27</span> <span class="chip c-roslag">28</span> <span class="chip c-roslag">29</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="ekskogen 27 vallentuna roslagsbanan"><td class="name nowrap">Ekskogen</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="enebyberg 28 danderyd roslagsbanan"><td class="name nowrap">Enebyberg</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="ensta 27 täby roslagsbanan"><td class="name nowrap">Ensta</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="frösunda 27 vallentuna roslagsbanan"><td class="name nowrap">Frösunda</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="galoppfältet 28 täby roslagsbanan"><td class="name nowrap">Galoppfältet</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="hägernäs 28 täby roslagsbanan"><td class="name nowrap">Hägernäs</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="kragstalund 27 vallentuna roslagsbanan"><td class="name nowrap">Kragstalund</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="kårsta 27 vallentuna roslagsbanan"><td class="name nowrap">Kårsta</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="lahäll 29 täby roslagsbanan"><td class="name nowrap">Lahäll</td><td><span class="chip c-roslag">29</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="lindholmen 27 vallentuna roslagsbanan"><td class="name nowrap">Lindholmen</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="molnby 27 vallentuna roslagsbanan"><td class="name nowrap">Molnby</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="mörby 27/28/29 danderyd roslagsbanan"><td class="name nowrap">Mörby</td><td><span class="chip c-roslag">27</span> <span class="chip c-roslag">28</span> <span class="chip c-roslag">29</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="näsby allé 29 täby roslagsbanan"><td class="name nowrap">Näsby allé</td><td><span class="chip c-roslag">29</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="näsbypark 29 täby roslagsbanan"><td class="name nowrap">Näsbypark</td><td><span class="chip c-roslag">29</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="ormsta 27 vallentuna roslagsbanan"><td class="name nowrap">Ormsta</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="roslags näsby 27/28 täby roslagsbanan"><td class="name nowrap">Roslags Näsby</td><td><span class="chip c-roslag">27</span> <span class="chip c-roslag">28</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="rydbo 28 österåker roslagsbanan"><td class="name nowrap">Rydbo</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Österåker</td></tr>
+            <tr data-k="stocksund 29 danderyd roslagsbanan"><td class="name nowrap">Stocksund</td><td><span class="chip c-roslag">29</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="tibble 27 täby roslagsbanan"><td class="name nowrap">Tibble</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="tunagård 28 österåker roslagsbanan"><td class="name nowrap">Tunagård</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Österåker</td></tr>
+            <tr data-k="täby centrum 28 täby roslagsbanan"><td class="name nowrap">Täby Centrum</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="täby kyrkby 27 täby roslagsbanan"><td class="name nowrap">Täby Kyrkby</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="täljö 28 österåker roslagsbanan"><td class="name nowrap">Täljö</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Österåker</td></tr>
+            <tr data-k="vallentuna 27 vallentuna roslagsbanan"><td class="name nowrap">Vallentuna</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Vallentuna</td></tr>
+            <tr data-k="vendevägen 29 danderyd roslagsbanan"><td class="name nowrap">Vendevägen</td><td><span class="chip c-roslag">29</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="viggbyholm 28 täby roslagsbanan"><td class="name nowrap">Viggbyholm</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="visinge 27 täby roslagsbanan"><td class="name nowrap">Visinge</td><td><span class="chip c-roslag">27</span></td><td class="nowrap">Täby</td></tr>
+            <tr data-k="åkers runö 28 österåker roslagsbanan"><td class="name nowrap">Åkers Runö</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Österåker</td></tr>
+            <tr data-k="åkersberga 28 österåker roslagsbanan"><td class="name nowrap">Åkersberga</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Österåker</td></tr>
+            <tr data-k="östberga 29 danderyd roslagsbanan"><td class="name nowrap">Östberga</td><td><span class="chip c-roslag">29</span></td><td class="nowrap">Danderyd</td></tr>
+            <tr data-k="österskär 28 österåker roslagsbanan"><td class="name nowrap">Österskär</td><td><span class="chip c-roslag">28</span></td><td class="nowrap">Österåker</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="sysblock">
+        <h4>Saltsjöbanan <span class="n">16</span></h4>
+        <div class="scroll"><table>
+          <thead><tr><th>Stop</th><th>Lines</th><th>Kommun</th></tr></thead>
+          <tbody>
+            <tr data-k="erstaviksbadet 26 nacka saltsjöbanan"><td class="name nowrap">Erstaviksbadet</td><td><span class="chip c-saltsjo">26</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="fisksätra 25 nacka saltsjöbanan"><td class="name nowrap">Fisksätra</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="henriksdal 25 nacka saltsjöbanan"><td class="name nowrap">Henriksdal</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="igelboda 25/26 nacka saltsjöbanan"><td class="name nowrap">Igelboda</td><td><span class="chip c-saltsjo">25</span> <span class="chip c-saltsjo">26</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="lillängen 25 nacka saltsjöbanan"><td class="name nowrap">Lillängen</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="nacka 25 nacka saltsjöbanan"><td class="name nowrap">Nacka</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="neglinge 25 nacka saltsjöbanan"><td class="name nowrap">Neglinge</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="ringvägen 25 nacka saltsjöbanan"><td class="name nowrap">Ringvägen</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="saltsjö-duvnäs 25 nacka saltsjöbanan"><td class="name nowrap">Saltsjö-Duvnäs</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="saltsjö-järla 25 nacka saltsjöbanan"><td class="name nowrap">Saltsjö-Järla</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="saltsjöbaden 25 nacka saltsjöbanan"><td class="name nowrap">Saltsjöbaden</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="solsidan 26 nacka saltsjöbanan"><td class="name nowrap">Solsidan</td><td><span class="chip c-saltsjo">26</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="storängen 25 nacka saltsjöbanan"><td class="name nowrap">Storängen</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="tattby 26 nacka saltsjöbanan"><td class="name nowrap">Tattby</td><td><span class="chip c-saltsjo">26</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="tippen 26 nacka saltsjöbanan"><td class="name nowrap">Tippen</td><td><span class="chip c-saltsjo">26</span></td><td class="nowrap">Nacka</td></tr>
+            <tr data-k="östervik 25 nacka saltsjöbanan"><td class="name nowrap">Östervik</td><td><span class="chip c-saltsjo">25</span></td><td class="nowrap">Nacka</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="end">
+    <p>Base rules from the community rulebook at
+      <a href="https://www.lifack.ch/docs/quick_start_guide">lifack.ch</a>, which is not
+      affiliated with Jet Lag: The Game, Nebula or Wendover Productions. Expansion rules from
+      <a href="https://rules.jetlagthegame.com/expansion/">rules.jetlagthegame.com</a>. Stop
+      and route data from OpenStreetMap, © OpenStreetMap contributors, ODbL. The border, the
+      metric conversions, the divisions, the landmasses and the coast are our decisions, not
+      official rules.</p>
+  </footer>
+
+</div>
+
+<script type="application/json" id="map-data">{"note":"x is metres east of the border centre, y is metres south.","centre":[59.38,17.79],"radius":55000,"zone":400,"lines":[{"n":"Blå linjen 10 · Kungsträdgården–Hjulsta","c":"blue","l":"10","p":[[5495,-1921,5730,-1762,7189,-1407,7580,-1177,7882,-872,8089,-162,8351,324,10185,1601,10364,2133,10370,2760,10642,3236,10934,3367,11865,3381],[11865,3381,12414,3931],[12414,3931,12646,4519,12963,4858,13393,5027,14065,5492,14624,5526,15183,5286],[15183,5286,15428,5278],[15428,5278,15733,5372],[15733,5372,15830,5447],[15830,5447,15929,5487]]},{"n":"Blå linjen 11 · Kungsträdgården–Akalla","c":"blue","l":"11","p":[[7001,-3993,7865,-3141,8311,-2895],[8311,-2895,8439,-2828],[8439,-2828,8867,-2312,9283,-2163],[9283,-2163,9585,-2076],[9585,-2076,9921,-1687],[9921,-1687,9998,-1582],[9998,-1582,10185,-1200],[10185,-1200,10187,-1141],[10187,-1141,10110,-798,9747,-112,9774,231,11186,1704,11660,2056,11923,2517,11943,3322,12414,3931],[12414,3931,12646,4519,12963,4858,13393,5027,14065,5492,14624,5526,15183,5286],[15183,5286,15428,5278],[15428,5278,15733,5372],[15733,5372,15842,5417],[15842,5417,15949,5460]]},{"n":"Röda linjen 13 · Norsborg–Ropsten","c":"red","l":"13","p":[[1288,15144,2097,15223],[2097,15223,2853,15630,3221,15653,3600,15545,3817,15177],[3817,15177,3831,15094],[3831,15094,3923,14866],[3923,14866,4026,14726],[4026,14726,4044,14707],[4044,14707,4230,14582],[4230,14582,4584,14555],[4584,14555,4617,14558],[4617,14558,4984,14545],[4984,14545,5039,14534],[5380,12895,5609,13272,5712,13753,5481,14262,5039,14534],[5274,12755,5380,12895],[5110,12510,5274,12755],[5076,12434,5110,12510],[5649,11585,5259,11734,5055,11954,5076,12434],[5649,11585,6375,11486],[6375,11486,6774,11429,7110,11066],[7110,11066,7163,10980],[7163,10980,7178,10953],[7178,10953,7201,10919],[7201,10919,7435,10544],[7435,10544,7494,10358],[7494,10358,7522,10238],[7522,10238,7661,9690,8037,9490],[8037,9490,8204,9474],[8204,9474,8310,9470],[8310,9470,8903,9304,9603,8685,10304,8438],[10304,8438,10466,8418],[10466,8418,10487,8416],[10487,8416,10536,8411],[10536,8411,11242,8297],[11242,8297,11649,8178,12494,8140,13031,7842],[13031,7842,13124,7761],[13124,7761,13315,7634],[16008,6900,15934,7053,15743,7130,14959,6877,14134,7016,13744,7192,13315,7634],[15939,6627,16008,6900],[15910,6587,15939,6627],[15910,6587,15763,6408],[15733,6364,15763,6408],[15733,6364,15290,5636],[15290,5636,15312,5454,15654,5058,16105,5051,16397,4894],[16397,4894,16557,4814],[16557,4814,16989,4664,17188,4399,17532,3717,17492,3423],[17492,3423,17490,3417],[17399,3129,17490,3417],[17390,3093,17399,3129],[17650,2582,17402,2896,17390,3093],[17650,2582,17703,2513]]},{"n":"Röda linjen 14 · Fruängen–Mörby centrum","c":"red","l":"14","p":[[9885,10178,9908,10413],[9896,10084,9885,10178],[9928,9988,9896,10084],[9959,9933,9928,9988],[9975,9910,9959,9933],[9983,9900,9975,9910],[10093,9798,9983,9900],[10168,9756,10093,9798],[10531,9557,10168,9756],[10624,9481,10531,9557],[10744,9395,10624,9481],[10744,9395,11165,9244],[11268,9216,11165,9244],[11441,9172,11268,9216],[11441,9172,11700,9108],[11700,9108,11746,9096],[11746,9096,11949,9038],[11949,9038,12324,8900,12612,8614,13034,7845],[13034,7845,13130,7770],[13130,7770,13315,7634],[16008,6900,15934,7053,15743,7130,14959,6877,14134,7016,13744,7192,13315,7634],[15939,6627,16008,6900],[15910,6587,15939,6627],[15910,6587,15763,6408],[15733,6364,15763,6408],[15733,6364,15290,5636],[15290,5636,15312,5454,15654,5058,16105,5051,16397,4894],[16397,4894,16571,4625,16428,4121,15749,3703,15318,3229],[15318,3229,15162,2472],[15162,2472,14798,801,14576,436,14079,90,13972,-412],[13972,-412,13974,-428],[13974,-428,13980,-450],[13980,-450,14066,-634],[14066,-634,14108,-688],[14108,-688,14304,-1056,14171,-1784,13971,-2068]]},{"n":"Gröna linjen 17 · Skarpnäck–Hässelby strand","c":"green","l":"17","p":[[19487,12682,19508,12085,19412,11665,19255,11427,18912,11291],[18912,11291,18706,11136],[18706,11136,18652,11062],[18652,11062,18449,10776],[18449,10776,18404,10681],[18404,10681,18374,10493],[18374,10493,18409,10278],[18409,10278,18438,10154],[18438,10154,18455,10023],[18455,10023,18455,10008],[18455,10008,18455,9980],[18455,9980,18428,9747],[18428,9747,18377,9631],[18377,9631,18011,9487],[18011,9487,17934,9488],[17934,9488,17418,9517],[17418,9517,17380,9522],[17380,9522,17132,9518],[17132,9518,17086,9494],[17086,9494,17022,9440],[17022,9440,17019,9437],[17019,9437,16821,9258],[16821,9258,16808,9252],[16808,9252,16787,9243],[16787,9243,16629,9187],[16629,9187,16502,9095],[16502,9095,16483,9036],[16483,9036,16471,8973],[16471,8973,16451,8830],[16451,8830,16281,8227],[16281,8227,16267,8182],[16008,6942,16267,8182],[15933,6631,16008,6942],[15905,6591,15933,6631],[15757,6411,15905,6591],[15724,6369,15757,6411],[15724,6369,15281,5608,15313,5451,15551,5208,15531,5000,15111,4151,14918,4103],[14918,4103,14315,4152],[14315,4152,14078,4238,13918,4678],[13918,4678,13859,4818],[13859,4818,13627,5287,13053,5377],[13053,5377,12573,5411],[12573,5411,12449,5388],[12449,5388,11859,5192],[11859,5192,11402,5153],[11402,5153,11365,5162],[11365,5162,11321,5177],[11321,5177,10894,5197],[10894,5197,10791,5175],[10791,5175,10764,5170],[10764,5170,10467,5157],[10467,5157,10430,5189],[10430,5189,10087,5089],[10087,5089,10063,5083],[10063,5083,9226,4831],[9226,4831,9194,4821],[9194,4821,8442,4634],[8442,4634,8316,4562],[8316,4562,7902,4319],[7902,4319,7884,4311],[7884,4311,7805,4273],[7805,4273,7268,4217],[7268,4217,7261,4217],[7261,4217,6616,4230],[6616,4230,6593,4217],[5852,3789,6593,4217],[5282,3548,5540,3729,5852,3789],[5197,3431,5282,3548],[5183,3401,5197,3431],[5155,3239,5183,3401],[5177,3071,5155,3239],[5177,3071,5198,2962],[5198,2962,5202,2917],[5202,2917,5202,2772],[5202,2772,5200,2733],[5200,2733,5133,2406,4915,2133],[4915,2133,4868,2092],[4868,2092,4850,2076],[4850,2076,4560,1785],[4527,1750,4560,1785],[4500,1718,4527,1750],[4500,1718,4263,1477],[4263,1477,4243,1464],[4243,1464,4070,1384],[3910,1351,4070,1384],[3759,1338,3910,1351],[3657,1336,3759,1338],[3167,1414,3657,1336],[2979,1487,3167,1414],[2405,2090,2570,1772,2979,1487]]},{"n":"Gröna linjen 18 · Farsta strand–Hässelby strand","c":"green","l":"18","p":[[2975,1475,2583,1752,2392,2081],[3163,1407,2975,1475],[3654,1332,3163,1407],[3755,1334,3654,1332],[3910,1347,3755,1334],[4070,1380,3910,1347],[4070,1380,4245,1461],[4245,1461,4265,1475],[4265,1475,4510,1709],[4539,1736,4510,1709],[4573,1769,4539,1736],[4573,1769,4865,2059],[4865,2059,5121,2373,5209,2731],[5209,2731,5213,2772],[5213,2772,5209,2919],[5209,2919,5202,2969],[5202,2969,5180,3075],[5159,3238,5180,3075],[5188,3397,5159,3238],[5204,3426,5188,3397],[5293,3542,5204,3426],[5852,3780,5541,3723,5293,3542],[5852,3780,6596,4212],[6596,4212,6619,4222],[6619,4222,7261,4213],[7261,4213,7267,4213],[7267,4213,7447,4203],[7447,4203,7885,4308],[7885,4308,7903,4316],[7903,4316,8318,4559],[8318,4559,8444,4627],[8444,4627,9196,4815],[9196,4815,9229,4824],[9229,4824,10067,5078],[10067,5078,10092,5086],[10092,5086,10426,5188],[10426,5188,10464,5155],[10464,5155,10517,5120],[10517,5120,10579,5106],[10579,5106,10769,5144],[10769,5144,10796,5150],[10796,5150,10892,5173],[10892,5173,11318,5171],[11318,5171,11363,5157],[11363,5157,11400,5148],[11400,5148,11860,5187],[11860,5187,12065,5253],[12082,5258,12065,5253],[12451,5385,12082,5258],[12573,5407,12451,5385],[13053,5373,12573,5407],[13853,4816,13608,5269,13053,5373],[13908,4674,13853,4816],[14320,4136,14073,4228,13908,4674],[14919,4096,14320,4136],[15580,5110,15137,4170,14919,4096],[15580,5110,15578,5203],[15578,5203,15336,5443,15299,5630],[15299,5630,15745,6358],[15745,6358,15773,6405],[15773,6405,15917,6581],[15917,6581,15948,6622],[15948,6622,16029,6950],[16271,8182,16029,6950],[16285,8225,16271,8182],[16434,8694,16285,8225],[16446,8748,16434,8694],[16465,8838,16446,8748],[16505,8964,16465,8838],[16627,9182,16505,8964],[16790,9237,16627,9182],[16810,9245,16790,9237],[16810,9245,16871,9278],[16871,9278,17031,9413],[17031,9413,17037,9418],[17037,9418,17040,9421],[17040,9421,17119,9570,17078,10005],[17078,10005,17072,10118],[17072,10118,17073,10152],[17073,10152,17164,10655],[17164,10655,17317,11136],[17317,11136,17323,11247],[17323,11247,17221,11668],[17221,11668,17103,11773],[17103,11773,16941,11925],[16941,11925,16928,11938],[16928,11938,16750,12119],[16750,12119,16727,12144],[16727,12144,16550,12599,16582,13171],[16582,13171,16581,13350],[16581,13350,16581,13537],[16581,13537,16590,13592],[16590,13592,16717,13832],[16717,13832,16736,13853],[16736,13853,16973,14137,17073,14686],[17073,14686,17080,14753],[17080,14753,17152,15043],[17152,15043,17256,15239],[17256,15239,17354,15420],[17354,15420,17528,15948],[17528,15948,17587,16019],[17587,16019,17735,16180]]},{"n":"Gröna linjen 19 · Hagsätra–Hässelby strand","c":"green","l":"19","p":[[12607,13015,12649,13092],[12649,13092,12664,13120],[12664,13120,12683,13164],[12683,13164,12722,13287],[12722,13287,12830,13569,13069,13784],[13069,13784,13143,13809],[13143,13809,13460,13756],[13460,13756,13497,13732],[13497,13732,13615,13647],[13615,13647,13657,13612],[13657,13612,13918,13423],[13918,13423,13938,13413],[13938,13413,14011,13373],[14011,13373,14049,13351],[14049,13351,14298,13013],[14298,13013,14325,12958],[14325,12958,14522,12642],[14522,12642,14531,12629],[14531,12629,14694,12269],[14694,12269,14711,12210],[14711,12210,14755,12057],[14755,12057,14776,11986],[14776,11986,14929,11767],[14929,11767,14967,11749],[14967,11749,15223,11691],[15223,11691,15251,11682],[15251,11682,15755,11354],[15755,11354,15792,11292],[15792,11292,15898,10776],[15898,10776,15970,10652],[15970,10652,16041,10431,15862,9975,16007,9681],[16007,9681,16018,9672],[16018,9672,16039,9657],[16039,9657,16057,9645],[16057,9645,16320,9525],[16320,9525,16346,9502],[16346,9502,16481,9184],[16481,9184,16508,9122],[16508,9122,16484,8972],[16484,8972,16451,8830],[16451,8830,16281,8227],[16281,8227,16267,8182],[16008,6942,16267,8182],[15933,6631,16008,6942],[15905,6591,15933,6631],[15757,6411,15905,6591],[15724,6369,15757,6411],[15724,6369,15281,5608,15313,5451,15551,5208,15531,5000,15111,4151,14918,4103],[14918,4103,14315,4152],[14315,4152,14078,4238,13918,4678],[13918,4678,13859,4818],[13859,4818,13627,5287,13053,5377],[13053,5377,12573,5411],[12573,5411,12449,5388],[12449,5388,11859,5192],[11859,5192,11402,5153],[11402,5153,11365,5162],[11365,5162,11321,5177],[11321,5177,10894,5197],[10894,5197,10791,5175],[10791,5175,10764,5170],[10764,5170,10467,5157],[10467,5157,10430,5189],[10430,5189,10087,5089],[10087,5089,10063,5083],[10063,5083,9226,4831],[9226,4831,9194,4821],[9194,4821,8442,4634],[8442,4634,8316,4562],[8316,4562,7902,4319],[7902,4319,7884,4311],[7884,4311,7805,4273],[7805,4273,7268,4217],[7268,4217,7261,4217],[7261,4217,6616,4230],[6616,4230,6593,4217],[5852,3789,6593,4217],[5282,3548,5540,3729,5852,3789],[5197,3431,5282,3548],[5183,3401,5197,3431],[5155,3239,5183,3401],[5177,3071,5155,3239],[5177,3071,5198,2962],[5198,2962,5202,2917],[5202,2917,5202,2772],[5202,2772,5200,2733],[5200,2733,5133,2406,4915,2133],[4915,2133,4868,2092],[4868,2092,4850,2076],[4850,2076,4560,1785],[4527,1750,4560,1785],[4500,1718,4527,1750],[4500,1718,4263,1477],[4263,1477,4243,1464],[4243,1464,4070,1384],[3910,1351,4070,1384],[3759,1338,3910,1351],[3657,1336,3759,1338],[3167,1414,3657,1336],[2979,1487,3167,1414],[2405,2090,2570,1772,2979,1487]]},{"n":"Pendeltåg 40 · Uppsala C–Södertälje centrum","c":"pendel","l":"40","p":[[-7805,-52929,-8051,-53212],[-7805,-52929,-7783,-52906],[-7783,-52906,-7728,-52848],[-7728,-52848,-7618,-52723],[-7618,-52723,-7506,-52607],[-7506,-52607,-7103,-52195],[-7103,-52195,-6766,-51850],[-6766,-51850,-6717,-51801],[-6717,-51801,-4966,-50005],[-4966,-50005,-4942,-49981],[-4942,-49981,-4911,-49948],[-4911,-49948,-4079,-48959,-3301,-47636],[-3301,-47636,-3292,-47620],[-3292,-47620,-2651,-46541],[-2651,-46541,-2643,-46529],[-2643,-46529,-2259,-45819,-1585,-42126,-1240,-41032],[-1240,-41032,-937,-40247],[-419,-39060,-937,-40247],[-419,-39060,151,-37646],[151,-37646,1145,-34411,1714,-33581],[1714,-33581,2348,-32999,3071,-32708],[3071,-32708,3156,-32693],[3156,-32693,4100,-32606,4591,-32667],[4591,-32667,4679,-32681],[4679,-32681,5311,-32777],[5311,-32777,5320,-32778],[5320,-32778,6403,-32805],[6403,-32805,6414,-32804],[6414,-32804,7334,-32526],[7334,-32526,7411,-32478],[7411,-32478,7846,-31989,8049,-31346,7723,-29154],[7723,-29154,7722,-29147],[7722,-29147,7499,-27650],[7463,-27363,7499,-27650],[7463,-27363,7216,-26344,6184,-24395,6093,-23835,6200,-23091],[6200,-23091,6235,-22680],[6235,-22680,6141,-21677],[6141,-21677,6120,-21590],[6120,-21590,5929,-20663,5986,-19359],[5986,-19359,5986,-19221],[5986,-19221,6011,-18716],[6011,-18716,6340,-16616,6273,-15953],[6273,-15953,6074,-15264],[6074,-15264,5773,-14135,5812,-13491,6979,-10869],[6979,-10869,7536,-9441,7743,-7876,8402,-6542],[8402,-6542,9160,-5050],[9160,-5050,9186,-4990],[9186,-4990,9564,-3790],[9564,-3790,9896,-3063,11030,-1880,11339,-1002,11906,-159,12417,1328],[12417,1328,12501,1672],[12501,1672,12568,2194],[12911,3397,12568,2194],[12911,3397,13040,3698],[13040,3698,13323,3903,14308,3961],[14308,3961,14712,4185],[14712,4185,15044,4461,15192,4851],[15192,4851,15399,5860],[15399,5860,15804,6911,15767,7150,15568,7332],[15568,7332,14972,7542],[14972,7542,14518,7688],[14518,7688,14019,8365],[14019,8365,13628,8858],[13628,8858,13545,8919],[13545,8919,13407,9033],[13407,9033,13142,9397,13037,9853],[13029,9991,13037,9853],[13023,10088,13029,9991],[13023,10088,13021,10125],[13021,10125,13016,10270],[13016,10270,12873,10938,12076,11825],[12076,11825,11762,12299,11753,12803],[11753,12803,11789,12947],[11789,12947,11819,13472],[11819,13472,11689,14130,11170,15374],[11170,15374,10343,16383],[10343,16383,10295,16423],[10295,16423,10062,16632],[10062,16632,9195,17549],[9195,17549,8837,18034],[8837,18034,8823,18053],[8823,18053,8771,18121],[8771,18121,8347,18538,5951,19742],[5951,19742,5702,19950],[5702,19950,5523,20070],[5523,20070,5319,20122],[5319,20122,5293,20123],[5293,20123,4769,19974],[4769,19974,4734,19972],[4734,19972,4641,19979],[4641,19979,4056,20122,3133,20108],[3133,20108,1627,19990],[1627,19990,1176,20076,860,20264],[860,20264,-1058,20770],[-1058,20770,-1630,20890,-2246,20762,-3000,20928],[-3000,20928,-3191,20892],[-3191,20892,-3315,20868],[-3315,20868,-3363,20858],[-3363,20858,-3392,20853],[-3392,20853,-3441,20843],[-3441,20843,-3698,20805],[-3698,20805,-4097,20971],[-4097,20971,-4892,21665,-5839,21702,-6806,22036,-7081,21991,-7347,21808],[-7347,21808,-7766,21474,-8142,21541],[-8142,21541,-8205,21594],[-8205,21594,-8233,21632],[-8233,21632,-8274,21713],[-8274,21713,-8296,21771],[-8296,21771,-8320,21846],[-8320,21846,-8311,22024],[-8311,22024,-8286,22087],[-8286,22087,-8185,22277],[-8185,22277,-7951,22754],[-7951,22754,-7901,22863],[-7951,22754,-7901,22863],[-8185,22277,-7951,22754],[-8185,22277,-8226,22215],[-8295,22086,-8226,22215],[-8317,22027,-8295,22086],[-8359,21931,-8317,22027],[-8424,21851,-8359,21931],[-8593,21746,-8424,21851],[-8627,21731,-8593,21746],[-9050,21322,-8943,21560,-8627,21731],[-9050,21322,-9065,21267],[-9211,20932,-9065,21267]]},{"n":"Pendeltåg 41 · Märsta–Södertälje centrum","c":"pendel","l":"41","p":[[4022,-27157,4044,-27550],[4013,-27080,4022,-27157],[3995,-26994,4013,-27080],[3995,-26994,3986,-26920],[4028,-26090,3937,-26449,3986,-26920],[4028,-26090,4040,-26063],[4471,-25486,4040,-26063],[4471,-25486,4913,-24447,4962,-23296,5194,-22362,5572,-21543,5901,-20262,5986,-19221],[5986,-19221,6011,-18716],[6011,-18716,6340,-16616,6273,-15953],[6273,-15953,6074,-15264],[6074,-15264,5773,-14135,5812,-13491,6979,-10869],[6979,-10869,7536,-9441,7743,-7876,8402,-6542],[8402,-6542,9160,-5050],[9160,-5050,9186,-4990],[9186,-4990,9564,-3790],[9564,-3790,9896,-3063,11030,-1880,11339,-1002,11906,-159,12417,1328],[12417,1328,12501,1672],[12501,1672,12568,2194],[12911,3397,12568,2194],[12911,3397,13040,3698],[13040,3698,13323,3903,14308,3961],[14308,3961,14712,4185],[14712,4185,15044,4461,15192,4851],[15192,4851,15399,5860],[15399,5860,15804,6911,15767,7150,15568,7332],[15568,7332,14972,7542],[14972,7542,14518,7688],[14518,7688,14019,8365],[14019,8365,13628,8858],[13628,8858,13545,8919],[13545,8919,13407,9033],[13407,9033,13142,9397,13037,9853],[13029,9991,13037,9853],[13023,10088,13029,9991],[13023,10088,13021,10125],[13021,10125,13016,10270],[13016,10270,12873,10938,12076,11825],[12076,11825,11762,12299,11753,12803],[11753,12803,11789,12947],[11789,12947,11819,13472],[11819,13472,11689,14130,11170,15374],[11170,15374,10343,16383],[10343,16383,10295,16423],[10295,16423,10062,16632],[10062,16632,9195,17549],[9195,17549,8837,18034],[8837,18034,8823,18053],[8823,18053,8771,18121],[8771,18121,8347,18538,5951,19742],[5951,19742,5702,19950],[5702,19950,5523,20070],[5523,20070,5319,20122],[5319,20122,5293,20123],[5293,20123,4769,19974],[4769,19974,4734,19972],[4734,19972,4641,19979],[4641,19979,4056,20122,3133,20108],[3133,20108,1627,19990],[1627,19990,1176,20076,860,20264],[860,20264,-1058,20770],[-1058,20770,-1630,20890,-2246,20762,-3000,20928],[-3000,20928,-3191,20892],[-3191,20892,-3315,20868],[-3315,20868,-3363,20858],[-3363,20858,-3392,20853],[-3392,20853,-3441,20843],[-3441,20843,-3698,20805],[-3698,20805,-4097,20971],[-4097,20971,-4892,21665,-5839,21702,-6806,22036,-7081,21991,-7347,21808],[-7347,21808,-7766,21474,-8142,21541],[-8142,21541,-8205,21594],[-8205,21594,-8233,21632],[-8233,21632,-8274,21713],[-8274,21713,-8296,21771],[-8296,21771,-8320,21846],[-8320,21846,-8311,22024],[-8311,22024,-8286,22087],[-8286,22087,-8185,22277],[-8185,22277,-7951,22754],[-7951,22754,-7901,22863],[-7951,22754,-7901,22863],[-8185,22277,-7951,22754],[-8185,22277,-8226,22215],[-8295,22086,-8226,22215],[-8317,22027,-8295,22086],[-8359,21931,-8317,22027],[-8424,21851,-8359,21931],[-8593,21746,-8424,21851],[-8627,21731,-8593,21746],[-9050,21322,-8943,21560,-8627,21731],[-9050,21322,-9065,21267],[-9211,20932,-9065,21267]]},{"n":"Pendeltåg 43 · Bålsta–Nynäshamn","c":"pendel","l":"43","p":[[-14236,-20600,-14521,-20963],[-14197,-20546,-14236,-20600],[-14157,-20494,-14197,-20546],[-14157,-20494,-13848,-20055],[-13848,-20055,-13810,-20005],[-13810,-20005,-12961,-19035],[-12961,-19035,-12792,-18664],[-12792,-18664,-12468,-17544,-11750,-16428,-11309,-16082,-9001,-14785],[-9001,-14785,-8784,-14662],[-8784,-14662,-7132,-13633,-5659,-11783,-5231,-11375,-4599,-11062,-2978,-10706],[-2978,-10706,-2904,-10693],[-2904,-10693,-2306,-10794],[-2306,-10794,-2209,-10850],[-1951,-11015,-2209,-10850],[-1924,-11027,-1951,-11015],[-1675,-11097,-1924,-11027],[-1675,-11097,-1601,-11114],[-1601,-11114,-1529,-11126],[-1529,-11126,-999,-11069],[-999,-11069,-536,-10872],[-536,-10872,-383,-10807],[-383,-10807,-340,-10789],[-340,-10789,-148,-10707],[-148,-10707,-26,-10649],[-26,-10649,7,-10631],[7,-10631,283,-10413],[283,-10413,523,-10052],[523,-10052,586,-9888],[586,-9888,631,-9711],[631,-9711,635,-9282],[635,-9282,628,-8724],[628,-8724,768,-8345],[768,-8345,1034,-8009],[1034,-8009,1365,-7671],[1365,-7671,1401,-7629],[1401,-7629,1432,-7588],[1432,-7588,1574,-7348],[1574,-7348,1646,-7137],[1646,-7137,2361,-5199],[2361,-5199,2385,-5128],[2385,-5128,2441,-4638],[2441,-4638,2400,-4234],[2400,-4234,2402,-4213],[2402,-4213,2514,-3905,2796,-3685],[2796,-3685,2908,-3632],[2908,-3632,3547,-3306,4664,-2469,5521,-1209],[5521,-1209,5847,-708],[5847,-708,6385,-178],[6385,-178,7263,612,7972,984],[7972,984,9247,1600],[9247,1600,9625,1715,10153,2040],[10153,2040,10802,2506],[10802,2506,10936,2622],[10936,2622,11186,2751,11940,2810],[11940,2810,12096,2818],[12096,2818,12608,2831],[12608,2831,12794,3024],[12794,3024,12860,3188],[12860,3188,12911,3397],[12911,3397,13040,3698],[13040,3698,13323,3903,14308,3961],[14308,3961,14712,4185],[14712,4185,15044,4461,15192,4851],[15192,4851,15399,5860],[15399,5860,15804,6911,15767,7150,15568,7332],[15568,7332,14972,7542],[14972,7542,14518,7688],[14518,7688,14019,8365],[14019,8365,13628,8858],[13628,8858,13545,8919],[13545,8919,13407,9033],[13407,9033,13142,9397,13037,9853],[13029,9991,13037,9853],[13023,10088,13029,9991],[13023,10088,13021,10125],[13021,10125,12978,10637],[12978,10637,12943,10846],[12943,10846,12627,11242],[12627,11242,12440,11405],[12440,11405,12279,11735,12498,12014],[12498,12014,12617,12094],[12617,12094,13913,13404,15364,14361,15884,15034,16735,15475],[16735,15475,16746,15483],[16746,15483,16917,15591],[16917,15591,16925,15596],[16925,15596,17294,15829],[17294,15829,17443,15911],[17443,15911,17494,15929],[17494,15929,18340,15982,18769,16377],[18769,16377,18782,16394],[18782,16394,19180,16854,20437,17620,20729,18160],[20729,18160,20739,18182],[20739,18182,20887,18752],[20887,18752,20905,18966],[20905,18966,20791,19485,19971,20103,19791,20915],[19791,20915,19599,21614],[19599,21614,19589,21674],[19589,21674,19700,23105,19325,24568,19159,26188,18818,27417,18528,27956],[18528,27956,18360,28169,17197,29031,14711,30766],[14711,30766,14182,31049],[14182,31049,13884,31341],[13884,31341,13297,32368],[13297,32368,12989,32689],[12989,32689,11930,33357],[11930,33357,11604,33671],[11604,33671,10918,34348],[10918,34348,10839,34419],[10839,34419,10522,34712],[10522,34712,10243,34942],[7944,38605,8782,37306,9719,35484,10243,34942],[7637,39530,7944,38605],[7119,42398,7601,40328,7637,39530],[6885,42815,7119,42398],[6872,42830,6885,42815],[6431,43691,6524,43293,6872,42830],[6305,44432,6431,43691],[6199,44758,6305,44432],[6196,44786,6199,44758],[6192,44821,6196,44786],[6527,48200,6072,47735,5773,46762,6192,44821],[6772,48491,6527,48200],[8573,51422,6772,48491],[8573,51422,8652,51821,8599,52328],[8127,53014,8418,52707,8599,52328],[8072,53658,8000,53264,8127,53014],[8082,53681,8072,53658],[8675,53693,8342,53858,8082,53681],[8959,53486,8675,53693],[9139,53305,8959,53486]]},{"n":"Pendeltåg 48 · Södertälje centrum–Gnesta","c":"pendel","l":"48","p":[[-26925,36922,-27125,36900],[-26925,36922,-26823,36938],[-26550,37050,-26823,36938],[-26514,37066,-26550,37050],[-26488,37078,-26514,37066],[-26482,37081,-26488,37078],[-26482,37081,-26080,37217,-25635,37166],[-25635,37166,-25613,37158],[-25613,37158,-24912,36738,-24463,36666,-23998,36826,-23211,37516,-22830,37582,-22291,37498],[-22291,37498,-22278,37494],[-22278,37494,-22022,37403],[-22022,37403,-22000,37395],[-22000,37395,-21792,37312],[-21792,37312,-21777,37306],[-21777,37306,-21182,37064],[-21182,37064,-20383,36756,-19694,36689,-18409,36348],[-18409,36348,-18384,36347],[-18384,36347,-17401,36217],[-17401,36217,-15826,35590,-14575,34962,-14252,34527,-14011,33652,-13641,33151],[-13641,33151,-13548,33036],[-13548,33036,-13534,33019],[-13534,33019,-13059,32426],[-13059,32426,-12846,32155],[-12846,32155,-12795,32097],[-12795,32097,-12552,31829],[-12552,31829,-12202,31601],[-12202,31601,-12184,31591],[-12184,31591,-11642,31167,-11219,30221,-10773,29661],[-10773,29661,-10520,29378],[-10520,29378,-9957,28709,-9733,28113,-9208,27597,-8991,27200],[-8991,27200,-8942,27075],[-8942,27075,-8502,25912,-8512,24648,-8398,24342],[-8398,24342,-8382,24321],[-8382,24321,-8366,24299],[-8366,24299,-8236,24152],[-8236,24152,-8113,24010],[-8113,24010,-8075,23967],[-8075,23967,-7983,23862],[-7983,23862,-7927,23799],[-7927,23799,-7742,23371,-7905,22865],[-7905,22865,-7951,22775],[-8157,22353,-7951,22775],[-8157,22353,-8178,22306],[-8226,22215,-8178,22306],[-8295,22086,-8226,22215],[-8317,22027,-8295,22086],[-8359,21931,-8317,22027],[-8424,21851,-8359,21931],[-8593,21746,-8424,21851],[-8627,21731,-8593,21746],[-9050,21322,-8943,21560,-8627,21731],[-9050,21322,-9065,21267],[-9082,21220,-9065,21267],[-9082,21220,-9100,21179],[-9224,20940,-9100,21179]]},{"n":"Spårväg City 7 · T-Centralen–Waldemarsudde","c":"city","l":"7","p":[[15403,5346,15582,5297],[15582,5297,15624,5297],[15624,5297,15781,5275],[15781,5275,16188,5238],[16188,5238,16218,5249],[16218,5249,16534,5410,17217,5413],[17233,5469,17217,5413],[17233,5469,17458,6174,18215,6385],[18238,6387,18238,6387]]},{"n":"Nockebybanan 12 · Alvik–Nockeby","c":"nockeby","l":"12","p":[[10849,5178,10801,5167],[10801,5167,10766,5160],[10766,5160,10631,5128],[10631,5128,10532,5142],[10532,5142,10498,5161],[10498,5161,10448,5209],[10448,5209,10496,5561,10387,6417,9922,6591,9419,6296,9136,6621,8636,6357],[8636,6357,8607,6358],[8607,6358,8448,6242,8245,5800,7626,5606,7340,5670],[7340,5670,7282,5709]]},{"n":"Lidingöbanan 21 · Ropsten–Gåshaga brygga","c":"orange","l":"21","p":[[17795,2438,17834,2413],[17834,2413,17853,2366],[17853,2366,17864,2342],[17864,2342,18335,1900,18476,1921],[18599,2153,18476,1921],[19201,2515,18837,2458,18624,2296,18599,2153],[19201,2515,19568,2615,19869,3087,20913,3840],[20913,3840,21427,4051],[21427,4051,21695,4071,22021,3955,22241,4006],[22477,4113,22241,4006],[22477,4113,22486,4115],[22486,4115,22820,4045],[22820,4045,22981,3891],[22981,3891,23377,3537],[23377,3537,23543,3499],[23543,3499,23788,3354],[23788,3354,23794,3348],[23794,3348,24154,3149],[24154,3149,24178,3123],[24178,3123,24613,2648,25029,2561],[25029,2561,25061,2564],[25061,2564,25167,2572]]},{"n":"Tvärbanan 30 · Sickla–Solna station","c":"orange","l":"30","p":[[18736,8135,18793,8159],[18725,8130,18736,8135],[18662,8107,18725,8130],[18662,8107,18469,8119],[18469,8119,18376,8253,18121,8216],[18121,8216,18035,8201],[18035,8201,18013,8206],[18013,8206,18006,8212],[18006,8212,17891,8433],[17891,8433,17847,8498],[17847,8498,17719,8652],[17719,8652,17293,8432,16939,8586],[16939,8586,16839,8634],[16839,8634,16699,8701],[16448,8720,16699,8701],[16389,8790,16448,8720],[16398,8837,16389,8790],[16427,8873,16398,8837],[16455,8974,16427,8873],[16473,9043,16455,8974],[16368,9459,16473,9043],[16275,9535,16368,9459],[16275,9535,16047,9627],[16047,9627,16019,9629],[16019,9629,15770,9572,15378,9674],[15378,9674,15288,9673],[15288,9673,15165,9654],[15165,9654,15148,9650],[15148,9650,15131,9645],[15131,9645,15095,9636],[15095,9636,14929,9571],[14929,9571,14902,9559],[14902,9559,14290,9312,14054,9305,13519,8895],[13519,8895,13411,8752],[13366,8276,13411,8752],[13366,8276,13322,8074,13457,7809,13275,7674,13292,7513,12664,7110,12143,7191],[12143,7191,11904,7013],[11904,7013,11683,6599],[11683,6599,11703,6366,11612,6209],[11612,6209,11561,6163],[11561,6163,11532,6151],[11532,6151,10958,5812],[10901,5680,10958,5812],[10901,5680,10860,5575],[10860,5575,10847,5541],[10847,5541,10755,5329],[10755,5329,10795,5123],[10795,5123,10801,4825,10478,4450],[10478,4450,10362,4326],[10362,4326,10225,4180],[10225,4180,10171,4122],[10171,4122,10161,4110],[10161,4110,9912,3716],[9912,3716,9896,3693],[9896,3693,9670,3056],[9670,3056,9756,2508,9682,2259],[9682,2259,9717,2203],[9717,2203,9863,2119],[9863,2119,10020,2062,10244,2153],[10244,2153,10375,2254],[10375,2254,10402,2244],[10402,2244,10562,2116],[10562,2116,10626,2131],[10626,2131,10939,2473,11760,2050],[11760,2050,11860,2028],[11860,2028,12144,2034],[12144,2034,12259,1947],[12259,1947,12327,1867],[12327,1867,12357,1832],[12357,1832,12389,1796]]},{"n":"Tvärbanan 31 · Alviks strand–Bromma flygplats","c":"orange","l":"31","p":[[8887,2557,8964,2662],[8964,2662,9247,2800],[9247,2800,9630,3001],[9630,3001,9665,3057],[9665,3057,9892,3696],[9892,3696,9907,3718],[9907,3718,10131,4089],[10131,4089,10157,4116],[10157,4116,10167,4127],[10167,4127,10222,4182],[10222,4182,10360,4329],[10360,4329,10475,4452],[10475,4452,10794,4823,10790,5118],[10790,5118,10751,5329],[10751,5329,10843,5543],[10843,5543,10862,5598],[10862,5598,10880,5636],[10880,5636,10897,5682]]},{"n":"Roslagsbanan 27 · Stockholms östra–Kårsta","c":"roslag","l":"27","p":[[15878,3698,15923,3740],[15609,3301,15878,3698],[15325,2910,15609,3301],[15296,2749,15325,2910],[15300,2722,15296,2749],[15300,2722,15312,2652],[15312,2652,15314,2641],[15314,2641,15279,2465],[15279,2465,15106,2168],[15106,2168,15083,2124],[15083,2124,14707,1508,14699,1097],[14699,1097,14704,1080],[14704,1080,14716,812,14552,538],[14552,538,14542,517],[14542,517,14535,503],[14535,503,14469,370],[14469,370,14462,356],[14462,356,14413,244],[14413,244,14352,39],[14352,39,14333,-25],[14333,-25,14312,-130],[14312,-130,14308,-189],[14308,-189,14339,-410],[14339,-410,14376,-504],[14376,-504,14395,-567],[14395,-567,14406,-627],[14406,-627,14616,-1407],[14616,-1407,14636,-1435],[14636,-1435,14981,-1690],[14981,-1690,15084,-1750],[15084,-1750,15242,-2092],[15242,-2092,15251,-2189],[15251,-2189,15254,-2223],[15254,-2223,15257,-2248],[15257,-2248,15332,-2817],[15332,-2817,15345,-2859],[15345,-2859,15349,-2876],[15349,-2876,15334,-3046],[15334,-3046,15138,-3782,14737,-4382,14809,-5120],[14809,-5120,14809,-5130],[14809,-5130,14811,-5623,14973,-5926],[14973,-5926,15045,-6006],[15045,-6006,15061,-6023],[15061,-6023,15178,-6187],[15178,-6187,15217,-6249],[15258,-6328,15217,-6249],[15305,-6444,15258,-6328],[15305,-6444,15469,-6981],[15469,-6981,15495,-7121],[15495,-7121,15522,-8155,15424,-8568,15481,-9520],[15481,-9520,15470,-9557],[15470,-9557,15182,-9998],[15182,-9998,15104,-10660],[15104,-10660,15111,-10743],[15111,-10743,15421,-12046],[15421,-12046,15543,-12374],[15543,-12374,15744,-12728],[15744,-12728,16329,-13848],[16329,-13848,16326,-14007],[16326,-14007,16207,-14344],[16207,-14344,16195,-14760],[16195,-14760,16195,-14783],[16195,-14783,16173,-15258],[16173,-15258,16163,-15292],[16163,-15292,15956,-16075],[15956,-16075,16267,-16621],[16267,-16621,16373,-16948],[16373,-16948,16499,-17343],[16499,-17343,16514,-17434],[16514,-17434,16511,-17564],[16511,-17564,16432,-18269],[16432,-18269,16457,-18711],[16457,-18711,16517,-18938],[16517,-18938,16780,-19909],[16780,-19909,16784,-19918],[16784,-19918,17463,-20891,17568,-21487],[17568,-21487,17641,-21815,18064,-22585],[18064,-22585,18123,-22892],[18123,-22892,18192,-23167],[18192,-23167,18415,-23640],[18415,-23640,18420,-23654],[18420,-23654,18510,-23787],[18510,-23787,19165,-24420,20015,-24974],[20015,-24974,20124,-25092],[20124,-25092,20308,-25349],[20308,-25349,21048,-26043],[21048,-26043,21127,-26133],[21127,-26133,21448,-26796],[21448,-26796,21524,-27032],[21524,-27032,21541,-27085],[21541,-27085,21633,-27368],[21633,-27368,21635,-27377],[21635,-27377,21650,-27423],[21650,-27423,21664,-27459],[21664,-27459,21816,-27702],[21816,-27702,23505,-28947],[23505,-28947,23815,-28987],[23815,-28987,24043,-28920],[24043,-28920,24053,-28917],[24053,-28917,24832,-28823],[24832,-28823,24876,-28822],[24876,-28822,24892,-28823],[24892,-28823,25051,-28890],[25051,-28890,25529,-29499],[25529,-29499,25593,-29582],[25593,-29582,26132,-30253,26732,-30491],[26732,-30491,26998,-30733],[26998,-30733,27077,-30810]]},{"n":"Roslagsbanan 28 · Stockholms östra–Österskär","c":"roslag","l":"28","p":[[15609,3301,15878,3698],[15325,2910,15609,3301],[15296,2749,15325,2910],[15300,2722,15296,2749],[15300,2722,15312,2652],[15312,2652,15314,2641],[15314,2641,15279,2465],[15279,2465,15106,2168],[15106,2168,15083,2124],[15083,2124,14707,1508,14699,1097],[14699,1097,14704,1080],[14704,1080,14716,812,14552,538],[14552,538,14542,517],[14542,517,14535,503],[14535,503,14469,370],[14469,370,14462,356],[14462,356,14413,244],[14413,244,14352,39],[14352,39,14333,-25],[14333,-25,14312,-130],[14312,-130,14308,-189],[14308,-189,14339,-410],[14339,-410,14376,-504],[14376,-504,14395,-567],[14395,-567,14406,-627],[14406,-627,14616,-1407],[14616,-1407,14636,-1435],[14636,-1435,14981,-1690],[14981,-1690,15084,-1750],[15084,-1750,15242,-2092],[15242,-2092,15251,-2189],[15251,-2189,15254,-2223],[15254,-2223,15257,-2248],[15257,-2248,15332,-2817],[15332,-2817,15345,-2859],[15345,-2859,15349,-2876],[15349,-2876,15334,-3046],[15334,-3046,15138,-3782,14737,-4382,14809,-5120],[14809,-5120,14809,-5130],[14809,-5130,14811,-5623,14973,-5926],[14973,-5926,15045,-6006],[15045,-6006,15061,-6023],[15257,-6303,15061,-6023],[15264,-6319,15257,-6303],[15332,-6423,15264,-6319],[15332,-6423,15718,-6780],[15718,-6780,15732,-6792],[15732,-6792,15867,-6916],[15867,-6916,16073,-7106],[16073,-7106,16082,-7115],[16082,-7115,16589,-7409,16934,-7487],[16934,-7487,17176,-7531],[17176,-7531,17221,-7539],[17221,-7539,17682,-7632,17990,-7903],[17990,-7903,18130,-8064],[18130,-8064,18348,-8121],[18348,-8121,18353,-8120],[18353,-8120,18727,-7990],[18727,-7990,19055,-7868],[19055,-7868,19098,-7843],[19098,-7843,19111,-7836],[19111,-7836,19365,-7784,19529,-7941],[19529,-7941,20083,-8999,20551,-9268],[20551,-9268,20807,-9368],[20807,-9368,20835,-9382],[20835,-9382,21059,-9497],[21059,-9497,21502,-9827,22058,-9630],[22058,-9630,22194,-9561],[22194,-9561,22566,-9507,22894,-9613],[22894,-9613,23739,-9956,24727,-9977,25371,-10495],[25371,-10495,25909,-10724],[25909,-10724,25947,-10731],[25947,-10731,26402,-10821],[26402,-10821,26870,-11179],[26870,-11179,27093,-11233],[27093,-11233,27478,-11173],[27478,-11173,27501,-11172],[27501,-11172,27967,-11152],[27967,-11152,28031,-11149],[28031,-11149,28475,-11113],[28475,-11113,28523,-11103],[28565,-11095,28523,-11103],[28565,-11095,28678,-11072],[28678,-11072,29018,-10955],[29018,-10955,29375,-10482,29315,-9680],[29315,-9680,29294,-9551],[29294,-9551,29467,-9176],[29467,-9176,29545,-9041]]},{"n":"Roslagsbanan 29 · Stockholms östra–Näsbypark","c":"roslag","l":"29","p":[[15609,3301,15878,3698],[15325,2910,15609,3301],[15296,2749,15325,2910],[15300,2722,15296,2749],[15300,2722,15312,2652],[15312,2652,15314,2641],[15314,2641,15279,2465],[15279,2465,15106,2168],[15106,2168,15083,2124],[15083,2124,14707,1508,14699,1097],[14699,1097,14704,1080],[14704,1080,14716,812,14552,538],[14552,538,14542,517],[14542,517,14535,503],[14535,503,14469,370],[14469,370,14462,356],[14462,356,14413,244],[14413,244,14352,39],[14352,39,14333,-25],[14333,-25,14312,-130],[14312,-130,14308,-189],[14308,-189,14339,-410],[14339,-410,14376,-504],[14376,-504,14395,-567],[14395,-567,14406,-627],[14406,-627,14616,-1407],[14616,-1407,14636,-1435],[14636,-1435,14981,-1690],[14981,-1690,15084,-1750],[15084,-1750,15211,-1937],[15213,-1945,15211,-1937],[15213,-1945,15296,-2054],[15296,-2054,15376,-2081],[15376,-2081,15422,-2083],[15422,-2083,15758,-2216],[15758,-2216,16060,-2576,16103,-2848],[16103,-2848,16100,-2879],[16100,-2879,16044,-3327],[16044,-3327,16035,-3508],[16035,-3508,16031,-3530],[16031,-3530,15970,-3668],[15970,-3668,15755,-3915,15761,-4238],[15761,-4238,16082,-4851],[16082,-4851,16307,-5150],[16322,-5162,16307,-5150],[16322,-5162,16997,-5318,17217,-5467],[17217,-5467,17320,-5588]]},{"n":"Saltsjöbanan 25 · Henriksdal–Saltsjöbaden","c":"saltsjo","l":"25","p":[[18009,7494,18109,7633],[18109,7633,18116,7643],[18116,7643,18325,7909],[18325,7909,18368,7943],[18368,7943,18491,8006],[18491,8006,18717,8107],[18717,8107,18738,8118],[18738,8118,18785,8147],[18785,8147,19152,8189],[19152,8189,20332,8139],[20332,8139,20545,8137],[20545,8137,21344,8404,21805,8290],[21805,8290,22046,8294,22637,8697,23320,8882],[23320,8882,24744,9583],[24744,9583,24761,9596],[24761,9596,25048,9641,25534,9329,25950,9359,26249,9572],[26249,9572,26635,9510],[26635,9510,26950,9471,27435,9937],[27435,9937,27692,10169],[27692,10169,28349,10161],[28349,10161,28580,10275],[28580,10275,28652,10397],[28652,10397,28666,10423],[28666,10423,29472,11222],[29472,11222,29614,11239]]},{"n":"Saltsjöbanan 26 · Igelboda–Solsidan","c":"saltsjo","l":"26","p":[[27586,10090,27517,10024],[27586,10090,27668,10300],[27668,10300,27669,10314],[27669,10314,27660,10448],[27660,10448,27657,10489],[27657,10489,27618,10715],[27618,10715,27613,10730],[27613,10730,27589,10928,27698,11104],[27905,11243,27698,11104],[27905,11243,28054,11445,28015,11742],[28015,11742,28041,11860],[28041,11860,28465,12134,28697,12144]]}],"stops":[["Abrahamsberg","17/18/19","Stockholm","Tunnelbana",9285,4846],["AGA","21","Lidingö","Tram",20781,3752],["Akalla","11","Stockholm","Tunnelbana",6987,-3961],["Alby","13","Botkyrka","Tunnelbana",3108,15662],["Alléparken","12","Stockholm","Tram",10459,5645],["Altorp","29","Danderyd","Roslagsbanan",16037,-3432],["Alvik","17/18/19/12/30/31","Stockholm","Tunnelbana",10902,5187],["Alviks strand","30/31","Stockholm","Tram",10899,5681],["Arlanda central","40","Sigtuna","Pendeltåg",7858,-29993],["Arninge","28","Täby","Roslagsbanan",19923,-8770],["Aspudden","13","Stockholm","Tunnelbana",12043,8174],["Axelsberg","13","Stockholm","Tunnelbana",10456,8424],["Bagarmossen","17","Stockholm","Tunnelbana",19354,11557],["Baggeby","21","Lidingö","Tram",19427,2554],["Bandhagen","19","Stockholm","Tunnelbana",14719,12211],["Barkarby","43","Järfälla","Pendeltåg",4276,-2759],["Bergshamra","14","Solna","Tunnelbana",14028,-78],["Björkhagen","17","Stockholm","Tunnelbana",18455,9885],["Blackeberg","17/18/19","Stockholm","Tunnelbana",5256,3510],["Blåsut","18","Stockholm","Tunnelbana",17076,9963],["Bodal","21","Lidingö","Tram",19741,2899],["Bredäng","13","Stockholm","Tunnelbana",8133,9486],["Brevik","21","Lidingö","Tram",23452,3516],["Bro","43","Upplands-Bro","Pendeltåg",-8908,-14733],["Bromma Blocks","31","Stockholm","Tram",9462,2914],["Bromma flygplats","31","Stockholm","Tram",8884,2553],["Brommaplan","17/18/19","Stockholm","Tunnelbana",8488,4644],["Bråvallavägen","28","Danderyd","Roslagsbanan",15332,-2817],["Bällsta","27","Vallentuna","Roslagsbanan",15987,-15917],["Bällsta bro","30","Sundbyberg","Tram",9825,2143],["Bålsta","43","Håbo","Pendeltåg",-14440,-20870],["Danderyds sjukhus","14","Danderyd","Tunnelbana",14286,-1219],["Djurgårdsbron","7","Stockholm","Tram",17160,5373],["Djurgårdsskolan","7","Stockholm","Tram",17838,6318],["Djursholms Ekeby","28","Danderyd","Roslagsbanan",15161,-3708],["Djursholms Ösby","27/28/29","Danderyd","Roslagsbanan",15258,-2075],["Duvbo","10","Sundbyberg","Tunnelbana",9883,1385],["Ekskogen","27","Vallentuna","Roslagsbanan",24737,-28833],["Enebyberg","28","Danderyd","Roslagsbanan",14811,-5100],["Enskede gård","19","Stockholm","Tunnelbana",15888,10098],["Ensta","27","Täby","Roslagsbanan",15515,-8031],["Erstaviksbadet","26","Nacka","Saltsjöbanan",28080,11924],["Farsta","18","Stockholm","Tunnelbana",17233,15212],["Farsta strand","18/43","Stockholm","Tunnelbana",17694,16136],["Fisksätra","25","Nacka","Saltsjöbanan",26429,9552],["Fittja","13","Botkyrka","Tunnelbana",4009,14765],["Flemingsberg","40/41","Huddinge","Pendeltåg",8898,17954],["Fridhemsplan","10/11/17/18/19","Stockholm","Tunnelbana",13668,5238],["Fruängen","14","Stockholm","Tunnelbana",9915,10412],["Frösunda","27","Vallentuna","Roslagsbanan",21596,-27259],["Galoppfältet","28","Täby","Roslagsbanan",16728,-7451],["Gamla stan","13/14/17/18/19","Stockholm","Tunnelbana",15706,6311],["Globen","19/30","Stockholm","Tunnelbana",16261,9567],["Gnesta","48","Gnesta","Pendeltåg",-27074,36906],["Gröndal","30","Stockholm","Tram",12548,7131],["Gröndalsviken","43","Nynäshamn","Pendeltåg",8038,53528],["Gubbängen","18","Stockholm","Tunnelbana",16561,12955],["Gullmarsplan","17/18/19/30","Stockholm","Tunnelbana",16479,8958],["Gärdet","13","Stockholm","Tunnelbana",17513,3799],["Gåshaga","21","Lidingö","Tram",24736,2605],["Gåshaga brygga","21","Lidingö","Tram",25167,2572],["Hagsätra","19","Stockholm","Tunnelbana",12631,13075],["Hallonbergen","10","Sundbyberg","Tunnelbana",10156,617],["Hallunda","13","Botkyrka","Tunnelbana",1990,15220],["Hammarbyhöjden","17","Stockholm","Tunnelbana",17822,9484],["Handen","43","Haninge","Pendeltåg",19508,23775],["Helenelund","40/41","Sollentuna","Pendeltåg",9802,-3198],["Hemfosa","43","Haninge","Pendeltåg",10517,34707],["Henriksdal","25","Nacka","Saltsjöbanan",18055,7554],["Hjulsta","10","Stockholm","Tunnelbana",5569,-1848],["Hornstull","13/14","Stockholm","Tunnelbana",13988,7078],["Huddinge","40/41","Huddinge","Pendeltåg",10680,16041],["Husby","11","Stockholm","Tunnelbana",7862,-3138],["Huvudsta","10","Solna","Tunnelbana",11174,3378],["Hägernäs","28","Täby","Roslagsbanan",18997,-7897],["Hägerstensåsen","14","Stockholm","Tunnelbana",10655,9462],["Häggvik","40/41","Sollentuna","Pendeltåg",8108,-7104],["Hässelby gård","17/18/19","Stockholm","Tunnelbana",3057,1451],["Hässelby strand","17/18/19","Stockholm","Tunnelbana",2408,2063],["Högberga","21","Lidingö","Tram",22891,3976],["Högdalen","19","Stockholm","Tunnelbana",14348,12939],["Höglandstorget","12","Stockholm","Tram",8527,6322],["Hökarängen","18","Stockholm","Tunnelbana",16604,13657],["Hötorget","17/18/19","Stockholm","Tunnelbana",15494,4917],["Igelboda","25/26","Nacka","Saltsjöbanan",27542,10043],["Islandstorget","17/18/19","Stockholm","Tunnelbana",5882,3792],["Jakobsberg","43","Järfälla","Pendeltåg",2440,-4849],["Johannelund","17/18/19","Stockholm","Tunnelbana",3847,1342],["Johannesfred","30/31","Stockholm","Tram",10190,4146],["Jordbro","43","Haninge","Pendeltåg",19084,26468],["Järna","48","Södertälje","Pendeltåg",-12581,31855],["Kallhäll","43","Järfälla","Pendeltåg",964,-8068],["Karlaplan","13","Stockholm","Tunnelbana",17140,4480],["Karlsbodavägen","30","Stockholm","Tram",9714,2680],["Kista","11","Stockholm","Tunnelbana",8642,-2574],["Klövervägen","12","Stockholm","Tram",10418,6095],["Knivsta","40","Knivsta","Pendeltåg",-177,-38490],["Kottla","21","Lidingö","Tram",22101,3958],["Kragstalund","27","Vallentuna","Roslagsbanan",16199,-14493],["Krigslida","43","Haninge","Pendeltåg",15605,30191],["Kristineberg","17/18/19","Stockholm","Tunnelbana",12140,5281],["Kungsträdgården","10/11/7","Stockholm","Tunnelbana",15936,5473],["Kungsängen","43","Upplands-Bro","Pendeltåg",-2163,-10882],["Käppala","21","Lidingö","Tram",24252,3045],["Kärrtorp","17","Stockholm","Tunnelbana",18407,10669],["Kårsta","27","Vallentuna","Roslagsbanan",27077,-30810],["Lahäll","29","Täby","Roslagsbanan",16105,-4899],["Larsberg","21","Lidingö","Tram",20217,3302],["Liljeholmen","13/14/30","Stockholm","Tunnelbana",13219,7710],["Liljevalchs/Gröna Lund","7","Stockholm","Tram",17409,6092],["Lillängen","25","Nacka","Saltsjöbanan",21075,8338],["Linde","30","Stockholm","Tram",15543,9643],["Lindholmen","27","Vallentuna","Roslagsbanan",18101,-22741],["Luma","30","Stockholm","Tram",17342,8439],["Mariatorget","13/14","Stockholm","Tunnelbana",15336,7000],["Masmo","13","Huddinge","Tunnelbana",5209,14487],["Medborgarplatsen","17/18/19","Stockholm","Tunnelbana",16058,7216],["Midsommarkransen","14","Stockholm","Tunnelbana",12531,8726],["Molnby","27","Vallentuna","Roslagsbanan",16742,-19791],["Mälarhöjden","13","Stockholm","Tunnelbana",9397,8850],["Märsta","41","Sigtuna","Pendeltåg",4043,-27454],["Mårtensdal","30","Stockholm","Tram",16898,8605],["Mölnbo","48","Södertälje","Pendeltåg",-21034,37004],["Mörby","27/28/29","Danderyd","Roslagsbanan",14583,-1349],["Mörby centrum","14","Danderyd","Tunnelbana",13971,-2069],["Nacka","25","Nacka","Saltsjöbanan",19302,8173],["Neglinge","25","Nacka","Saltsjöbanan",28504,10198],["Nockeby","12","Stockholm","Tram",7282,5709],["Nockeby torg","12","Stockholm","Tram",7867,5679],["Nordiska museet/Vasamuseet","7","Stockholm","Tram",17316,5643],["Norra Ulvsunda","30/31","Stockholm","Tram",9761,3307],["Norrviken","40/41","Sollentuna","Pendeltåg",7620,-8807],["Norsborg","13","Botkyrka","Tunnelbana",1289,15150],["Nybroplan","7","Stockholm","Tram",16250,5266],["Nynäsgård","43","Nynäshamn","Pendeltåg",8650,51885],["Nynäshamn","43","Nynäshamn","Pendeltåg",9114,53332],["Näckrosen","11","Solna","Tunnelbana",10875,1383],["Näsby allé","29","Täby","Roslagsbanan",16739,-5271],["Näsbypark","29","Täby","Roslagsbanan",17320,-5588],["Odenplan","17/18/19/40/41/43","Stockholm","Tunnelbana",14625,4120],["Olovslund","12","Stockholm","Tram",8245,5800],["Ormsta","27","Vallentuna","Roslagsbanan",16413,-18485],["Ringvägen","25","Nacka","Saltsjöbanan",29045,10788],["Rinkeby","10","Stockholm","Tunnelbana",7846,-919],["Rissne","10","Sundbyberg","Tunnelbana",8546,492],["Ropsten","13/21","Stockholm","Tunnelbana",17713,2521],["Rosersberg","41","Sigtuna","Pendeltåg",5109,-22685],["Roslags Näsby","27/28","Täby","Roslagsbanan",15197,-6208],["Rotebro","40/41","Sollentuna","Pendeltåg",7075,-10670],["Rydbo","28","Österåker","Roslagsbanan",22432,-9507],["Råcksta","17/18/19","Stockholm","Tunnelbana",5208,2793],["Rådhuset","10/11","Stockholm","Tunnelbana",14416,5549],["Rådmansgatan","17/18/19","Stockholm","Tunnelbana",15256,4422],["Rågsved","19","Stockholm","Tunnelbana",13520,13727],["Rönninge","40/41","Salem","Pendeltåg",-2229,20762],["Saltsjö-Duvnäs","25","Nacka","Saltsjöbanan",23191,8847],["Saltsjö-Järla","25","Nacka","Saltsjöbanan",20428,8135],["Saltsjöbaden","25","Nacka","Saltsjöbanan",29614,11239],["Sandsborg","18","Stockholm","Tunnelbana",17122,10499],["Sankt Eriksplan","17/18/19","Stockholm","Tunnelbana",14018,4393],["Segersäng","43","Nynäshamn","Pendeltåg",7754,39084],["Sickla","30/25","Nacka","Tram",18755,8143],["Sickla kaj","30","Stockholm","Tram",17769,8613],["Sickla udde","30","Stockholm","Tram",18061,8205],["Skansen","7","Stockholm","Tram",17655,6258],["Skanstull","17/18/19","Stockholm","Tunnelbana",16214,7937],["Skarpnäck","17","Stockholm","Tunnelbana",19447,12645],["Skogskyrkogården","18","Stockholm","Tunnelbana",17316,11277],["Skogås","43","Huddinge","Pendeltåg",20602,17855],["Skärholmen","13","Stockholm","Tunnelbana",6620,11475],["Skärmarbrink","17/18","Stockholm","Tunnelbana",17004,9398],["Skärsätra","21","Lidingö","Tram",21561,4076],["Slussen","13/14/17/18/19","Stockholm","Tunnelbana",16001,6755],["Smedslätten","12","Stockholm","Tram",9902,6586],["Sockenplan","19","Stockholm","Tunnelbana",15892,10799],["Sollentuna","40/41","Sollentuna","Pendeltåg",8992,-5391],["Solna Business Park","30","Solna","Tram",10721,2264],["Solna centrum","11/30","Solna","Tunnelbana",11784,2281],["Solna station","40/41/30","Solna","Pendeltåg",12389,1796],["Solna strand","10","Solna","Tunnelbana",10387,2843],["Solsidan","26","Nacka","Saltsjöbanan",28697,12144],["Spånga","43","Stockholm","Pendeltåg",6079,-457],["Stadion","14","Stockholm","Tunnelbana",16468,4198],["Stadshagen","10/11","Stockholm","Tunnelbana",12807,4718],["Stockholms södra","40/41/43","Stockholm","Pendeltåg",15412,7389],["Stocksund","29","Danderyd","Roslagsbanan",14392,-556],["Stora Essingen","30","Stockholm","Tram",11515,6144],["Stora mossen","17/18/19","Stockholm","Tunnelbana",9983,5059],["Storängen","25","Nacka","Saltsjöbanan",22015,8285],["Stureby","19","Stockholm","Tunnelbana",15072,11728],["Stuvsta","40/41","Huddinge","Pendeltåg",11729,14003],["Styrmansgatan","7","Stockholm","Tram",16671,5405],["Sundbybergs centrum","10/43/30","Sundbyberg","Tunnelbana",10345,2152],["Svedmyra","19","Stockholm","Tunnelbana",15713,11411],["Sätra","13","Stockholm","Tunnelbana",7466,10491],["Södertälje centrum","40/41/48","Södertälje","Pendeltåg",-9215,20934],["Södertälje hamn","40/41/48","Södertälje","Pendeltåg",-8115,22410],["Södertälje syd","48","Södertälje","Pendeltåg",-8191,24099],["T-Centralen","10/11/13/14/17/18/19/40/41/43/7","Stockholm","Tunnelbana",15363,5355],["Tallkrogen","18","Stockholm","Tunnelbana",16787,12075],["Tattby","26","Nacka","Saltsjöbanan",27804,11172],["Tekniska högskolan","14/27/28/29","Stockholm","Tunnelbana",15925,3808],["Telefonplan","14","Stockholm","Tunnelbana",11805,9088],["Tensta","10","Stockholm","Tunnelbana",6220,-1644],["Thorildsplan","17/18/19","Stockholm","Tunnelbana",12719,5405],["Tibble","27","Täby","Roslagsbanan",15462,-6947],["Tippen","26","Nacka","Saltsjöbanan",27631,10666],["Torsvik/Millesgården","21","Lidingö","Tram",18583,2010],["Trekanten","30","Stockholm","Tram",12922,7317],["Trångsund","43","Huddinge","Pendeltåg",19325,16949],["Tullinge","40/41","Botkyrka","Pendeltåg",6496,19424],["Tumba","40/41","Botkyrka","Pendeltåg",2638,20096],["Tunagård","28","Österåker","Roslagsbanan",29331,-9905],["Tungelsta","43","Haninge","Pendeltåg",14492,30874],["Täby Centrum","28","Täby","Roslagsbanan",16141,-7155],["Täby Kyrkby","27","Täby","Roslagsbanan",15661,-12575],["Täljö","28","Österåker","Roslagsbanan",25265,-10393],["Ulriksdal","40/41","Solna","Pendeltåg",11960,-32],["Universitetet","14/27/28/29","Stockholm","Tunnelbana",15003,1647],["Upplands Väsby","40/41","Upplands Väsby","Pendeltåg",6201,-15680],["Uppsala C","40","Uppsala","Pendeltåg",-7993,-53146],["Valla torg","30","Stockholm","Tram",14657,9455],["Vallentuna","27","Vallentuna","Roslagsbanan",16452,-17191],["Vega","43","Haninge","Pendeltåg",19612,21522],["Vendevägen","29","Danderyd","Roslagsbanan",15739,-2200],["Viggbyholm","28","Täby","Roslagsbanan",17824,-7726],["Visinge","27","Täby","Roslagsbanan",15485,-9205],["Vällingby","17/18/19","Stockholm","Tunnelbana",4584,1788],["Västerhaninge","43","Haninge","Pendeltåg",17763,28597],["Västertorp","14","Stockholm","Tunnelbana",10018,9872],["Västra skogen","10/11","Solna","Tunnelbana",12126,3634],["Vårberg","13","Stockholm","Tunnelbana",5707,11576],["Vårby gård","13","Huddinge","Tunnelbana",5311,12793],["Waldemarsudde","7","Stockholm","Tram",18215,6385],["Zinkensdamm","13/14","Stockholm","Tunnelbana",14696,6921],["Älvsjö","40/41/43","Stockholm","Pendeltåg",12508,11321],["Ängbyplan","17/18/19","Stockholm","Tunnelbana",6657,4243],["Åkers Runö","28","Österåker","Roslagsbanan",27252,-11203],["Åkersberga","28","Österåker","Roslagsbanan",28840,-11040],["Åkeshov","17/18/19","Stockholm","Tunnelbana",7610,4215],["Ålstens gård","12","Stockholm","Tram",9194,6603],["Ålstensgatan","12","Stockholm","Tram",9458,6295],["Årstaberg","40/41/43/30","Stockholm","Pendeltåg",13592,8989],["Årstadal","30","Stockholm","Tram",13359,8251],["Årstafältet","30","Stockholm","Tram",14148,9310],["Örnsberg","13","Stockholm","Tunnelbana",11210,8312],["Ösmo","43","Nynäshamn","Pendeltåg",6384,44083],["Östberga","29","Danderyd","Roslagsbanan",16097,-2670],["Östermalmstorg","13/14","Stockholm","Tunnelbana",16312,4956],["Österskär","28","Österåker","Roslagsbanan",29545,-9041],["Östertälje","40/41","Södertälje","Pendeltåg",-7479,21691],["Östervik","25","Nacka","Saltsjöbanan",25259,9463]]}</script>
+<script>
+  (function () {
+    var svg = document.getElementById("netmap");
+    var raw = document.getElementById("map-data");
+    if (!svg || !raw) return;
+
+    var data;
+    try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+
+    var NS = "http://www.w3.org/2000/svg";
+    var LINE_COLOUR = {
+      "10": "blue", "11": "blue", "13": "red", "14": "red",
+      "17": "green", "18": "green", "19": "green",
+      "40": "pendel", "41": "pendel", "43": "pendel", "48": "pendel",
+      "7": "city", "12": "nockeby", "21": "orange", "30": "orange", "31": "orange",
+      "27": "roslag", "28": "roslag", "29": "roslag", "25": "saltsjo", "26": "saltsjo"
+    };
+    function colourOf(line) { return LINE_COLOUR[line] || "muted"; }
+
+    var SYSTEM = {
+      blue: "Tunnelbana", red: "Tunnelbana", green: "Tunnelbana",
+      pendel: "Pendeltåg", city: "Tram", nockeby: "Tram", orange: "Tram",
+      roslag: "Roslagsbanan", saltsjo: "Saltsjöbanan"
+    };
+    var R = data.radius;
+    var view = { k: 1, x: 0, y: 0 };
+    var picked = null;
+
+    svg.setAttribute("viewBox", (-R) + " " + (-R) + " " + (2 * R) + " " + (2 * R));
+
+    function make(tag, attrs) {
+      var el = document.createElementNS(NS, tag);
+      for (var key in attrs) el.setAttribute(key, attrs[key]);
+      return el;
+    }
+
+    var root = make("g", {});
+    svg.appendChild(root);
+
+    root.appendChild(make("circle", { cx: 0, cy: 0, r: R, "class": "border" }));
+
+    var zoneLayer = make("g", { "class": "off" });
+    root.appendChild(zoneLayer);
+    data.stops.forEach(function (stop) {
+      zoneLayer.appendChild(make("circle",
+        { cx: stop[4], cy: stop[5], r: data.zone, "class": "zone" }));
+    });
+
+    var lineLayer = make("g", {});
+    root.appendChild(lineLayer);
+    data.lines.forEach(function (line) {
+      var group = make("g", {});
+      group.dataset.sys = SYSTEM[line.c];
+      line.p.forEach(function (flat) {
+        var points = [];
+        for (var i = 0; i < flat.length; i += 2) points.push(flat[i] + "," + flat[i + 1]);
+        group.appendChild(make("polyline", {
+          points: points.join(" "), "class": "route",
+          stroke: "var(--" + line.c + ")", "vector-effect": "non-scaling-stroke"
+        }));
+      });
+      lineLayer.appendChild(group);
+    });
+
+    var stopLayer = make("g", {});
+    root.appendChild(stopLayer);
+    var label = make("text", { "text-anchor": "middle" });
+    data.stops.forEach(function (stop, i) {
+      var colour = (stop[1].split("/")[0]);
+      var dot = make("circle", {
+        cx: stop[4], cy: stop[5], r: 900, "class": "stop",
+        fill: "var(--" + colourOf(colour) + ")"
+      });
+      dot.dataset.i = i;
+      dot.dataset.sys = stop[3];
+      stopLayer.appendChild(dot);
+    });
+    root.appendChild(label);
+
+    function apply() {
+      root.setAttribute("transform",
+        "translate(" + view.x + "," + view.y + ") scale(" + view.k + ")");
+      svg.style.setProperty("--dot", (900 / view.k) + "px");
+      label.setAttribute("font-size", (1400 / view.k));
+      label.setAttribute("stroke-width", (500 / view.k));
+    }
+
+    function fit() {
+      view = { k: 1, x: 0, y: 0 };
+      apply();
+    }
+
+    function zoomAbout(cx, cy, factor) {
+      var next = Math.min(80, Math.max(1, view.k * factor));
+      if (next === view.k) return;
+      view.x = cx - (cx - view.x) * (next / view.k);
+      view.y = cy - (cy - view.y) * (next / view.k);
+      view.k = next;
+      apply();
+    }
+
+    function toLocal(event) {
+      var box = svg.getBoundingClientRect();
+      var side = Math.min(box.width, box.height);
+      var offX = (box.width - side) / 2;
+      var offY = (box.height - side) / 2;
+      return {
+        x: ((event.clientX - box.left - offX) / side) * 2 * R - R,
+        y: ((event.clientY - box.top - offY) / side) * 2 * R - R
+      };
+    }
+
+    svg.addEventListener("wheel", function (event) {
+      event.preventDefault();
+      var at = toLocal(event);
+      zoomAbout(at.x, at.y, event.deltaY < 0 ? 1.25 : 0.8);
+    }, { passive: false });
+
+    var pointers = {};
+    var last = null;
+    var spread = 0;
+
+    svg.addEventListener("pointerdown", function (event) {
+      svg.setPointerCapture(event.pointerId);
+      pointers[event.pointerId] = toLocal(event);
+      last = toLocal(event);
+      spread = 0;
+      svg.classList.add("dragging");
+    });
+
+    svg.addEventListener("pointermove", function (event) {
+      if (!(event.pointerId in pointers)) return;
+      var here = toLocal(event);
+      pointers[event.pointerId] = here;
+      var ids = Object.keys(pointers);
+
+      if (ids.length >= 2) {
+        var a = pointers[ids[0]], b = pointers[ids[1]];
+        var gap = Math.hypot(a.x - b.x, a.y - b.y);
+        var mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+        if (spread) zoomAbout(mid.x, mid.y, gap / spread);
+        spread = gap;
+        return;
+      }
+      view.x += here.x - last.x;
+      view.y += here.y - last.y;
+      last = here;
+      apply();
+    });
+
+    function release(event) {
+      delete pointers[event.pointerId];
+      spread = 0;
+      if (!Object.keys(pointers).length) svg.classList.remove("dragging");
+    }
+    svg.addEventListener("pointerup", release);
+    svg.addEventListener("pointercancel", release);
+
+    var readout = document.getElementById("mapread");
+
+    function show(index) {
+      var stop = data.stops[index];
+      var chips = stop[1].split("/").map(function (line) {
+        return '<span class="chip c-' + colourOf(line) + '">' + line + "</span>";
+      }).join(" ");
+      readout.innerHTML = "<strong>" + stop[0] + "</strong> &nbsp;" + chips +
+        ' &nbsp;<span class="count">' + stop[2] + "</span>";
+      label.textContent = stop[0];
+      label.setAttribute("x", stop[4]);
+      label.setAttribute("y", stop[5] - 1200 / view.k);
+      if (picked) picked.classList.remove("pick");
+      picked = stopLayer.querySelector('[data-i="' + index + '"]');
+      if (picked) picked.classList.add("pick");
+    }
+
+    stopLayer.addEventListener("pointerdown", function (event) {
+      var dot = event.target.closest("circle.stop");
+      if (dot) show(+dot.dataset.i);
+    });
+
+    stopLayer.addEventListener("mousemove", function (event) {
+      var dot = event.target.closest("circle.stop");
+      if (dot) show(+dot.dataset.i);
+    });
+
+    document.getElementById("mapin").addEventListener("click", function () { zoomAbout(0, 0, 1.6); });
+    document.getElementById("mapout").addEventListener("click", function () { zoomAbout(0, 0, 0.625); });
+    document.getElementById("mapreset").addEventListener("click", fit);
+
+    var zonesButton = document.getElementById("mapzones");
+    zonesButton.addEventListener("click", function () {
+      var on = zonesButton.getAttribute("aria-pressed") === "true";
+      zonesButton.setAttribute("aria-pressed", String(!on));
+      zoneLayer.classList.toggle("off", on);
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll("#mapbar .sys"), function (button) {
+      var system = button.dataset.sys;
+      var swatch = { "Tunnelbana": "blue", "Pendeltåg": "pendel", "Tram": "orange",
+                     "Roslagsbanan": "roslag", "Saltsjöbanan": "saltsjo" }[system];
+      button.style.setProperty("--swatch", "var(--" + swatch + ")");
+      button.addEventListener("click", function () {
+        var on = button.getAttribute("aria-pressed") === "true";
+        button.setAttribute("aria-pressed", String(!on));
+        Array.prototype.forEach.call(
+          root.querySelectorAll('[data-sys="' + system + '"]'), function (el) {
+            el.classList.toggle("off", on);
+          });
+      });
+    });
+
+    fit();
+  })();
+
+  (function () {
+    var q = document.getElementById("q");
+    var rows = Array.prototype.slice.call(document.querySelectorAll("#stops tbody tr"));
+    var blocks = Array.prototype.slice.call(document.querySelectorAll(".sysblock"));
+    var count = document.getElementById("count");
+
+    function render() {
+      var term = q.value.trim().toLowerCase();
+      var shown = 0;
+      rows.forEach(function (row) {
+        var hit = !term || row.dataset.k.indexOf(term) !== -1;
+        row.hidden = !hit;
+        if (hit) shown++;
+      });
+      blocks.forEach(function (block) {
+        var any = Array.prototype.slice.call(block.querySelectorAll("tbody tr"))
+          .some(function (r) { return !r.hidden; });
+        block.hidden = !any;
+      });
+      count.textContent = shown === rows.length
+        ? rows.length + " stops"
+        : shown + " of " + rows.length + " stops";
+    }
+
+    q.addEventListener("input", render);
+    render();
+
+    var links = Array.prototype.slice.call(document.querySelectorAll(".rail a"));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+    if ("IntersectionObserver" in window) {
+      var seen = new Set();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) seen.add(entry.target); else seen.delete(entry.target);
+        });
+        var first = sections.filter(function (s) { return seen.has(s); })[0];
+        links.forEach(function (a, i) { a.classList.toggle("on", sections[i] === first); });
+      }, { rootMargin: "-10% 0px -70% 0px" });
+      sections.forEach(function (s) { if (s) io.observe(s); });
+    }
+  })();
+</script>

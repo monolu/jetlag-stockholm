@@ -1,0 +1,25 @@
+Radar,
+Cost,"Draw 2, Pick 1"
+Time,5 Minutes
+Question:,Are you within [Distance] of me?
+,
+[Distance],Notes
+"0.25mi
+402m",
+"0.50mi
+805m",
+"1mi
+1.6km",
+"3mi
+4.8km",
+"5mi
+8.0km",
+"10mi
+16.0km",
+"25mi
+40.0km",
+"50mi
+80.5km",
+"100mi
+160.9km",
+Choose,

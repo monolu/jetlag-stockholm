@@ -1,0 +1,25 @@
+Tentacles,,
+Cost:,,"Draw 4, Pick 2"
+Time:,,5 Minutes
+Question:,,"Of all the [Places] within [Distance] of me, 
+which are you closest to?"
+,,
+[Places],[Distance],
+Medium & Up,,
+Museums,"1mi
+1.6km",
+Libraries,"1mi
+1.6km",
+Movie Theatres,"1mi
+1.6km",
+Hospitals,"1mi
+1.6km",
+Large Games Only,,
+Metro Lines,"15mi
+24.14km",
+Zoos,"15mi
+24.14km",
+Aquariums,"15mi
+24.14km",
+Amusement Parks,"15mi
+24.14km",
