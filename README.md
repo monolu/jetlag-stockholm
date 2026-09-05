@@ -29,12 +29,17 @@ Everything you need during the game is one page, live at
 **<https://monolu.github.io/jetlag-stockholm/>** — rules, local definitions, all 252
 stops, and the network on a real map. Send that link to everyone.
 
+The map on it is our own Google My Map, embedded:
+<https://www.google.com/maps/d/viewer?mid=1KjLl3dy7DhmggT4o4qT-awV80zBs7t0>
+
 It is built by `build_site.py` into `docs/`, from `field-manual.html`. There is also an
 Artifact copy at
 <https://claude.ai/code/artifact/1da46632-5022-4f36-bdde-65406e5bc907>; it holds the same
-text but draws the map itself, because an Artifact cannot load map tiles.
+text but draws the map itself, because an Artifact can neither embed an iframe nor load
+map tiles.
 
-`map.html` is the map on its own, full screen, and works from disk with no server.
+`map.html` is a fallback: the same network on OpenStreetMap, full screen, working from
+disk with no Google and no server.
 
 ## The network
 
