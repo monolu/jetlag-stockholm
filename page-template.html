@@ -410,9 +410,23 @@
     margin: 0 0 16px;
   }
 
-  .fig { background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: 11px; }
+  .fig {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 11px;
+  }
+
   .fig svg { display: block; width: 100%; height: auto; }
-  .fig figcaption { font-size: 14px; color: var(--muted); margin-top: 7px; }
+
+  .fig figcaption {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--muted);
+    margin-top: 9px;
+    text-wrap: pretty;
+  }
   .fig figcaption b { color: var(--ink); font-weight: 600; }
 
   .finder { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; margin: 0 0 11px; }
@@ -694,19 +708,19 @@
       </div>
       <div class="figs">
         <figure class="fig"><!--FIG-MATCHING-->
-          <figcaption><b>Matching</b> splits the map into the ground that shares the
-            seekers' nearest one and the ground that does not.</figcaption>
+          <figcaption><b>Matching</b> keeps the half of the map that shares the seekers'
+            nearest one.</figcaption>
         </figure>
         <figure class="fig"><!--FIG-MEASURING-->
           <figcaption><b>Measuring</b> cuts at the seekers' own distance from the
             thing.</figcaption>
         </figure>
         <figure class="fig"><!--FIG-RADAR-->
-          <figcaption><b>Radar</b> is a circle of the asked size. Hit or miss, one side of
-            it goes.</figcaption>
+          <figcaption><b>Radar</b> keeps the inside or the outside of a circle of the
+            asked size.</figcaption>
         </figure>
         <figure class="fig"><!--FIG-TENTACLE-->
-          <figcaption><b>Tentacles</b> leave only the share of the circle belonging to the
+          <figcaption><b>Tentacles</b> keep only the share of the range belonging to the
             one named.</figcaption>
         </figure>
       </div>
