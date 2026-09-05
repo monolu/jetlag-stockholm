@@ -7,6 +7,7 @@
     "name": "Abrahamsberg",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -23,6 +24,7 @@
     "name": "AGA",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -39,6 +41,7 @@
     "name": "Akalla",
     "system": "Tunnelbana",
     "lines": "11",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -55,6 +58,7 @@
     "name": "Alby",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Botkyrka"
    },
    "geometry": {
@@ -71,6 +75,7 @@
     "name": "Alléparken",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -87,6 +92,7 @@
     "name": "Altorp",
     "system": "Roslagsbanan",
     "lines": "29",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -103,6 +109,7 @@
     "name": "Alvik",
     "system": "Tunnelbana + Tram",
     "lines": "17/18/19/12/30/31",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -119,6 +126,7 @@
     "name": "Alviks strand",
     "system": "Tram",
     "lines": "30/31",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -135,6 +143,7 @@
     "name": "Arlanda central",
     "system": "Pendeltåg",
     "lines": "40",
+    "style": "Pendeltåg",
     "kommun": "Sigtuna"
    },
    "geometry": {
@@ -151,6 +160,7 @@
     "name": "Arninge",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -167,6 +177,7 @@
     "name": "Aspudden",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -183,6 +194,7 @@
     "name": "Axelsberg",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -199,6 +211,7 @@
     "name": "Bagarmossen",
     "system": "Tunnelbana",
     "lines": "17",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -215,6 +228,7 @@
     "name": "Baggeby",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -231,6 +245,7 @@
     "name": "Bandhagen",
     "system": "Tunnelbana",
     "lines": "19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -247,6 +262,7 @@
     "name": "Barkarby",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Järfälla"
    },
    "geometry": {
@@ -263,6 +279,7 @@
     "name": "Bergshamra",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Solna"
    },
    "geometry": {
@@ -279,6 +296,7 @@
     "name": "Björkhagen",
     "system": "Tunnelbana",
     "lines": "17",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -295,6 +313,7 @@
     "name": "Blackeberg",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -311,6 +330,7 @@
     "name": "Blåsut",
     "system": "Tunnelbana",
     "lines": "18",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -327,6 +347,7 @@
     "name": "Bodal",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -343,6 +364,7 @@
     "name": "Bredäng",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -359,6 +381,7 @@
     "name": "Brevik",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -375,6 +398,7 @@
     "name": "Bro",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Upplands-Bro"
    },
    "geometry": {
@@ -391,6 +415,7 @@
     "name": "Bromma Blocks",
     "system": "Tram",
     "lines": "31",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -407,6 +432,7 @@
     "name": "Bromma flygplats",
     "system": "Tram",
     "lines": "31",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -423,6 +449,7 @@
     "name": "Brommaplan",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -439,6 +466,7 @@
     "name": "Bråvallavägen",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -455,6 +483,7 @@
     "name": "Bällsta",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -471,6 +500,7 @@
     "name": "Bällsta bro",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Sundbyberg"
    },
    "geometry": {
@@ -487,6 +517,7 @@
     "name": "Bålsta",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Håbo"
    },
    "geometry": {
@@ -503,6 +534,7 @@
     "name": "Danderyds sjukhus",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -519,6 +551,7 @@
     "name": "Djurgårdsbron",
     "system": "Tram",
     "lines": "7",
+    "style": "Spårväg City",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -535,6 +568,7 @@
     "name": "Djurgårdsskolan",
     "system": "Tram",
     "lines": "7",
+    "style": "Spårväg City",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -551,6 +585,7 @@
     "name": "Djursholms Ekeby",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -567,6 +602,7 @@
     "name": "Djursholms Ösby",
     "system": "Roslagsbanan",
     "lines": "27/28/29",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -583,6 +619,7 @@
     "name": "Duvbo",
     "system": "Tunnelbana",
     "lines": "10",
+    "style": "Blå linjen",
     "kommun": "Sundbyberg"
    },
    "geometry": {
@@ -599,6 +636,7 @@
     "name": "Ekskogen",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -615,6 +653,7 @@
     "name": "Enebyberg",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -631,6 +670,7 @@
     "name": "Enskede gård",
     "system": "Tunnelbana",
     "lines": "19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -647,6 +687,7 @@
     "name": "Ensta",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -663,6 +704,7 @@
     "name": "Erstaviksbadet",
     "system": "Saltsjöbanan",
     "lines": "26",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -679,6 +721,7 @@
     "name": "Farsta",
     "system": "Tunnelbana",
     "lines": "18",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -695,6 +738,7 @@
     "name": "Farsta strand",
     "system": "Tunnelbana + Pendeltåg",
     "lines": "18/43",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -711,6 +755,7 @@
     "name": "Fisksätra",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -727,6 +772,7 @@
     "name": "Fittja",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Botkyrka"
    },
    "geometry": {
@@ -743,6 +789,7 @@
     "name": "Flemingsberg",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Huddinge"
    },
    "geometry": {
@@ -759,6 +806,7 @@
     "name": "Fridhemsplan",
     "system": "Tunnelbana",
     "lines": "10/11/17/18/19",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -775,6 +823,7 @@
     "name": "Fruängen",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -791,6 +840,7 @@
     "name": "Frösunda",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -807,6 +857,7 @@
     "name": "Galoppfältet",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -823,6 +874,7 @@
     "name": "Gamla stan",
     "system": "Tunnelbana",
     "lines": "13/14/17/18/19",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -839,6 +891,7 @@
     "name": "Globen",
     "system": "Tunnelbana + Tram",
     "lines": "19/30",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -855,6 +908,7 @@
     "name": "Gnesta",
     "system": "Pendeltåg",
     "lines": "48",
+    "style": "Pendeltåg",
     "kommun": "Gnesta"
    },
    "geometry": {
@@ -871,6 +925,7 @@
     "name": "Gröndal",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -887,6 +942,7 @@
     "name": "Gröndalsviken",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Nynäshamn"
    },
    "geometry": {
@@ -903,6 +959,7 @@
     "name": "Gubbängen",
     "system": "Tunnelbana",
     "lines": "18",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -919,6 +976,7 @@
     "name": "Gullmarsplan",
     "system": "Tunnelbana + Tram",
     "lines": "17/18/19/30",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -935,6 +993,7 @@
     "name": "Gärdet",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -951,6 +1010,7 @@
     "name": "Gåshaga",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -967,6 +1027,7 @@
     "name": "Gåshaga brygga",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -983,6 +1044,7 @@
     "name": "Hagsätra",
     "system": "Tunnelbana",
     "lines": "19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -999,6 +1061,7 @@
     "name": "Hallonbergen",
     "system": "Tunnelbana",
     "lines": "10",
+    "style": "Blå linjen",
     "kommun": "Sundbyberg"
    },
    "geometry": {
@@ -1015,6 +1078,7 @@
     "name": "Hallunda",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Botkyrka"
    },
    "geometry": {
@@ -1031,6 +1095,7 @@
     "name": "Hammarbyhöjden",
     "system": "Tunnelbana",
     "lines": "17",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1047,6 +1112,7 @@
     "name": "Handen",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Haninge"
    },
    "geometry": {
@@ -1063,6 +1129,7 @@
     "name": "Helenelund",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Sollentuna"
    },
    "geometry": {
@@ -1079,6 +1146,7 @@
     "name": "Hemfosa",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Haninge"
    },
    "geometry": {
@@ -1095,6 +1163,7 @@
     "name": "Henriksdal",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -1111,6 +1180,7 @@
     "name": "Hjulsta",
     "system": "Tunnelbana",
     "lines": "10",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1127,6 +1197,7 @@
     "name": "Hornstull",
     "system": "Tunnelbana",
     "lines": "13/14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1143,6 +1214,7 @@
     "name": "Huddinge",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Huddinge"
    },
    "geometry": {
@@ -1159,6 +1231,7 @@
     "name": "Husby",
     "system": "Tunnelbana",
     "lines": "11",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1175,6 +1248,7 @@
     "name": "Huvudsta",
     "system": "Tunnelbana",
     "lines": "10",
+    "style": "Blå linjen",
     "kommun": "Solna"
    },
    "geometry": {
@@ -1191,6 +1265,7 @@
     "name": "Hägernäs",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -1207,6 +1282,7 @@
     "name": "Hägerstensåsen",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1223,6 +1299,7 @@
     "name": "Häggvik",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Sollentuna"
    },
    "geometry": {
@@ -1239,6 +1316,7 @@
     "name": "Hässelby gård",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1255,6 +1333,7 @@
     "name": "Hässelby strand",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1271,6 +1350,7 @@
     "name": "Högberga",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -1287,6 +1367,7 @@
     "name": "Högdalen",
     "system": "Tunnelbana",
     "lines": "19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1303,6 +1384,7 @@
     "name": "Höglandstorget",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1319,6 +1401,7 @@
     "name": "Hökarängen",
     "system": "Tunnelbana",
     "lines": "18",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1335,6 +1418,7 @@
     "name": "Hötorget",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1351,6 +1435,7 @@
     "name": "Igelboda",
     "system": "Saltsjöbanan",
     "lines": "25/26",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -1367,6 +1452,7 @@
     "name": "Islandstorget",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1383,6 +1469,7 @@
     "name": "Jakobsberg",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Järfälla"
    },
    "geometry": {
@@ -1399,6 +1486,7 @@
     "name": "Johannelund",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1415,6 +1503,7 @@
     "name": "Johannesfred",
     "system": "Tram",
     "lines": "30/31",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1431,6 +1520,7 @@
     "name": "Jordbro",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Haninge"
    },
    "geometry": {
@@ -1447,6 +1537,7 @@
     "name": "Järna",
     "system": "Pendeltåg",
     "lines": "48",
+    "style": "Pendeltåg",
     "kommun": "Södertälje"
    },
    "geometry": {
@@ -1463,6 +1554,7 @@
     "name": "Kallhäll",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Järfälla"
    },
    "geometry": {
@@ -1479,6 +1571,7 @@
     "name": "Karlaplan",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1495,6 +1588,7 @@
     "name": "Karlsbodavägen",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1511,6 +1605,7 @@
     "name": "Kista",
     "system": "Tunnelbana",
     "lines": "11",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1527,6 +1622,7 @@
     "name": "Klövervägen",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1543,6 +1639,7 @@
     "name": "Knivsta",
     "system": "Pendeltåg",
     "lines": "40",
+    "style": "Pendeltåg",
     "kommun": "Knivsta"
    },
    "geometry": {
@@ -1559,6 +1656,7 @@
     "name": "Kottla",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -1575,6 +1673,7 @@
     "name": "Kragstalund",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -1591,6 +1690,7 @@
     "name": "Krigslida",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Haninge"
    },
    "geometry": {
@@ -1607,6 +1707,7 @@
     "name": "Kristineberg",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1623,6 +1724,7 @@
     "name": "Kungsträdgården",
     "system": "Tunnelbana + Tram",
     "lines": "10/11/7",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1639,6 +1741,7 @@
     "name": "Kungsängen",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Upplands-Bro"
    },
    "geometry": {
@@ -1655,6 +1758,7 @@
     "name": "Käppala",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -1671,6 +1775,7 @@
     "name": "Kärrtorp",
     "system": "Tunnelbana",
     "lines": "17",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1687,6 +1792,7 @@
     "name": "Kårsta",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -1703,6 +1809,7 @@
     "name": "Lahäll",
     "system": "Roslagsbanan",
     "lines": "29",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -1719,6 +1826,7 @@
     "name": "Larsberg",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -1735,6 +1843,7 @@
     "name": "Liljeholmen",
     "system": "Tunnelbana + Tram",
     "lines": "13/14/30",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1751,6 +1860,7 @@
     "name": "Liljevalchs/Gröna Lund",
     "system": "Tram",
     "lines": "7",
+    "style": "Spårväg City",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1767,6 +1877,7 @@
     "name": "Lillängen",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -1783,6 +1894,7 @@
     "name": "Linde",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1799,6 +1911,7 @@
     "name": "Lindholmen",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -1815,6 +1928,7 @@
     "name": "Luma",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1831,6 +1945,7 @@
     "name": "Mariatorget",
     "system": "Tunnelbana",
     "lines": "13/14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1847,6 +1962,7 @@
     "name": "Masmo",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Huddinge"
    },
    "geometry": {
@@ -1863,6 +1979,7 @@
     "name": "Medborgarplatsen",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1879,6 +1996,7 @@
     "name": "Midsommarkransen",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1895,6 +2013,7 @@
     "name": "Molnby",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -1911,6 +2030,7 @@
     "name": "Mälarhöjden",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1927,6 +2047,7 @@
     "name": "Märsta",
     "system": "Pendeltåg",
     "lines": "41",
+    "style": "Pendeltåg",
     "kommun": "Sigtuna"
    },
    "geometry": {
@@ -1943,6 +2064,7 @@
     "name": "Mårtensdal",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -1959,6 +2081,7 @@
     "name": "Mölnbo",
     "system": "Pendeltåg",
     "lines": "48",
+    "style": "Pendeltåg",
     "kommun": "Södertälje"
    },
    "geometry": {
@@ -1975,6 +2098,7 @@
     "name": "Mörby",
     "system": "Roslagsbanan",
     "lines": "27/28/29",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -1991,6 +2115,7 @@
     "name": "Mörby centrum",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -2007,6 +2132,7 @@
     "name": "Nacka",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -2023,6 +2149,7 @@
     "name": "Neglinge",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -2039,6 +2166,7 @@
     "name": "Nockeby",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2055,6 +2183,7 @@
     "name": "Nockeby torg",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2071,6 +2200,7 @@
     "name": "Nordiska museet/Vasamuseet",
     "system": "Tram",
     "lines": "7",
+    "style": "Spårväg City",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2087,6 +2217,7 @@
     "name": "Norra Ulvsunda",
     "system": "Tram",
     "lines": "30/31",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2103,6 +2234,7 @@
     "name": "Norrviken",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Sollentuna"
    },
    "geometry": {
@@ -2119,6 +2251,7 @@
     "name": "Norsborg",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Botkyrka"
    },
    "geometry": {
@@ -2135,6 +2268,7 @@
     "name": "Nybroplan",
     "system": "Tram",
     "lines": "7",
+    "style": "Spårväg City",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2151,6 +2285,7 @@
     "name": "Nynäsgård",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Nynäshamn"
    },
    "geometry": {
@@ -2167,6 +2302,7 @@
     "name": "Nynäshamn",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Nynäshamn"
    },
    "geometry": {
@@ -2183,6 +2319,7 @@
     "name": "Näckrosen",
     "system": "Tunnelbana",
     "lines": "11",
+    "style": "Blå linjen",
     "kommun": "Solna"
    },
    "geometry": {
@@ -2199,6 +2336,7 @@
     "name": "Näsby allé",
     "system": "Roslagsbanan",
     "lines": "29",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -2215,6 +2353,7 @@
     "name": "Näsbypark",
     "system": "Roslagsbanan",
     "lines": "29",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -2231,6 +2370,7 @@
     "name": "Odenplan",
     "system": "Tunnelbana + Pendeltåg",
     "lines": "17/18/19/40/41/43",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2247,6 +2387,7 @@
     "name": "Olovslund",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2263,6 +2404,7 @@
     "name": "Ormsta",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -2279,6 +2421,7 @@
     "name": "Ringvägen",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -2295,6 +2438,7 @@
     "name": "Rinkeby",
     "system": "Tunnelbana",
     "lines": "10",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2311,6 +2455,7 @@
     "name": "Rissne",
     "system": "Tunnelbana",
     "lines": "10",
+    "style": "Blå linjen",
     "kommun": "Sundbyberg"
    },
    "geometry": {
@@ -2327,6 +2472,7 @@
     "name": "Ropsten",
     "system": "Tunnelbana + Tram",
     "lines": "13/21",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2343,6 +2489,7 @@
     "name": "Rosersberg",
     "system": "Pendeltåg",
     "lines": "41",
+    "style": "Pendeltåg",
     "kommun": "Sigtuna"
    },
    "geometry": {
@@ -2359,6 +2506,7 @@
     "name": "Roslags Näsby",
     "system": "Roslagsbanan",
     "lines": "27/28",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -2375,6 +2523,7 @@
     "name": "Rotebro",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Sollentuna"
    },
    "geometry": {
@@ -2391,6 +2540,7 @@
     "name": "Rydbo",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Österåker"
    },
    "geometry": {
@@ -2407,6 +2557,7 @@
     "name": "Råcksta",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2423,6 +2574,7 @@
     "name": "Rådhuset",
     "system": "Tunnelbana",
     "lines": "10/11",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2439,6 +2591,7 @@
     "name": "Rådmansgatan",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2455,6 +2608,7 @@
     "name": "Rågsved",
     "system": "Tunnelbana",
     "lines": "19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2471,6 +2625,7 @@
     "name": "Rönninge",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Salem"
    },
    "geometry": {
@@ -2487,6 +2642,7 @@
     "name": "Saltsjö-Duvnäs",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -2503,6 +2659,7 @@
     "name": "Saltsjö-Järla",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -2519,6 +2676,7 @@
     "name": "Saltsjöbaden",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -2535,6 +2693,7 @@
     "name": "Sandsborg",
     "system": "Tunnelbana",
     "lines": "18",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2551,6 +2710,7 @@
     "name": "Sankt Eriksplan",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2567,6 +2727,7 @@
     "name": "Segersäng",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Nynäshamn"
    },
    "geometry": {
@@ -2583,6 +2744,7 @@
     "name": "Sickla",
     "system": "Tram + Saltsjöbanan",
     "lines": "30/25",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -2599,6 +2761,7 @@
     "name": "Sickla kaj",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2615,6 +2778,7 @@
     "name": "Sickla udde",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2631,6 +2795,7 @@
     "name": "Skansen",
     "system": "Tram",
     "lines": "7",
+    "style": "Spårväg City",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2647,6 +2812,7 @@
     "name": "Skanstull",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2663,6 +2829,7 @@
     "name": "Skarpnäck",
     "system": "Tunnelbana",
     "lines": "17",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2679,6 +2846,7 @@
     "name": "Skogskyrkogården",
     "system": "Tunnelbana",
     "lines": "18",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2695,6 +2863,7 @@
     "name": "Skogås",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Huddinge"
    },
    "geometry": {
@@ -2711,6 +2880,7 @@
     "name": "Skärholmen",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2727,6 +2897,7 @@
     "name": "Skärmarbrink",
     "system": "Tunnelbana",
     "lines": "17/18",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2743,6 +2914,7 @@
     "name": "Skärsätra",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -2759,6 +2931,7 @@
     "name": "Slussen",
     "system": "Tunnelbana",
     "lines": "13/14/17/18/19",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2775,6 +2948,7 @@
     "name": "Smedslätten",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2791,6 +2965,7 @@
     "name": "Sockenplan",
     "system": "Tunnelbana",
     "lines": "19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2807,6 +2982,7 @@
     "name": "Sollentuna",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Sollentuna"
    },
    "geometry": {
@@ -2823,6 +2999,7 @@
     "name": "Solna Business Park",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Solna"
    },
    "geometry": {
@@ -2839,6 +3016,7 @@
     "name": "Solna centrum",
     "system": "Tunnelbana + Tram",
     "lines": "11/30",
+    "style": "Blå linjen",
     "kommun": "Solna"
    },
    "geometry": {
@@ -2855,6 +3033,7 @@
     "name": "Solna station",
     "system": "Pendeltåg + Tram",
     "lines": "40/41/30",
+    "style": "Pendeltåg",
     "kommun": "Solna"
    },
    "geometry": {
@@ -2871,6 +3050,7 @@
     "name": "Solna strand",
     "system": "Tunnelbana",
     "lines": "10",
+    "style": "Blå linjen",
     "kommun": "Solna"
    },
    "geometry": {
@@ -2887,6 +3067,7 @@
     "name": "Solsidan",
     "system": "Saltsjöbanan",
     "lines": "26",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -2903,6 +3084,7 @@
     "name": "Spånga",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2919,6 +3101,7 @@
     "name": "Stadion",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2935,6 +3118,7 @@
     "name": "Stadshagen",
     "system": "Tunnelbana",
     "lines": "10/11",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2951,6 +3135,7 @@
     "name": "Stockholms södra",
     "system": "Pendeltåg",
     "lines": "40/41/43",
+    "style": "Pendeltåg",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2967,6 +3152,7 @@
     "name": "Stocksund",
     "system": "Roslagsbanan",
     "lines": "29",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -2983,6 +3169,7 @@
     "name": "Stora Essingen",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -2999,6 +3186,7 @@
     "name": "Stora mossen",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3015,6 +3203,7 @@
     "name": "Storängen",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -3031,6 +3220,7 @@
     "name": "Stureby",
     "system": "Tunnelbana",
     "lines": "19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3047,6 +3237,7 @@
     "name": "Stuvsta",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Huddinge"
    },
    "geometry": {
@@ -3063,6 +3254,7 @@
     "name": "Styrmansgatan",
     "system": "Tram",
     "lines": "7",
+    "style": "Spårväg City",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3079,6 +3271,7 @@
     "name": "Sundbybergs centrum",
     "system": "Tunnelbana + Pendeltåg + Tram",
     "lines": "10/43/30",
+    "style": "Blå linjen",
     "kommun": "Sundbyberg"
    },
    "geometry": {
@@ -3095,6 +3288,7 @@
     "name": "Svedmyra",
     "system": "Tunnelbana",
     "lines": "19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3111,6 +3305,7 @@
     "name": "Sätra",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3127,6 +3322,7 @@
     "name": "Södertälje centrum",
     "system": "Pendeltåg",
     "lines": "40/41/48",
+    "style": "Pendeltåg",
     "kommun": "Södertälje"
    },
    "geometry": {
@@ -3143,6 +3339,7 @@
     "name": "Södertälje hamn",
     "system": "Pendeltåg",
     "lines": "40/41/48",
+    "style": "Pendeltåg",
     "kommun": "Södertälje"
    },
    "geometry": {
@@ -3159,6 +3356,7 @@
     "name": "Södertälje syd",
     "system": "Pendeltåg",
     "lines": "48",
+    "style": "Pendeltåg",
     "kommun": "Södertälje"
    },
    "geometry": {
@@ -3175,6 +3373,7 @@
     "name": "T-Centralen",
     "system": "Tunnelbana + Pendeltåg + Tram",
     "lines": "10/11/13/14/17/18/19/40/41/43/7",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3191,6 +3390,7 @@
     "name": "Tallkrogen",
     "system": "Tunnelbana",
     "lines": "18",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3207,6 +3407,7 @@
     "name": "Tattby",
     "system": "Saltsjöbanan",
     "lines": "26",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -3223,6 +3424,7 @@
     "name": "Tekniska högskolan",
     "system": "Tunnelbana + Roslagsbanan",
     "lines": "14/27/28/29",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3239,6 +3441,7 @@
     "name": "Telefonplan",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3255,6 +3458,7 @@
     "name": "Tensta",
     "system": "Tunnelbana",
     "lines": "10",
+    "style": "Blå linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3271,6 +3475,7 @@
     "name": "Thorildsplan",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3287,6 +3492,7 @@
     "name": "Tibble",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -3303,6 +3509,7 @@
     "name": "Tippen",
     "system": "Saltsjöbanan",
     "lines": "26",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {
@@ -3319,6 +3526,7 @@
     "name": "Torsvik/Millesgården",
     "system": "Tram",
     "lines": "21",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Lidingö"
    },
    "geometry": {
@@ -3335,6 +3543,7 @@
     "name": "Trekanten",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3351,6 +3560,7 @@
     "name": "Trångsund",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Huddinge"
    },
    "geometry": {
@@ -3367,6 +3577,7 @@
     "name": "Tullinge",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Botkyrka"
    },
    "geometry": {
@@ -3383,6 +3594,7 @@
     "name": "Tumba",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Botkyrka"
    },
    "geometry": {
@@ -3399,6 +3611,7 @@
     "name": "Tunagård",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Österåker"
    },
    "geometry": {
@@ -3415,6 +3628,7 @@
     "name": "Tungelsta",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Haninge"
    },
    "geometry": {
@@ -3431,6 +3645,7 @@
     "name": "Täby Centrum",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -3447,6 +3662,7 @@
     "name": "Täby Kyrkby",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -3463,6 +3679,7 @@
     "name": "Täljö",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Österåker"
    },
    "geometry": {
@@ -3479,6 +3696,7 @@
     "name": "Ulriksdal",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Solna"
    },
    "geometry": {
@@ -3495,6 +3713,7 @@
     "name": "Universitetet",
     "system": "Tunnelbana + Roslagsbanan",
     "lines": "14/27/28/29",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3511,6 +3730,7 @@
     "name": "Upplands Väsby",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Upplands Väsby"
    },
    "geometry": {
@@ -3527,6 +3747,7 @@
     "name": "Uppsala C",
     "system": "Pendeltåg",
     "lines": "40",
+    "style": "Pendeltåg",
     "kommun": "Uppsala"
    },
    "geometry": {
@@ -3543,6 +3764,7 @@
     "name": "Valla torg",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3559,6 +3781,7 @@
     "name": "Vallentuna",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Vallentuna"
    },
    "geometry": {
@@ -3575,6 +3798,7 @@
     "name": "Vega",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Haninge"
    },
    "geometry": {
@@ -3591,6 +3815,7 @@
     "name": "Vendevägen",
     "system": "Roslagsbanan",
     "lines": "29",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -3607,6 +3832,7 @@
     "name": "Viggbyholm",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -3623,6 +3849,7 @@
     "name": "Visinge",
     "system": "Roslagsbanan",
     "lines": "27",
+    "style": "Roslagsbanan",
     "kommun": "Täby"
    },
    "geometry": {
@@ -3639,6 +3866,7 @@
     "name": "Vällingby",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3655,6 +3883,7 @@
     "name": "Västerhaninge",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Haninge"
    },
    "geometry": {
@@ -3671,6 +3900,7 @@
     "name": "Västertorp",
     "system": "Tunnelbana",
     "lines": "14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3687,6 +3917,7 @@
     "name": "Västra skogen",
     "system": "Tunnelbana",
     "lines": "10/11",
+    "style": "Blå linjen",
     "kommun": "Solna"
    },
    "geometry": {
@@ -3703,6 +3934,7 @@
     "name": "Vårberg",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3719,6 +3951,7 @@
     "name": "Vårby gård",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Huddinge"
    },
    "geometry": {
@@ -3735,6 +3968,7 @@
     "name": "Waldemarsudde",
     "system": "Tram",
     "lines": "7",
+    "style": "Spårväg City",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3751,6 +3985,7 @@
     "name": "Zinkensdamm",
     "system": "Tunnelbana",
     "lines": "13/14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3767,6 +4002,7 @@
     "name": "Älvsjö",
     "system": "Pendeltåg",
     "lines": "40/41/43",
+    "style": "Pendeltåg",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3783,6 +4019,7 @@
     "name": "Ängbyplan",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3799,6 +4036,7 @@
     "name": "Åkers Runö",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Österåker"
    },
    "geometry": {
@@ -3815,6 +4053,7 @@
     "name": "Åkersberga",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Österåker"
    },
    "geometry": {
@@ -3831,6 +4070,7 @@
     "name": "Åkeshov",
     "system": "Tunnelbana",
     "lines": "17/18/19",
+    "style": "Gröna linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3847,6 +4087,7 @@
     "name": "Ålstens gård",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3863,6 +4104,7 @@
     "name": "Ålstensgatan",
     "system": "Tram",
     "lines": "12",
+    "style": "Nockebybanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3879,6 +4121,7 @@
     "name": "Årstaberg",
     "system": "Pendeltåg + Tram",
     "lines": "40/41/43/30",
+    "style": "Pendeltåg",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3895,6 +4138,7 @@
     "name": "Årstadal",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3911,6 +4155,7 @@
     "name": "Årstafältet",
     "system": "Tram",
     "lines": "30",
+    "style": "Tvärbanan / Lidingöbanan",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3927,6 +4172,7 @@
     "name": "Örnsberg",
     "system": "Tunnelbana",
     "lines": "13",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3943,6 +4189,7 @@
     "name": "Ösmo",
     "system": "Pendeltåg",
     "lines": "43",
+    "style": "Pendeltåg",
     "kommun": "Nynäshamn"
    },
    "geometry": {
@@ -3959,6 +4206,7 @@
     "name": "Östberga",
     "system": "Roslagsbanan",
     "lines": "29",
+    "style": "Roslagsbanan",
     "kommun": "Danderyd"
    },
    "geometry": {
@@ -3975,6 +4223,7 @@
     "name": "Östermalmstorg",
     "system": "Tunnelbana",
     "lines": "13/14",
+    "style": "Röda linjen",
     "kommun": "Stockholm"
    },
    "geometry": {
@@ -3991,6 +4240,7 @@
     "name": "Österskär",
     "system": "Roslagsbanan",
     "lines": "28",
+    "style": "Roslagsbanan",
     "kommun": "Österåker"
    },
    "geometry": {
@@ -4007,6 +4257,7 @@
     "name": "Östertälje",
     "system": "Pendeltåg",
     "lines": "40/41",
+    "style": "Pendeltåg",
     "kommun": "Södertälje"
    },
    "geometry": {
@@ -4023,6 +4274,7 @@
     "name": "Östervik",
     "system": "Saltsjöbanan",
     "lines": "25",
+    "style": "Saltsjöbanan",
     "kommun": "Nacka"
    },
    "geometry": {

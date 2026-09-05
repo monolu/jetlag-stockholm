@@ -82,7 +82,7 @@ If My Maps flattens the folders into a single layer, import these four instead:
 | `03-house-rules.md` | The long-form version of our local rulings, with per-curse notes |
 | `04-checklist.md` | Night-before checklist and the round run sheet |
 | `data/all-layers.kml` | **Import this one.** Lines + stops + zones + border |
-| `data/stations.csv` | All 252 stops: name, system, lines, kommun, coordinates |
+| `data/stations.csv` | All 252 stops: name, system, lines, colour, style, kommun, coordinates. Colour a map by the **style** column — it holds one value per stop, nine in all. `colour` lists every colour a stop carries, which runs to 22 distinct values, and Google My Maps only styles 20 before dropping the rest into "Other". |
 | `data/stations.geojson` | Everything, for any tool that eats GeoJSON |
 | `build_map.py` | Regenerates every file in `data/` from the OSM snapshots in `data/osm/` |
 | `build_mapdata.py` | Thins the network into `data/map-data.json`, the payload the page's map draws |

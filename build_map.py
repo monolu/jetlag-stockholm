@@ -80,6 +80,16 @@ SYSTEM_OF = {
 }
 SYSTEM_ORDER = ["Tunnelbana", "Pendeltåg", "Tram", "Roslagsbanan", "Saltsjöbanan"]
 
+# One value per stop, for colouring a map by column. `colour` holds every colour a
+# stop carries, which runs to 22 distinct values across the network; Google My Maps
+# only styles 20 categories and drops the rest into "Other". These nine never do.
+STYLE_NAME = {
+    "blue": "Blå linjen", "red": "Röda linjen", "green": "Gröna linjen",
+    "pendel": "Pendeltåg", "city": "Spårväg City", "nockeby": "Nockebybanan",
+    "orange": "Tvärbanan / Lidingöbanan", "roslag": "Roslagsbanan",
+    "saltsjo": "Saltsjöbanan",
+}
+
 # One relation per line carries the drawn geometry; the opposite direction is a
 # near duplicate and is skipped.
 GEOM_LINES = {
@@ -290,6 +300,7 @@ def build_rows(verbose=False):
             "system": " + ".join(systems),
             "lines": "/".join(lines),
             "colour": "/".join(colours),
+            "style": STYLE_NAME[colours[0]],
             "kommun": kommun,
             "lat": round(stop["pt"][0], 6),
             "lon": round(stop["pt"][1], 6),
@@ -422,7 +433,7 @@ def write(name, text):
 
 
 def write_csv(rows):
-    fields = ["name", "system", "lines", "colour", "kommun", "lat", "lon"]
+    fields = ["name", "system", "lines", "colour", "style", "kommun", "lat", "lon"]
     with open(os.path.join(OUT, "stations.csv"), "w", encoding="utf-8-sig", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=fields)
         writer.writeheader()
@@ -434,7 +445,7 @@ def write_geojson(rows):
     features = [{
         "type": "Feature",
         "properties": {"name": r["name"], "system": r["system"], "lines": r["lines"],
-                       "kommun": r["kommun"]},
+                       "style": r["style"], "kommun": r["kommun"]},
         "geometry": {"type": "Point", "coordinates": [r["lon"], r["lat"]]},
     } for r in rows]
     for line in route_lines():
