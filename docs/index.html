@@ -418,8 +418,8 @@
 
   .figs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
-    gap: 11px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 13px;
     margin: 0 0 16px;
   }
 
@@ -428,19 +428,26 @@
     background: var(--surface);
     border: 1px solid var(--rule);
     border-radius: 3px;
-    padding: 11px;
+    padding: 13px 13px 9px;
+  }
+
+  .fig figcaption {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--ink);
+    margin: 0 0 9px;
+    text-wrap: balance;
   }
 
   .fig svg { display: block; width: 100%; height: auto; }
-
-  .fig figcaption {
-    font-size: 14px;
-    line-height: 1.4;
-    color: var(--muted);
-    margin-top: 9px;
-    text-wrap: pretty;
-  }
-  .fig figcaption b { color: var(--ink); font-weight: 600; }
+  .fig svg text { font-family: var(--display); }
+  .fig svg .area { font-weight: 700; font-size: 12px; letter-spacing: .05em; fill: #fff; }
+  .fig svg .pin { font-weight: 600; font-size: 12.5px; fill: #fff; }
+  .fig svg .out { font-weight: 700; font-size: 12px; letter-spacing: .05em; fill: var(--ink); }
 
   .finder { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; margin: 0 0 11px; }
 
@@ -732,62 +739,92 @@
           everyone agrees otherwise. The seekers screenshot what they count when they ask.</p>
       </div>
       <div class="figs">
-        <figure class="fig"><svg viewBox="0 0 180 180" role="img" aria-label="Matching keeps the half of the map nearest the same thing">
-  <clipPath id="clip-match"><circle cx="90" cy="90" r="76"/></clipPath>
-  <circle cx="90" cy="90" r="76" fill="var(--surface-2)"/>
+        <figure class="fig">
+          <figcaption>Is your nearest museum the same as my nearest museum?</figcaption>
+<svg viewBox="40 20 300 300" role="img" aria-label="Matching keeps the ground nearest the same museum as the seekers">
+  <clipPath id="clip-match"><circle cx="190" cy="170" r="132"/></clipPath>
   <g clip-path="url(#clip-match)">
-    <path d="M45 192 L-10 190 L-10 -10 L133 -8 Z" fill="var(--accent)" fill-opacity=".2"/>
-    <line x1="45" y1="192" x2="133" y2="-8" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
+    <path d="M-31.4 490.0 L413.4 -175.0 L213.4 -175.0 L-231.4 490.0 Z" fill="#c0392b"/>
+    <path d="M-31.4 490.0 L413.4 -175.0 L613.4 -175.0 L168.6 490.0 Z" fill="#1e8449"/>
+    <line x1="-31.4" y1="490.0" x2="413.4" y2="-175.0" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 5"/>
   </g>
-  <circle cx="90" cy="90" r="76" fill="none" stroke="var(--rule-strong)" stroke-width="2"/>
-  <circle cx="48" cy="74" r="5" fill="var(--ink)" stroke="var(--surface-2)" stroke-width="2"/>
-  <circle cx="130" cy="110" r="5" fill="var(--ink)" stroke="var(--surface-2)" stroke-width="2"/>
-  <g transform="translate(62 48)"><path d="M0 -11 L2.7 -3.7 L10.5 -3.4 L4.4 1.4 L6.5 8.9 L0 4.6 L-6.5 8.9 L-4.4 1.4 L-10.5 -3.4 L-2.7 -3.7 Z" fill="var(--red)" stroke="var(--surface-2)" stroke-width="3" paint-order="stroke"/></g>
+  <text class="area" x="112" y="186" text-anchor="middle"><tspan x="112" y="172">POTENTIAL</tspan><tspan x="112" y="186">HIDER AREA</tspan><tspan x="112" y="200">IF NO</tspan></text>
+  <text class="area" x="262" y="146" text-anchor="middle"><tspan x="262" y="132">POTENTIAL</tspan><tspan x="262" y="146">HIDER AREA</tspan><tspan x="262" y="160">IF YES</tspan></text>
+  <circle cx="120" cy="110" r="6" fill="#111827" stroke="#fff" stroke-width="2"/>
+  <text class="pin" x="120" y="131" text-anchor="middle"><tspan x="120" y="131">Museum #1</tspan></text>
+  <circle cx="262" cy="205" r="6" fill="#111827" stroke="#fff" stroke-width="2"/>
+  <text class="pin" x="262" y="226" text-anchor="middle"><tspan x="262" y="226">Museum #2</tspan></text>
+  <g transform="translate(245 248)"><path d="M0 -13 L3.2 -4.4 L12.4 -4 L5.2 1.7 L7.6 10.5 L0 5.4 L-7.6 10.5 L-5.2 1.7 L-12.4 -4 L-3.2 -4.4 Z" fill="#111827" stroke="#fff" stroke-width="2.5" paint-order="stroke"/></g>
+  <text class="pin" x="245" y="270" text-anchor="middle"><tspan x="245" y="270">SEEKERS</tspan></text>
+  <circle cx="190" cy="170" r="132" fill="none" stroke="var(--ink)" stroke-width="2.5"/>
 </svg>
-          <figcaption><b>Matching</b> keeps the half of the map that shares the seekers'
-            nearest one.</figcaption>
         </figure>
-        <figure class="fig"><svg viewBox="0 0 180 180" role="img" aria-label="Measuring cuts at the seekers' own distance from the thing">
-  <clipPath id="clip-meas"><circle cx="90" cy="90" r="76"/></clipPath>
-  <circle cx="90" cy="90" r="76" fill="var(--surface-2)"/>
+        <figure class="fig">
+          <figcaption>Compared to me, are you closer to or further from Gröna Lund?</figcaption>
+<svg viewBox="40 20 300 300" role="img" aria-label="Measuring cuts at the seekers' own distance from the thing">
+  <clipPath id="clip-meas"><circle cx="190" cy="170" r="132"/></clipPath>
   <g clip-path="url(#clip-meas)">
-    <circle cx="34" cy="90" r="74" fill="var(--accent)" fill-opacity=".2" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle cx="190" cy="170" r="132" fill="#c0392b"/>
+    <circle cx="185" cy="155" r="65.0" fill="#1e8449" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 5"/>
   </g>
-  <circle cx="90" cy="90" r="76" fill="none" stroke="var(--rule-strong)" stroke-width="2"/>
-  <line x1="34" y1="90" x2="108" y2="90" stroke="var(--muted)" stroke-width="1.5"/>
-  <circle cx="34" cy="90" r="5" fill="var(--ink)" stroke="var(--surface-2)" stroke-width="2"/>
-  <g transform="translate(108 90)"><path d="M0 -11 L2.7 -3.7 L10.5 -3.4 L4.4 1.4 L6.5 8.9 L0 4.6 L-6.5 8.9 L-4.4 1.4 L-10.5 -3.4 L-2.7 -3.7 Z" fill="var(--red)" stroke="var(--surface-2)" stroke-width="3" paint-order="stroke"/></g>
+  <line x1="185" y1="155" x2="245" y2="130" stroke="#fff" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="area" x="185" y="130" text-anchor="middle"><tspan x="185" y="123">HIDER AREA</tspan><tspan x="185" y="137">IF CLOSER</tspan></text>
+  <text class="area" x="150" y="255" text-anchor="middle"><tspan x="150" y="241">POTENTIAL</tspan><tspan x="150" y="255">HIDER AREA</tspan><tspan x="150" y="269">IF FURTHER</tspan></text>
+  <circle cx="185" cy="155" r="6" fill="#111827" stroke="#fff" stroke-width="2"/>
+  <text class="pin" x="185" y="179" text-anchor="middle"><tspan x="185" y="179">Gröna Lund</tspan></text>
+  <g transform="translate(245 130)"><path d="M0 -13 L3.2 -4.4 L12.4 -4 L5.2 1.7 L7.6 10.5 L0 5.4 L-7.6 10.5 L-5.2 1.7 L-12.4 -4 L-3.2 -4.4 Z" fill="#111827" stroke="#fff" stroke-width="2.5" paint-order="stroke"/></g>
+  <text class="pin" x="274" y="117" text-anchor="middle"><tspan x="274" y="117">SEEKERS</tspan></text>
+  <circle cx="190" cy="170" r="132" fill="none" stroke="var(--ink)" stroke-width="2.5"/>
 </svg>
-          <figcaption><b>Measuring</b> cuts at the seekers' own distance from the
-            thing.</figcaption>
         </figure>
-        <figure class="fig"><svg viewBox="0 0 180 180" role="img" aria-label="Radar draws a circle of the asked size around the seekers">
-  <circle cx="90" cy="90" r="76" fill="var(--surface-2)"/>
-  <circle cx="84" cy="94" r="40" fill="var(--accent)" fill-opacity=".2" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
-  <circle cx="90" cy="90" r="76" fill="none" stroke="var(--rule-strong)" stroke-width="2"/>
-  <line x1="84" y1="94" x2="124" y2="94" stroke="var(--muted)" stroke-width="1.5"/>
-  <g transform="translate(84 94)"><path d="M0 -11 L2.7 -3.7 L10.5 -3.4 L4.4 1.4 L6.5 8.9 L0 4.6 L-6.5 8.9 L-4.4 1.4 L-10.5 -3.4 L-2.7 -3.7 Z" fill="var(--red)" stroke="var(--surface-2)" stroke-width="3" paint-order="stroke"/></g>
-</svg>
-          <figcaption><b>Radar</b> keeps the inside or the outside of a circle of the
-            asked size.</figcaption>
-        </figure>
-        <figure class="fig"><svg viewBox="0 0 180 180" role="img" aria-label="A tentacle question leaves the share of the range nearest one thing">
-  <circle cx="90" cy="90" r="76" fill="var(--surface-2)"/>
-  <path d="M90 90 L90 40 A50 50 0 0 1 133 115 Z" fill="var(--accent)" fill-opacity=".2"/>
-  <circle cx="90" cy="90" r="50" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
-  <g stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4" stroke-opacity=".7">
-    <line x1="90" y1="90" x2="90" y2="40"/>
-    <line x1="90" y1="90" x2="133" y2="115"/>
-    <line x1="90" y1="90" x2="47" y2="115"/>
+        <figure class="fig">
+          <figcaption>Are you within 5 km of me?</figcaption>
+<svg viewBox="40 20 300 300" role="img" aria-label="Radar draws a circle of the asked size around the seekers">
+  <clipPath id="clip-radar"><circle cx="190" cy="170" r="132"/></clipPath>
+  <g clip-path="url(#clip-radar)">
+    <circle cx="190" cy="170" r="132" fill="#c0392b"/>
+    <circle cx="205" cy="190" r="62" fill="#1e8449" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 5"/>
   </g>
-  <circle cx="90" cy="90" r="76" fill="none" stroke="var(--rule-strong)" stroke-width="2"/>
-  <circle cx="116" cy="74" r="5" fill="var(--ink)" stroke="var(--surface-2)" stroke-width="2"/>
-  <circle cx="90" cy="121" r="5" fill="var(--muted)" stroke="var(--surface-2)" stroke-width="2"/>
-  <circle cx="64" cy="74" r="5" fill="var(--muted)" stroke="var(--surface-2)" stroke-width="2"/>
-  <g transform="translate(90 90)"><path d="M0 -11 L2.7 -3.7 L10.5 -3.4 L4.4 1.4 L6.5 8.9 L0 4.6 L-6.5 8.9 L-4.4 1.4 L-10.5 -3.4 L-2.7 -3.7 Z" fill="var(--red)" stroke="var(--surface-2)" stroke-width="3" paint-order="stroke"/></g>
+  <text class="area" x="138" y="102" text-anchor="middle"><tspan x="138" y="88">POTENTIAL</tspan><tspan x="138" y="102">HIDER AREA</tspan><tspan x="138" y="116">IF MISS</tspan></text>
+  <text class="area" x="205" y="166" text-anchor="middle"><tspan x="205" y="159">HIDER AREA</tspan><tspan x="205" y="173">IF HIT</tspan></text>
+  <line x1="205" y1="190" x2="267" y2="190" stroke="#fff" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="pin" x="238" y="182" text-anchor="middle"><tspan x="238" y="182">5 km</tspan></text>
+  <g transform="translate(205 190)"><path d="M0 -13 L3.2 -4.4 L12.4 -4 L5.2 1.7 L7.6 10.5 L0 5.4 L-7.6 10.5 L-5.2 1.7 L-12.4 -4 L-3.2 -4.4 Z" fill="#111827" stroke="#fff" stroke-width="2.5" paint-order="stroke"/></g>
+  <text class="pin" x="205" y="216" text-anchor="middle"><tspan x="205" y="216">SEEKERS</tspan></text>
+  <circle cx="190" cy="170" r="132" fill="none" stroke="var(--ink)" stroke-width="2.5"/>
 </svg>
-          <figcaption><b>Tentacles</b> keep only the share of the range belonging to the
-            one named.</figcaption>
+        </figure>
+        <figure class="fig">
+          <figcaption>Of the museums within 2 km of me, which are you nearest to?</figcaption>
+<svg viewBox="40 20 300 322" role="img" aria-label="A tentacle question leaves the share of the reach nearest one museum">
+  <clipPath id="clip-tent"><circle cx="190" cy="170" r="132"/></clipPath>
+  <g clip-path="url(#clip-tent)">
+    <circle cx="190" cy="170" r="132" fill="#6b7280"/>
+  </g>
+  <path d="M192.0 140.8 L112.2 194.1 A92 92 0 0 1 183.9 53.2 Z" fill="#3b5bdb"/>
+  <path d="M192.0 140.8 L183.9 53.2 A92 92 0 0 1 268.5 193.0 Z" fill="#3b5bdb"/>
+  <path d="M192.0 140.8 L268.5 193.0 A92 92 0 0 1 112.2 194.1 Z" fill="#d68910"/>
+  <circle cx="190" cy="145" r="92" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <g stroke="#fff" stroke-width="2" stroke-dasharray="5 4">
+    <line x1="192.0" y1="140.8" x2="183.9" y2="53.2"/>
+    <line x1="192.0" y1="140.8" x2="112.2" y2="194.1"/>
+    <line x1="192.0" y1="140.8" x2="268.5" y2="193.0"/>
+  </g>
+  <line x1="190" y1="145" x2="103.5" y2="113.7" stroke="#fff" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="pin" x="150" y="106" text-anchor="middle"><tspan x="150" y="106">2 km</tspan></text>
+  <circle cx="136" cy="124" r="6" fill="#111827" stroke="#fff" stroke-width="2"/>
+  <text class="pin" x="136" y="146" text-anchor="middle"><tspan x="136" y="146">Museum #1</tspan></text>
+  <circle cx="244" cy="114" r="6" fill="#111827" stroke="#fff" stroke-width="2"/>
+  <text class="pin" x="244" y="136" text-anchor="middle"><tspan x="244" y="136">Museum #2</tspan></text>
+  <circle cx="186" cy="199" r="6" fill="#111827" stroke="#fff" stroke-width="2"/>
+  <text class="pin" x="186" y="221" text-anchor="middle"><tspan x="186" y="221">Museum #3</tspan></text>
+  <text class="area" x="140" y="262" text-anchor="middle"><tspan x="140" y="262">OUT OF REACH</tspan></text>
+  <g transform="translate(190 145)"><path d="M0 -13 L3.2 -4.4 L12.4 -4 L5.2 1.7 L7.6 10.5 L0 5.4 L-7.6 10.5 L-5.2 1.7 L-12.4 -4 L-3.2 -4.4 Z" fill="#111827" stroke="#fff" stroke-width="2.5" paint-order="stroke"/></g>
+  <path d="M190 314 L176 214" stroke="var(--ink)" stroke-width="2" fill="none"/>
+  <path d="M176 214 l-1 11 l8 -6 z" fill="var(--ink)"/>
+  <text class="out" x="190" y="330" text-anchor="middle"><tspan x="190" y="330">THE SHARE LEFT IF THEY SAY MUSEUM #3</tspan></text>
+  <circle cx="190" cy="170" r="132" fill="none" stroke="var(--ink)" stroke-width="2.5"/>
+</svg>
         </figure>
       </div>
     </section>

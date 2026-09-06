@@ -14,6 +14,7 @@ import json
 import os
 
 import build_map as M
+import figures
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE = os.path.join(HERE, "page-template.html")
@@ -79,62 +80,7 @@ POWERUP_NOTES = {
     "Nothing": "Does nothing. It cannot be played, and it cannot pay a casting cost.",
 }
 
-# The four diagrams, all on one 180-square: the pale disc is the map, the red
-# star is the seekers, ink dots are the things a question names, muted dots the
-# things it does not, and the shaded ground is what survives the answer.
-FIGURES = {
-    # the bisector of two things, and the half that holds the seekers' one
-    "FIG-MATCHING": """<svg viewBox="0 0 180 180" role="img" aria-label="Matching keeps the half of the map nearest the same thing">
-  <clipPath id="clip-match"><circle cx="90" cy="90" r="76"/></clipPath>
-  <circle cx="90" cy="90" r="76" fill="var(--surface-2)"/>
-  <g clip-path="url(#clip-match)">
-    <path d="M45 192 L-10 190 L-10 -10 L133 -8 Z" fill="var(--accent)" fill-opacity=".2"/>
-    <line x1="45" y1="192" x2="133" y2="-8" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
-  </g>
-  <circle cx="90" cy="90" r="76" fill="none" stroke="var(--rule-strong)" stroke-width="2"/>
-  <circle cx="48" cy="74" r="5" fill="var(--ink)" stroke="var(--surface-2)" stroke-width="2"/>
-  <circle cx="130" cy="110" r="5" fill="var(--ink)" stroke="var(--surface-2)" stroke-width="2"/>
-  <g transform="translate(62 48)"><path d="M0 -11 L2.7 -3.7 L10.5 -3.4 L4.4 1.4 L6.5 8.9 L0 4.6 L-6.5 8.9 L-4.4 1.4 L-10.5 -3.4 L-2.7 -3.7 Z" fill="var(--red)" stroke="var(--surface-2)" stroke-width="3" paint-order="stroke"/></g>
-</svg>""",
-
-    # a circle drawn on the thing, through the seekers: inside it is closer
-    "FIG-MEASURING": """<svg viewBox="0 0 180 180" role="img" aria-label="Measuring cuts at the seekers' own distance from the thing">
-  <clipPath id="clip-meas"><circle cx="90" cy="90" r="76"/></clipPath>
-  <circle cx="90" cy="90" r="76" fill="var(--surface-2)"/>
-  <g clip-path="url(#clip-meas)">
-    <circle cx="34" cy="90" r="74" fill="var(--accent)" fill-opacity=".2" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
-  </g>
-  <circle cx="90" cy="90" r="76" fill="none" stroke="var(--rule-strong)" stroke-width="2"/>
-  <line x1="34" y1="90" x2="108" y2="90" stroke="var(--muted)" stroke-width="1.5"/>
-  <circle cx="34" cy="90" r="5" fill="var(--ink)" stroke="var(--surface-2)" stroke-width="2"/>
-  <g transform="translate(108 90)"><path d="M0 -11 L2.7 -3.7 L10.5 -3.4 L4.4 1.4 L6.5 8.9 L0 4.6 L-6.5 8.9 L-4.4 1.4 L-10.5 -3.4 L-2.7 -3.7 Z" fill="var(--red)" stroke="var(--surface-2)" stroke-width="3" paint-order="stroke"/></g>
-</svg>""",
-
-    "FIG-RADAR": """<svg viewBox="0 0 180 180" role="img" aria-label="Radar draws a circle of the asked size around the seekers">
-  <circle cx="90" cy="90" r="76" fill="var(--surface-2)"/>
-  <circle cx="84" cy="94" r="40" fill="var(--accent)" fill-opacity=".2" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
-  <circle cx="90" cy="90" r="76" fill="none" stroke="var(--rule-strong)" stroke-width="2"/>
-  <line x1="84" y1="94" x2="124" y2="94" stroke="var(--muted)" stroke-width="1.5"/>
-  <g transform="translate(84 94)"><path d="M0 -11 L2.7 -3.7 L10.5 -3.4 L4.4 1.4 L6.5 8.9 L0 4.6 L-6.5 8.9 L-4.4 1.4 L-10.5 -3.4 L-2.7 -3.7 Z" fill="var(--red)" stroke="var(--surface-2)" stroke-width="3" paint-order="stroke"/></g>
-</svg>""",
-
-    # the range divided between the three things in it; one share is shaded
-    "FIG-TENTACLE": """<svg viewBox="0 0 180 180" role="img" aria-label="A tentacle question leaves the share of the range nearest one thing">
-  <circle cx="90" cy="90" r="76" fill="var(--surface-2)"/>
-  <path d="M90 90 L90 40 A50 50 0 0 1 133 115 Z" fill="var(--accent)" fill-opacity=".2"/>
-  <circle cx="90" cy="90" r="50" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5"/>
-  <g stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4" stroke-opacity=".7">
-    <line x1="90" y1="90" x2="90" y2="40"/>
-    <line x1="90" y1="90" x2="133" y2="115"/>
-    <line x1="90" y1="90" x2="47" y2="115"/>
-  </g>
-  <circle cx="90" cy="90" r="76" fill="none" stroke="var(--rule-strong)" stroke-width="2"/>
-  <circle cx="116" cy="74" r="5" fill="var(--ink)" stroke="var(--surface-2)" stroke-width="2"/>
-  <circle cx="90" cy="121" r="5" fill="var(--muted)" stroke="var(--surface-2)" stroke-width="2"/>
-  <circle cx="64" cy="74" r="5" fill="var(--muted)" stroke="var(--surface-2)" stroke-width="2"/>
-  <g transform="translate(90 90)"><path d="M0 -11 L2.7 -3.7 L10.5 -3.4 L4.4 1.4 L6.5 8.9 L0 4.6 L-6.5 8.9 L-4.4 1.4 L-10.5 -3.4 L-2.7 -3.7 Z" fill="var(--red)" stroke="var(--surface-2)" stroke-width="3" paint-order="stroke"/></g>
-</svg>""",
-}
+FIGURES = figures.build()
 
 SITE_MAP = """      <div class="mapwrap">
         <iframe id="mymaps" title="Our game map in Google My Maps" loading="lazy"

@@ -405,8 +405,8 @@
 
   .figs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
-    gap: 11px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 13px;
     margin: 0 0 16px;
   }
 
@@ -415,19 +415,26 @@
     background: var(--surface);
     border: 1px solid var(--rule);
     border-radius: 3px;
-    padding: 11px;
+    padding: 13px 13px 9px;
+  }
+
+  .fig figcaption {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--ink);
+    margin: 0 0 9px;
+    text-wrap: balance;
   }
 
   .fig svg { display: block; width: 100%; height: auto; }
-
-  .fig figcaption {
-    font-size: 14px;
-    line-height: 1.4;
-    color: var(--muted);
-    margin-top: 9px;
-    text-wrap: pretty;
-  }
-  .fig figcaption b { color: var(--ink); font-weight: 600; }
+  .fig svg text { font-family: var(--display); }
+  .fig svg .area { font-weight: 700; font-size: 12px; letter-spacing: .05em; fill: #fff; }
+  .fig svg .pin { font-weight: 600; font-size: 12.5px; fill: #fff; }
+  .fig svg .out { font-weight: 700; font-size: 12px; letter-spacing: .05em; fill: var(--ink); }
 
   .finder { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; margin: 0 0 11px; }
 
@@ -707,21 +714,21 @@
           everyone agrees otherwise. The seekers screenshot what they count when they ask.</p>
       </div>
       <div class="figs">
-        <figure class="fig"><!--FIG-MATCHING-->
-          <figcaption><b>Matching</b> keeps the half of the map that shares the seekers'
-            nearest one.</figcaption>
+        <figure class="fig">
+          <figcaption>Is your nearest museum the same as my nearest museum?</figcaption>
+<!--FIG-MATCHING-->
         </figure>
-        <figure class="fig"><!--FIG-MEASURING-->
-          <figcaption><b>Measuring</b> cuts at the seekers' own distance from the
-            thing.</figcaption>
+        <figure class="fig">
+          <figcaption>Compared to me, are you closer to or further from Gröna Lund?</figcaption>
+<!--FIG-MEASURING-->
         </figure>
-        <figure class="fig"><!--FIG-RADAR-->
-          <figcaption><b>Radar</b> keeps the inside or the outside of a circle of the
-            asked size.</figcaption>
+        <figure class="fig">
+          <figcaption>Are you within 5 km of me?</figcaption>
+<!--FIG-RADAR-->
         </figure>
-        <figure class="fig"><!--FIG-TENTACLE-->
-          <figcaption><b>Tentacles</b> keep only the share of the range belonging to the
-            one named.</figcaption>
+        <figure class="fig">
+          <figcaption>Of the museums within 2 km of me, which are you nearest to?</figcaption>
+<!--FIG-TENTACLE-->
         </figure>
       </div>
     </section>
