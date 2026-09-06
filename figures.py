@@ -1,5 +1,5 @@
 """
-The four question diagrams, built and checked.
+The five question diagrams, built and checked.
 
 Each is a map of the game: a circle, because our border is one. Every region
 carries its own colour and its own label, so the picture says what the answer
@@ -25,6 +25,7 @@ YES = "#1e8449"      # the ground that is left
 OUT = "#6b7280"      # out of range, so not an answer either way
 PICK = "#d68910"     # the share the named thing keeps
 REST = "#3b5bdb"     # the shares it does not
+COLD = "#2c5fc9"     # the far side of a thermometer, where it got colder
 
 INK = "#111827"      # dots and stars, dark on every fill we use
 
@@ -42,8 +43,9 @@ def on_map(p):
 
 # ------------------------------------------------------------- svg pieces
 
-def star(x, y):
-    return (f'  <g transform="translate({x} {y})"><path d="{STAR}" fill="{INK}" '
+def star(x, y, hollow=False):
+    fill = "none" if hollow else INK
+    return (f'  <g transform="translate({x} {y})"><path d="{STAR}" fill="{fill}" '
             'stroke="#fff" stroke-width="2.5" paint-order="stroke"/></g>')
 
 
@@ -335,9 +337,53 @@ def tentacles():
     ], tall=True)
 
 
+# --------------------------------------------------- 5. thermometer
+
+# The seekers travel, then ask. Ground nearer where they finished got hotter,
+# ground nearer where they started got colder, and the bisector of the two is
+# the line between. Drawn flat, so the split is the circle's own diameter.
+START, END = (130, 190), (250, 190)
+_split = (START[0] + END[0]) / 2
+
+
+def hotter(p):
+    return p[0] > _split + 3
+
+
+def colder(p):
+    return p[0] < _split - 3
+
+
+def thermometer():
+    check("thermometer", "colder label", box(128, 115, ["REMAINING", "HIDER AREA", "IF COLDER"]), colder)
+    check("thermometer", "hotter label", box(252, 115, ["REMAINING", "HIDER AREA", "IF HOTTER"]), hotter)
+    check("thermometer", "start label", box(130, 216, ["START POINT"]), colder)
+    check("thermometer", "end label", box(250, 216, ["END POINT"]), hotter)
+    check("thermometer", "5 km", box(168, 180, ["5 km"]), colder)
+
+    return svg("A thermometer splits the map between where the seekers started and finished", [
+        clip("clip-therm"),
+        '  <g clip-path="url(#clip-therm)">',
+        f'    <rect x="{CX - R}" y="{CY - R}" width="{R}" height="{2 * R}" fill="{COLD}"/>',
+        f'    <rect x="{CX}" y="{CY - R}" width="{R}" height="{2 * R}" fill="{NO}"/>',
+        f'    <line x1="{_split}" y1="{CY - R}" x2="{_split}" y2="{CY + R}" '
+        'stroke="#fff" stroke-width="2.5" stroke-dasharray="7 5"/>',
+        "  </g>",
+        label(128, 115, ["REMAINING", "HIDER AREA", "IF COLDER"]),
+        label(252, 115, ["REMAINING", "HIDER AREA", "IF HOTTER"]),
+        f'  <line x1="{START[0] + 14}" y1="190" x2="{END[0] - 18}" y2="190" '
+        'stroke="#fff" stroke-width="2"/>',
+        f'  <path d="M{END[0] - 14} 190 l-10 -5 l0 10 z" fill="#fff"/>',
+        label(168, 180, ["5 km"], "pin"),
+        star(*START), label(130, 216, ["START POINT"], "pin"),
+        star(*END, hollow=True), label(250, 216, ["END POINT"], "pin"),
+    ])
+
+
 QUESTIONS = {
     "FIG-MATCHING": "Is your nearest museum the same as my nearest museum?",
     "FIG-MEASURING": "Compared to me, are you closer to or further from Gröna Lund?",
+    "FIG-THERMOMETER": "I just travelled 5 km. Am I hotter or colder?",
     "FIG-RADAR": "Are you within 5 km of me?",
     "FIG-TENTACLE": "Of the museums within 2 km of me, which are you nearest to?",
 }
@@ -347,6 +393,7 @@ def build():
     figures = {
         "FIG-MATCHING": matching(),
         "FIG-MEASURING": measuring(),
+        "FIG-THERMOMETER": thermometer(),
         "FIG-RADAR": radar(),
         "FIG-TENTACLE": tentacles(),
     }
@@ -356,5 +403,4 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
-    print("four figures, every label inside the region it names")
+    print(f"{len(build())} figures, every label inside the region it names")

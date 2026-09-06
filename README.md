@@ -84,6 +84,7 @@ If My Maps flattens the folders into a single layer, import these four instead:
 | `data/stations.geojson` | Everything, for any tool that eats GeoJSON |
 | `build_map.py` | Regenerates every file in `data/` from the OSM snapshots in `data/osm/` |
 | `build_pages.py` | Builds both copies of the page from `page-template.html` |
+| `figures.py` | Draws the five question diagrams, and checks every label sits in the region it names |
 | `cards/` | Every card and every question as data, plus a deck builder. See `cards/README.md` |
 
 Stop and route data from OpenStreetMap, © OpenStreetMap contributors, ODbL.
