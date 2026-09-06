@@ -431,6 +431,38 @@
   }
 
   .fig svg { display: block; width: 100%; height: auto; }
+
+  .coastmap {
+    margin: 0 0 14px;
+    max-width: 620px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 12px;
+  }
+
+  .coastmap svg { display: block; width: 100%; height: auto; }
+  /* the labels cross the coastline, so they carry the card colour behind them */
+  .coastmap svg text {
+    font-family: var(--display);
+    font-weight: 600;
+    paint-order: stroke;
+    stroke: var(--surface);
+    stroke-width: 5px;
+    stroke-linejoin: round;
+  }
+  .coastmap svg .sea { font-size: 15px; fill: var(--ink); }
+  .coastmap svg .fresh { font-size: 15px; fill: var(--muted); }
+  .coastmap svg .mark { font-size: 13px; fill: var(--ink); }
+
+  .coastmap figcaption {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--muted);
+    margin: 9px 0 0;
+    text-wrap: pretty;
+  }
+
   .fig svg text { font-family: var(--display); }
   .fig svg .area { font-weight: 700; font-size: 12px; letter-spacing: .05em; fill: #fff; }
   .fig svg .pin { font-weight: 600; font-size: 12.5px; fill: #fff; }
@@ -895,6 +927,13 @@
           few hundred metres across, Baggensstäket a few dozen. Read strictly there is no
           coast here at all, so we take the salt water instead.</p>
       </div>
+      <figure class="coastmap">
+<!--FIG-COAST-->
+        <figcaption>Every shore drawn in blue is coast, and the west of the map is empty
+          because Mälaren has none. The dots are the locks the line runs through; Norrström,
+          beside Slussen, is Mälaren's third mouth. Coastline from OpenStreetMap, which
+          starts the sea where we do.</figcaption>
+      </figure>
 
       <h3>Other</h3>
       <ul>

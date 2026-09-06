@@ -61,6 +61,10 @@ all 235 stops foldered by system, the 500 m hiding zone around every stop, the 7
 250 m circles the two zone curses make, and the border. Share it with everyone and open it
 once in the Google Maps app so it caches.
 
+Then add one more layer and import `data/coastline.kml`. That is the salt water, which
+is what our rules count as coast — Google paints Mälaren and Saltsjön the same blue, so it
+is the one ruling you cannot check on the map itself.
+
 If My Maps flattens the folders into a single layer, import these four instead:
 
 | File | Layer |
@@ -69,6 +73,7 @@ If My Maps flattens the folders into a single layer, import these four instead:
 | `data/stations.kml` | The 235 stops |
 | `data/hiding-zones.kml` | The 500 m, 750 m and 250 m circles around every stop |
 | `data/border.kml` | The 28.7 km border circle |
+| `data/coastline.kml` | The coastline, as its own layer |
 
 ## Files
 
@@ -85,6 +90,7 @@ If My Maps flattens the folders into a single layer, import these four instead:
 | `build_map.py` | Regenerates every file in `data/` from the OSM snapshots in `data/osm/` |
 | `build_pages.py` | Builds both copies of the page from `page-template.html` |
 | `figures.py` | Draws the five question diagrams, and checks every label sits in the region it names |
+| `build_coast.py` | Builds `data/coastline.kml` and the coast map on the page, from the OSM snapshot in `data/osm/coastline.json` |
 | `cards/` | Every card and every question as data, plus a deck builder. See `cards/README.md` |
 
 Stop and route data from OpenStreetMap, © OpenStreetMap contributors, ODbL.

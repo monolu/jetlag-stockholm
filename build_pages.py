@@ -13,6 +13,7 @@ import html
 import json
 import os
 
+import build_coast
 import build_map as M
 import figures
 
@@ -81,6 +82,7 @@ POWERUP_NOTES = {
 }
 
 FIGURES = figures.build()
+FIGURES['FIG-COAST'] = build_coast.figure()[0]
 
 SITE_MAP = """      <div class="mapwrap">
         <iframe id="mymaps" title="Our game map in Google My Maps" loading="lazy"
