@@ -509,7 +509,8 @@
   .systabs button:hover { color: var(--ink); }
   .systabs button[aria-selected="true"] { color: #fff; background: var(--accent); border-color: var(--accent); }
 
-  #stops-wrap { max-height: 460px; overflow: auto; }
+  /* the two long tables scroll in place rather than running down the page */
+  #stops-wrap, #clarify-wrap { max-height: 460px; overflow: auto; }
 
   footer.end {
     margin-top: 44px;
