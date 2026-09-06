@@ -1,5 +1,5 @@
 """
-The coastline: a Google My Maps layer, and the figure on the page.
+The coastline: a Google My Maps layer, and a drawn fallback.
 
 Our coast ruling is the one thing a player cannot look up in Google Maps —
 Mälaren and Saltsjön are painted the same blue — so it has to be drawn. The line
@@ -7,9 +7,14 @@ itself comes from OpenStreetMap's natural=coastline, which happens to run
 exactly where our ruling does: OSM treats Mälaren as an inland lake and starts
 the sea at the locks.
 
-    data/coastline.kml  a layer to add to the My Map, at 10 m accuracy
-    the page figure      thinned to 50 m, skerries under 250 m across dropped,
-                         since at 100 m to the pixel they are specks
+    data/coastline.kml  the layer to add to the My Map, at 10 m accuracy. This
+                        is the one people use: it sits on Google's basemap and
+                        pans and zooms like any other layer.
+    figure()            the same shore drawn cold, for the Artifact copy, which
+                        cannot load an iframe. Thinned to 50 m with the skerries
+                        under 250 m across dropped, since at 100 m to the pixel
+                        they are specks. Without a basemap under it, it is a
+                        diagram of the ruling rather than a map.
 
 Run: python build_coast.py
 """

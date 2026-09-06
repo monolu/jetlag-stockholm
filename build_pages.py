@@ -82,7 +82,32 @@ POWERUP_NOTES = {
 }
 
 FIGURES = figures.build()
-FIGURES['FIG-COAST'] = build_coast.figure()[0]
+
+# The coast section gets the same My Map again, dropped on the water and left to
+# pan and zoom, because the ruling is about ground you have to look at. The
+# Artifact copy cannot load an iframe, so it falls back to the drawn coastline.
+COAST_EMBED = ("https://www.google.com/maps/d/embed?mid=" + MYMAPS_ID +
+               "&amp;hl=en&amp;ll=59.31%2C18.05&amp;z=11")
+
+SITE_COAST = """      <div class="mapwrap">
+        <iframe id="coastmap" title="The coastline on our game map" loading="lazy"
+                allowfullscreen src="__EMBED__"></iframe>
+        <div class="mapout">
+          <a href="__VIEW__" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span>Turn on the <strong>Coastline</strong> layer from the panel at the top left.
+            Every shore it draws is coast; Mälaren has none, which is the whole ruling in one
+            picture.</span>
+        </div>
+      </div>
+"""
+
+ARTIFACT_COAST = """      <figure class="coastmap">
+__FIGURE__
+        <figcaption>Every shore drawn in blue is coast, and the west is empty because
+          Mälaren has none. The dots are the locks the line runs through. On the live page
+          this is a layer on the map itself, which you can pan and zoom.</figcaption>
+      </figure>
+"""
 
 SITE_MAP = """      <div class="mapwrap">
         <iframe id="mymaps" title="Our game map in Google My Maps" loading="lazy"
@@ -199,13 +224,17 @@ def build():
         "CLARIFY": clarify,
     })
 
-    artifact = fill(template, dict(common, MAPBLOCK=(
-        ARTIFACT_MAP.replace("__VIEW__", MYMAPS_VIEW).replace("__SITE__", SITE))))
+    artifact = fill(template, dict(
+        common,
+        MAPBLOCK=ARTIFACT_MAP.replace("__VIEW__", MYMAPS_VIEW).replace("__SITE__", SITE),
+        COASTBLOCK=ARTIFACT_COAST.replace("__FIGURE__", build_coast.figure()[0])))
     with open(os.path.join(HERE, "field-manual.html"), "w", encoding="utf-8") as fh:
         fh.write(artifact)
 
-    site = fill(template, dict(common, MAPBLOCK=(
-        SITE_MAP.replace("__EMBED__", MYMAPS_EMBED).replace("__VIEW__", MYMAPS_VIEW))))
+    site = fill(template, dict(
+        common,
+        MAPBLOCK=SITE_MAP.replace("__EMBED__", MYMAPS_EMBED).replace("__VIEW__", MYMAPS_VIEW),
+        COASTBLOCK=SITE_COAST.replace("__EMBED__", COAST_EMBED).replace("__VIEW__", MYMAPS_VIEW)))
     # the title, fonts and stylesheet belong in a real <head>
     cut = site.index("</style>") + len("</style>")
     site = SITE_HEAD + site[:cut] + "\n</head>\n<body>\n" + site[cut:] + "\n</body>\n</html>\n"
