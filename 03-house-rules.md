@@ -85,13 +85,21 @@ Measure in Google Maps: long-press an empty spot → *Measure distance*.
 
 Blasieholmen is a peninsula. A bridge joins nothing.
 
-**Coastline.** The rulebook's definition (a channel never narrower than 1.6 km) would make
-none of Stockholm a coast, so we override it:
+**Coastline.** The rulebook wants land meeting the ocean, a great lake, or water that
+reaches one through a channel never narrower than 1.6 km. Mälaren is neither an ocean nor a
+great lake, and it drains through a lock, so it fails on its own terms. The salt water fails
+too: every route from Stockholm to the open Baltic threads the archipelago, and Oxdjupet and
+the Vaxholm channel are a few hundred metres across while Baggensstäket is a few dozen. Read
+strictly, the game has no coast at all, so we override it:
 
-> **Coastline = the salt-water side.** Everything seaward of the Slussen and Hammarby
-> locks: Strömmen, Nybroviken, Saltsjön, Lilla Värtan, Djurgårdsbrunnsviken, the Nacka and
-> Lidingö shores, and the water out to Nynäshamn. Mälaren, Riddarfjärden, Årstaviken and
-> all lakes are **not** coastline.
+> **Coastline = the salt-water side**, on two fronts. East of Stockholm, everything seaward
+> of the Slussen, Norrström and Hammarby locks: Strömmen, Nybroviken, Saltsjön, Lilla
+> Värtan, Djurgårdsbrunnsviken, the Nacka, Lidingö and Saltsjöbaden shores, and the island
+> shores in that water. South of the Södertälje lock: the canal below it, Igelstaviken and
+> Hallsfjärden. Mälaren and its arms — Riddarfjärden, Årstaviken, Ulvsundasjön, Hammarby
+> sjö — and Brunnsviken, Edsviken and every lake are **not** coastline.
+
+It bears on one question, *compared to me, are you closer to or further from a coastline?*
 
 ## 6. The questions that can't tell them anything
 
